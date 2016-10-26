@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EAF1F9">
     <CheckBox
         android:layout_marginLeft="5px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_width="180px"
+        android:layout_width="200px"
         android:layout_height="60px"
         android:orientation="horizontal"
         >
@@ -96,7 +97,7 @@
         android:textColor="@color/black"/>
         </LinearLayout>
     <LinearLayout
-        android:layout_width="150px"
+        android:layout_width="170px"
         android:layout_height="60px"
         android:orientation="horizontal"
         >

@@ -50,6 +50,8 @@
             android:name=".activity.GqkshActivity"
             android:screenOrientation="landscape">
         </activity>
+        <activity android:name=".activity.AddGdtbActivity"
+            android:screenOrientation="landscape"/>
 
     </application>
 

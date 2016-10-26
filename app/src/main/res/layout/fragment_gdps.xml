@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF1F9">
+    <TextView
+    android:id="@+id/tv_gdps_num"
+    android:layout_width="match_parent"
+    android:layout_height="80px"
+    android:text="本次共查到0条"
+    android:gravity="center"/>
+    <ListView
+        android:id="@+id/listview_gdps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</LinearLayout>
