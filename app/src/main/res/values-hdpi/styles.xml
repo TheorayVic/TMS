@@ -40,4 +40,16 @@
     <!-- 是否允许对话框的背景变暗 -->  
            <item name="android:backgroundDimEnabled">true</item>  
        </style>  
+
+
+    <!--星星评分图片自定义取代系统图片-->
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <item name="android:progressDrawable">@drawable/yhpj_star</item>
+
+        <item name="android:minHeight">58dip</item>
+
+        <item name="android:maxHeight">58dip</item>
+
+    </style>
 </resources>
