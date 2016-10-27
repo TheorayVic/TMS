@@ -27,6 +27,7 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
     private Spinner spinner_wtlx,spinner_jjcd;
     private List<String> list_wtlx = new ArrayList<>();
     private List<String> list_jjcd = new ArrayList<>();
+
     public AddGdtbFragment() {
     }
 
@@ -49,17 +50,17 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
         ll_photo = (LinearLayout) view.findViewById(R.id.ll_gdtb_add_photo);
         ll_save = (LinearLayout) view.findViewById(R.id.ll_gdtb_add_save);
         ll_commit = (LinearLayout) view.findViewById(R.id.ll_gdtb_add_commit);
-        spinner_wtlx = (Spinner) view.findViewById(R.id.spinner_gdtb_add_wtlx);
+        spinner_wtlx = (Spinner) view.findViewById(R.id.tv_gdtb_add_wtlx);
         spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_gdtb_add_jjcd);
         list_jjcd.add("高");
         list_jjcd.add("中");
         list_jjcd.add("低");
         list_wtlx.add("硬件问题");
         list_wtlx.add("软件问题");
-        ArrayAdapter<String> adapter_jjcd = new ArrayAdapter<String>(getActivity(),R.layout.fragment_gdtb_add,
-                R.id.spinner_gdtb_add_jjcd,list_jjcd);
-        ArrayAdapter<String> adapter_wtlx = new ArrayAdapter<String>(getActivity(),R.layout.fragment_gdtb_add,
-                R.id.spinner_gdtb_add_wtlx,list_wtlx);
+        ArrayAdapter<String> adapter_jjcd = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_dropdown_item_1line,list_jjcd);
+        ArrayAdapter<String> adapter_wtlx = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_dropdown_item_1line,list_wtlx);
         spinner_jjcd.setAdapter(adapter_jjcd);
         spinner_wtlx.setAdapter(adapter_wtlx);
         ll_photo.setOnClickListener(this);

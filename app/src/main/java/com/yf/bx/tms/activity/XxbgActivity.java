@@ -1,6 +1,7 @@
 package com.yf.bx.tms.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.XxbgFramentPagerAdapter;
 import com.yf.bx.tms.fragment.AddGdtbFragment;
+import com.yf.bx.tms.fragment.CLGdclFragment;
 import com.yf.bx.tms.fragment.GdclFragment;
 import com.yf.bx.tms.fragment.GdpsFragment;
 import com.yf.bx.tms.fragment.GdtbFragment;
@@ -36,14 +38,12 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     private GdclFragment gdclFragment;
     private YhpjFragment yhpjFragment;
     private WwytpjFragment wwytpjFragment;
-
     private AddGdtbFragment addGdtbFragment;
+    private CLGdclFragment clGdclFragment;
     private ImageButton ib_back,ib_wwyt;
     private TextView tv_notice;
     private RadioGroup rg_xxbg;
-    private ViewPager viewPager;
     private RadioButton rb_gdtb,rb_gdps,rb_gdcl,rb_yhpj,rb_wwytpj;
-    private List<Fragment> fragments;
     private XxbgFramentPagerAdapter xxbgFramentPagerAdapter;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,6 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
 
 
     private void initView() {
-        viewPager = (ViewPager) findViewById(R.id.viewpager_xxbg);
         ib_back = (ImageButton) findViewById(R.id.ib_xxbg_back);
         ib_wwyt = (ImageButton) findViewById(R.id.ib_xxbg_wwyt);
         rb_gdtb = (RadioButton) findViewById(R.id.rb_xxbg_gdtb);
@@ -69,21 +68,13 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     }
 
     private void initData() {
-        fragments = new ArrayList<>();
         gdtbFragment = new GdtbFragment();
         gdpsFragment = new GdpsFragment();
         gdclFragment = new GdclFragment();
         yhpjFragment = new YhpjFragment();
         wwytpjFragment = new WwytpjFragment();
         addGdtbFragment = new AddGdtbFragment();
-        fragments.add(gdtbFragment);
-        fragments.add(gdpsFragment);
-        fragments.add(gdclFragment);
-        fragments.add(yhpjFragment);
-        fragments.add(wwytpjFragment);
-        fragments.add(addGdtbFragment);
-        xxbgFramentPagerAdapter = new XxbgFramentPagerAdapter(getSupportFragmentManager(),fragments);
-        viewPager.setAdapter(xxbgFramentPagerAdapter);
+        clGdclFragment = new CLGdclFragment();
     }
 
     private void initListener() {
@@ -93,9 +84,18 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         gdtbFragment.setOnButtonClick(new GdtbFragment.OnAddClick() {
             @Override
             public void onClick(View view) {
-              viewPager.setCurrentItem(5);
+                ReplaceFragmentUtils.replaceF(XxbgActivity.this,addGdtbFragment,false,R.id.framelayout_xxbg);
+
             }
         });
+
+        gdclFragment.setOnButtonClick(new GdclFragment.OnAddClick() {
+            @Override
+            public void onClick(View view) {
+                ReplaceFragmentUtils.replaceF(XxbgActivity.this,clGdclFragment,false,R.id.framelayout_xxbg);
+            }
+        });
+
     }
 
     @Override
@@ -114,20 +114,30 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId){
                 case R.id.rb_xxbg_gdtb:
-                    viewPager.setCurrentItem(0);
+                    ReplaceFragmentUtils.replaceF(this,gdtbFragment,false,R.id.framelayout_xxbg);
                     break;
                 case R.id.rb_xxbg_gdps:
-                    viewPager.setCurrentItem(1);
+                    ReplaceFragmentUtils.replaceF(this,gdpsFragment,false,R.id.framelayout_xxbg);
                     break;
                 case R.id.rb_xxbg_gdcl:
-                    viewPager.setCurrentItem(2);
+                    ReplaceFragmentUtils.replaceF(this,gdclFragment,false,R.id.framelayout_xxbg);
                     break;
                 case R.id.rb_xxbg_yhpj:
-                    viewPager.setCurrentItem(3);
+                    ReplaceFragmentUtils.replaceF(this,yhpjFragment,false,R.id.framelayout_xxbg);
                     break;
                 case R.id.rb_xxbg_wwytpj:
-                    viewPager.setCurrentItem(4);
+                    ReplaceFragmentUtils.replaceF(this,wwytpjFragment,false,R.id.framelayout_xxbg);
                     break;
             }
+    }
+
+    //接受工单派送中点击item的派送工单后返回的数据,并通知adapter，然后提交给服务器，
+    // 再次请求数据时已经改变
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+       //返回分配人员的名字
+        if (null!=data){
+        String result = data.getExtras().getString("result");}
+
     }
 }

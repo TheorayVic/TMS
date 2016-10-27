@@ -84,6 +84,6 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
     }
     //1、定义接口
     public interface OnAddClick{
-        public void onClick(View view);
+         void onClick(View view);
     }
 }

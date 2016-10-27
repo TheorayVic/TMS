@@ -11,14 +11,14 @@ import android.support.v4.app.FragmentTransaction;
 
 public class ReplaceFragmentUtils {
 
-    public static void replaceFragmentUtil(FragmentActivity activity, Fragment fragment, boolean popBackStack, int layoutFragment) {
+    public static void replaceF(FragmentActivity activity, Fragment fragment, boolean popBackStack, int layoutFragment) {
         if(popBackStack)
             activity.getFragmentManager().popBackStack();
 
         FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager()
                 .beginTransaction();
         fragmentTransaction.replace(layoutFragment, fragment);
-        fragmentTransaction.addToBackStack(null);
+       // fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

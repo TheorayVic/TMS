@@ -4,8 +4,10 @@
     android:layout_height="match_parent"
     android:background="#EAF1F9">
 <LinearLayout
+    android:layout_marginTop="10px"
+    android:layout_marginLeft="15px"
     android:layout_width="match_parent"
-    android:layout_height="180px"
+    android:layout_height="200px"
     android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_gdps_item_num"
@@ -16,23 +18,168 @@
         android:gravity="center"/>
     <LinearLayout
         android:id="@+id/ll_gdps_item"
-        android:layout_width="match_parent"
-        android:layout_height="180px"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="200px"
+        android:layout_marginLeft="10px"
+        android:orientation="vertical"
+        android:background="@drawable/gdps_item_white_bg">
         <LinearLayout
+            android:layout_marginLeft="15px"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:gravity="center">
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="match_parent"
+               android:orientation="horizontal"
+               android:gravity="center">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工单编号:"
+            android:textSize="17sp"
+            android:textColor="#3171AF"/>
+            <TextView
+                android:id="@+id/tv_gdps_item_gdbh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"/>
+           </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="紧急程度:"
+                    android:textSize="17sp"
+                    android:textColor="#3171AF"/>
+                <TextView
+                    android:id="@+id/tv_gdps_item_jjcd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="问题类型:"
+                    android:textSize="17sp"
+                    android:textColor="#3171AF"/>
+                <TextView
+                    android:id="@+id/tv_gdps_item_wtlx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="15px"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="问题描述:"
+                android:textSize="17sp"
+                android:textColor="#3171AF"/>
+            <TextView
+                android:id="@+id/tv_gdps_item_wtms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
+            <LinearLayout
+                android:layout_marginLeft="15px"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发生地点:"
+                    android:textSize="17sp"
+                    android:textColor="#3171AF"/>
+                <TextView
+                    android:id="@+id/tv_gdps_item_fsdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系人:"
+                    android:textSize="17sp"
+                    android:textColor="#3171AF"/>
+                <TextView
+                    android:id="@+id/tv_gdps_item_lxr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_gdps_item_cl"
+        android:layout_width="150px"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_gdps_item_lqgd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="领取工单"
+            android:background="@drawable/gdps_item_lqgd"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_gdps_item_psgd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="派送工单"
+            android:background="@drawable/gdps_item_psgd"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
+        </LinearLayout>
+    <TextView
+        android:layout_width="10px"
+        android:layout_height="match_parent" />
 </LinearLayout>
 </LinearLayout>
