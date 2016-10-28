@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_gdps_add_people"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:background="#EAF1F9"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="#008F8F"
+            android:gravity="center"
+            android:text="五位一体"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="20px"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="140px"
+                    android:layout_height="100px"
+                    android:background="#3E87CC"
+                    android:text="岗位"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+               <TextView
+                   android:layout_width="580px"
+                   android:layout_height="100px"
+                   android:background="@drawable/tv_bg"/>
+            </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="20px"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="140px"
+                        android:layout_height="100px"
+                        android:background="#3E87CC"
+                        android:text="流程"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="580px"
+                        android:layout_height="100px"
+                        android:background="@drawable/tv_bg"/>
+                </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10px"
+                        android:layout_marginLeft="20px"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="140px"
+                            android:layout_height="100px"
+                            android:background="#3E87CC"
+                            android:text="制度"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="580px"
+                            android:layout_height="100px"
+                            android:background="@drawable/tv_bg"/>
+                    </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="10px"
+                            android:layout_marginLeft="20px"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_width="140px"
+                                android:layout_height="100px"
+                                android:background="#3E87CC"
+                                android:text="标准"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                />
+                            <TextView
+                                android:layout_width="580px"
+                                android:layout_height="100px"
+                                android:background="@drawable/tv_bg"/>
+                        </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="10px"
+                                android:layout_marginLeft="20px"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="140px"
+                                    android:layout_height="100px"
+                                    android:background="#3E87CC"
+                                    android:text="考核"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    />
+                                <TextView
+                                    android:layout_width="580px"
+                                    android:layout_height="100px"
+                                    android:background="@drawable/tv_bg"/>
+                            </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

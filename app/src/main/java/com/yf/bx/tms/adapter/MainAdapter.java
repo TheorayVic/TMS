@@ -10,27 +10,34 @@ import android.widget.TextView;
 import com.yf.bx.tms.R;
 import com.zhy.autolayout.utils.AutoUtils;
 
+import java.util.List;
+
 /**
  * Created by 123 on 2016/10/25.
  */
 
 public class MainAdapter extends BaseAdapter {
     private Context context;
+    private List<String> list;
 
+    public MainAdapter(Context context, List<String> list) {
+        this.context = context;
+        this.list = list;
+    }
 
     @Override
     public int getCount() {
-        return 0;
+        return list.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return list.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override

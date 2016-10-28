@@ -59,6 +59,9 @@
     <ListView
         android:id="@+id/listview_gdtb"
         android:layout_width="match_parent"
+        android:divider="@drawable/dash_listview_divier"
+        android:layerType="software"
+        android:dividerHeight="2dp"
         android:layout_height="0dp"
         android:layout_weight="1">
     </ListView>

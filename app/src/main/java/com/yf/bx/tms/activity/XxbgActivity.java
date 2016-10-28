@@ -4,6 +4,7 @@ package com.yf.bx.tms.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageButton;
@@ -85,7 +86,6 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 ReplaceFragmentUtils.replaceF(XxbgActivity.this,addGdtbFragment,false,R.id.framelayout_xxbg);
-
             }
         });
 
@@ -105,7 +105,8 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.ib_xxbg_wwyt:
-
+                Intent intent =new Intent(this,AddWwytActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -114,7 +115,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId){
                 case R.id.rb_xxbg_gdtb:
-                    ReplaceFragmentUtils.replaceF(this,gdtbFragment,false,R.id.framelayout_xxbg);
+                   ReplaceFragmentUtils.replaceF(this,gdtbFragment,false,R.id.framelayout_xxbg);
                     break;
                 case R.id.rb_xxbg_gdps:
                     ReplaceFragmentUtils.replaceF(this,gdpsFragment,false,R.id.framelayout_xxbg);
@@ -129,6 +130,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
                     ReplaceFragmentUtils.replaceF(this,wwytpjFragment,false,R.id.framelayout_xxbg);
                     break;
             }
+
     }
 
     //接受工单派送中点击item的派送工单后返回的数据,并通知adapter，然后提交给服务器，

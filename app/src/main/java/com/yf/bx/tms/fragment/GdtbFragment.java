@@ -12,6 +12,11 @@ import android.widget.ListView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.XxbgActivity;
+import com.yf.bx.tms.adapter.GdpsAdapter;
+import com.yf.bx.tms.adapter.GdtbAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 工单提报
@@ -23,7 +28,7 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
     private View view;
     private ListView listView;
     private LinearLayout ll_add,ll_edit,ll_del,ll_commit;
-
+    private List<String> list;
     //定义接口 实现从一个Fragment跳转到另一个Fragment
     private OnAddClick  onAddClick;
     public GdtbFragment() {
@@ -38,7 +43,6 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_gdtb,container,false);
-
         return view;
     }
 
@@ -54,6 +58,10 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
         ll_edit.setOnClickListener(this);
         ll_del.setOnClickListener(this);
         ll_commit.setOnClickListener(this);
+        list = new ArrayList<>();
+        list.add("实验数据");
+        GdtbAdapter adapter = new GdtbAdapter(list,getActivity());
+        listView.setAdapter(adapter);
     }
 
     @Override

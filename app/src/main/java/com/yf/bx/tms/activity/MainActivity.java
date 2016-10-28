@@ -5,16 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.adapter.MainAdapter;
 import com.zhy.autolayout.AutoLayoutActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.yf.bx.tms.R.drawable.banner_11;
 
 public class MainActivity extends AutoLayoutActivity implements View.OnClickListener{
 
     private ImageView iv_banner1,iv_banner2,iv_banner3,iv_banner4;
-    private boolean isChecked1,isChecked2,isChecked3,isChecked4; ;
+    private boolean isChecked1,isChecked2,isChecked3,isChecked4;
+    private TextView tv_notice ;
+    private ListView lv_main;
+    private List<String> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +33,17 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
         iv_banner2 = (ImageView) findViewById(R.id.iv_main_banner2);
         iv_banner3 = (ImageView) findViewById(R.id.iv_main_banner3);
         iv_banner4 = (ImageView) findViewById(R.id.iv_main_banner4);
+        tv_notice = (TextView) findViewById(R.id.tv_main_tip);
+        lv_main = (ListView) findViewById(R.id.lv_main);
+        list = new ArrayList<>();
         iv_banner1.setOnClickListener(this);
         iv_banner2.setOnClickListener(this);
         iv_banner3.setOnClickListener(this);
         iv_banner4.setOnClickListener(this);
+        tv_notice.setOnClickListener(this);
+        list.add("实验数据");
+        MainAdapter mainAdapter = new MainAdapter(this,list);
+        lv_main.setAdapter(mainAdapter);
     }
 
     @Override
@@ -67,6 +84,9 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
                     Intent intent = new Intent(MainActivity.this,TxsbcxActivity.class);
                     startActivity(intent);
                 }
+                break;
+            case R.id.tv_main_tip:
+
                 break;
         }
     }

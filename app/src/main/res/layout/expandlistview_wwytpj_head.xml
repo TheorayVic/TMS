@@ -3,28 +3,17 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAF1F9">
-    <CheckBox
-        android:id="@+id/cb_gdtb_item"
-        android:layout_marginLeft="5px"
-        android:layout_width="wrap_content"
-        android:layout_height="60px"
-        android:gravity="center"/>
+
 
     <LinearLayout
-        android:layout_width="200px"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="60px"
         android:orientation="horizontal"
         >
-        <ImageView
-            android:layout_width="40px"
-            android:layout_height="match_parent"
-            android:src="@drawable/rotate_dashline"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginRight="-10dp"
-            android:layerType="software"
-            android:layout_gravity="left"/>
+
         <TextView
-            android:id="@+id/tv_gdtb_item_wtbt"
+            android:id="@+id/tv_wwytpj_item_wtbt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -33,99 +22,6 @@
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="150px"
-        android:layout_height="60px"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="40px"
-            android:layout_height="match_parent"
-            android:src="@drawable/rotate_dashline"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginRight="-10dp"
-            android:layerType="software"
-            android:layout_gravity="left"/>
-    <TextView
-        android:id="@+id/tv_gdtb_item_lxr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="联系人"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="200px"
-        android:layout_height="60px"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="40px"
-            android:layout_height="match_parent"
-            android:src="@drawable/rotate_dashline"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginRight="-10dp"
-            android:layerType="software"
-            android:layout_gravity="left"/>
-    <TextView
-        android:id="@+id/tv_gdtb_item_lxdh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="联系电话"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="250px"
-        android:layout_height="60px"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="40px"
-            android:layout_height="match_parent"
-            android:src="@drawable/rotate_dashline"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginRight="-10dp"
-            android:layerType="software"
-            android:layout_gravity="left"/>
-        <TextView
-            android:id="@+id/tv_gdtb_item_fsdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-        android:text="发生地点"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="170px"
-        android:layout_height="60px"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="40px"
-            android:layout_height="match_parent"
-            android:src="@drawable/rotate_dashline"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginRight="-10dp"
-            android:layerType="software"
-            android:layout_gravity="left"/>
-        <TextView
-            android:id="@+id/tv_gdtb_item_gdzt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="工单状态"
-            android:textSize="16sp"
-            android:textColor="@color/black"/>
-        </LinearLayout>
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -141,13 +37,87 @@
             android:layerType="software"
             android:layout_gravity="left"/>
         <TextView
-            android:id="@+id/tv_gdtb_item_jjcd"
+            android:id="@+id/tv_wwytpj_item_lxr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="联系人"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="40px"
+            android:layout_height="match_parent"
+            android:src="@drawable/rotate_dashline"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:layerType="software"
+            android:layout_gravity="left"/>
+        <TextView
+            android:id="@+id/tv_wwytpj_item_lxdh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-        android:text="紧急程度"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
-        </LinearLayout>
+            android:text="联系电话"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="40px"
+            android:layout_height="match_parent"
+            android:src="@drawable/rotate_dashline"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:layerType="software"
+            android:layout_gravity="left"/>
+        <TextView
+            android:id="@+id/tv_wwytpj_item_fsdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="发生地点"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="40px"
+            android:layout_height="match_parent"
+            android:src="@drawable/rotate_dashline"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:layerType="software"
+            android:layout_gravity="left"/>
+        <TextView
+            android:id="@+id/tv_wwytpj_item_zf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="总分"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
 </LinearLayout>
