@@ -1,8 +1,12 @@
 package com.yf.bx.tms.activity;
 
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -24,6 +28,7 @@ import com.yf.bx.tms.fragment.WwytpjFragment;
 import com.yf.bx.tms.fragment.YhpjFragment;
 import com.zhy.autolayout.AutoLayoutActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,5 +146,20 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         if (null!=data){
         String result = data.getExtras().getString("result");}
 
+        //请求码300 从图库中选择 ，400 拍照
+        if (requestCode==300&&resultCode==RESULT_OK){
+            Bundle bundle =  data.getExtras();
+            Bitmap bitmap = (Bitmap) bundle.get("data");
+        }else if (requestCode==400&&resultCode==RESULT_OK){
+            ContentResolver picResolver = getContentResolver();
+            Uri picUri = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(picResolver,picUri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+//            Bundle bundle = data.getExtras();
+//            bitmap =  bundle.getParcelable("data");
+        }
     }
 }
