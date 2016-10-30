@@ -143,13 +143,17 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
        //返回分配人员的名字
+        if (requestCode==100&&resultCode==RESULT_OK){
         if (null!=data){
-        String result = data.getExtras().getString("result");}
+        String result = data.getExtras().getString("result");
+        }
+        }
 
-        //请求码300 从图库中选择 ，400 拍照
+        //请求码400 从图库中选择 ，300 拍照
         if (requestCode==300&&resultCode==RESULT_OK){
             Bundle bundle =  data.getExtras();
-            Bitmap bitmap = (Bitmap) bundle.get("data");
+            if (bundle!=null){
+            Bitmap bitmap = (Bitmap) bundle.get("data");}
         }else if (requestCode==400&&resultCode==RESULT_OK){
             ContentResolver picResolver = getContentResolver();
             Uri picUri = data.getData();

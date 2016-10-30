@@ -13,12 +13,19 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.github.jjobes.slidedatetimepicker.SlideDateTimeListener;
+import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.utils.PhotoUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static android.R.attr.data;
 
 /**
  * Created by 123 on 2016/10/26.
@@ -34,6 +41,10 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
 
     private View.OnClickListener listener;
 
+    private TextView tv_wtfssj;
+
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
+
     public AddGdtbFragment() {
     }
 
@@ -46,7 +57,6 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_gdtb_add,container,false);
-
         return view;
     }
 
@@ -58,6 +68,9 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
         ll_commit = (LinearLayout) view.findViewById(R.id.ll_gdtb_add_commit);
         spinner_wtlx = (Spinner) view.findViewById(R.id.tv_gdtb_add_wtlx);
         spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_gdtb_add_jjcd);
+
+        tv_wtfssj = (TextView) view.findViewById(R.id.tv_gdtb_add_wtfssj);
+
         list_jjcd.add("高");
         list_jjcd.add("中");
         list_jjcd.add("低");
@@ -97,6 +110,37 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
                 }
             }
         };
+
+         //时间日期选择
+        final SlideDateTimeListener listener2 = new SlideDateTimeListener() {
+
+            @Override
+            public void onDateTimeSet(Date date)
+            {
+                // Do something with the date. This Date object contains
+                // the date and time that the user has selected.
+                String date2 = dateFormat.format(date);
+                tv_wtfssj.setText(date2);
+            }
+
+            @Override
+            public void onDateTimeCancel()
+            {
+                // Overriding onDateTimeCancel() is optional.
+            }
+        };
+
+        tv_wtfssj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new SlideDateTimePicker.Builder(getActivity().getSupportFragmentManager())
+                        .setListener(listener2)
+                        .setInitialDate(new Date())
+                        .setIs24HourTime(true)
+                        .build()
+                        .show();
+            }
+        });
     }
 
     @Override
