@@ -1,10 +1,17 @@
 package com.yf.bx.tms.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +27,8 @@ import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.utils.PhotoUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,6 +42,7 @@ import static android.R.attr.data;
 
 public class AddGdtbFragment extends Fragment implements View.OnClickListener{
 
+    private static final String TAG ="AddGdtbFragment";
     private View view;
     private LinearLayout ll_photo,ll_save,ll_commit;
     private Spinner spinner_wtlx,spinner_jjcd;
@@ -41,16 +51,23 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
 
     private View.OnClickListener listener;
 
-    private TextView tv_wtfssj;
+    private TextView tv_wtfssj,tv_savePhoto;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
 
+    private StringBuffer imgsb = new StringBuffer();
+    private PhotoBroadcastReceiver photoBroadcastReceiver;
     public AddGdtbFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //注册广播
+        photoBroadcastReceiver = new PhotoBroadcastReceiver();
+        IntentFilter intentFilter1 = new IntentFilter();
+        intentFilter1.addAction("addPhoto");
+        getActivity().registerReceiver(photoBroadcastReceiver,intentFilter1);
     }
 
     @Nullable
@@ -70,7 +87,7 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
         spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_gdtb_add_jjcd);
 
         tv_wtfssj = (TextView) view.findViewById(R.id.tv_gdtb_add_wtfssj);
-
+        tv_savePhoto = (TextView) view.findViewById(R.id.gdtb_add_savePhoto);
         list_jjcd.add("高");
         list_jjcd.add("中");
         list_jjcd.add("低");
@@ -85,6 +102,7 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
         ll_photo.setOnClickListener(this);
         ll_save.setOnClickListener(this);
         ll_commit.setOnClickListener(this);
+
 
 
         listener = new View.OnClickListener(){
@@ -158,5 +176,22 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
         }
     };
 
+//内部广播，接收XxbgActivity发过来的图片
+    public class PhotoBroadcastReceiver extends BroadcastReceiver{
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String filename = intent.getStringExtra("bitmap");
+        if (null!=filename){
+            imgsb.append(filename+";");
+            Log.i(TAG, "onReceive: imgsb:"+imgsb.toString());
+            tv_savePhoto.setText(imgsb.toString());
+        }
+    }
+}
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().unregisterReceiver(photoBroadcastReceiver);
+    }
 }

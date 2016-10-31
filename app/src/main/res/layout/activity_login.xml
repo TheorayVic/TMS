@@ -15,7 +15,7 @@
         <RelativeLayout
             android:id="@+id/loginLayout1"
             android:layout_width="wrap_content"
-            android:layout_height="260dp"
+            android:layout_height="280px"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/login2"
             android:background="@drawable/login_back">

@@ -33,6 +33,7 @@ public class GdpsAddPeopleActivity extends AutoLayoutActivity {
                 finish();
             }
         });
+
     }
 
     @Override

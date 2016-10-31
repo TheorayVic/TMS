@@ -67,7 +67,7 @@
             android:id="@+id/tv_gdcl_cl_wtms"
             android:layout_width="wrap_content"
             android:layout_alignRight="@id/tv_gdcl_cl_wtlx"
-            android:layout_height="100px"
+            android:layout_height="85px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
@@ -302,7 +302,7 @@
             android:id="@+id/tv_gdcl_cl_jjbf"
             android:layout_alignRight="@id/spinner_gdcl_cl_cljg"
             android:layout_width="wrap_content"
-            android:layout_height="90px"
+            android:layout_height="80px"
             android:maxLength="20"
             android:background="@drawable/tv_bg"/>
 
@@ -334,7 +334,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50px"
         android:layout_marginTop="10px"
         android:gravity="center">
         <LinearLayout

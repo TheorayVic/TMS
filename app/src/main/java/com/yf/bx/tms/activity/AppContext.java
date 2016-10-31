@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.yf.bx.tms.bean.User;
 import com.yf.bx.tms.utils.CyptoUtils;
 import com.yf.bx.tms.utils.FileUtils;
@@ -155,10 +156,6 @@ public class AppContext extends Application {
     public String getLoginUid() {
         return this.loginUid;
     }
-
-
-
-
 
 
     /**

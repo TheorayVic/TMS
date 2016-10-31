@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/tv_yhpj_lxr"
             android:layout_width="1000px"
-            android:layout_height="150px"
+            android:layout_height="140px"
             android:background="@drawable/tv_bg"/>
     </LinearLayout>
     <LinearLayout
@@ -143,7 +143,7 @@
         <EditText
             android:id="@+id/tv_yhpj_pj"
             android:layout_width="1000px"
-            android:layout_height="160px"
+            android:layout_height="150px"
             android:background="@drawable/tv_bg"/>
     </LinearLayout>
     <TextView
@@ -151,7 +151,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
     <LinearLayout
-        android:layout_marginTop="20px"
+        android:layout_marginTop="10px"
         android:id="@+id/ll_yhpj_commit"
         android:background="@drawable/gdtb_down_bg"
         android:layout_width="match_parent"
