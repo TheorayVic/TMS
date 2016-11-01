@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.MainAdapter;
+import com.yf.bx.tms.bean.MainBean;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
@@ -41,9 +43,27 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
         iv_banner3.setOnClickListener(this);
         iv_banner4.setOnClickListener(this);
         tv_notice.setOnClickListener(this);
-        list.add("实验数据");
+
+
         MainAdapter mainAdapter = new MainAdapter(this,list);
         lv_main.setAdapter(mainAdapter);
+        lv_main.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String type = list.get(position);//.getType
+                //根据类型判断跳转界面
+                Intent intent = null;
+                if ("信息办公设备工单".equals(type)){
+                    intent = new Intent(MainActivity.this,XxbgActivity.class);}
+                else if ("光纤可视化".equals(type)){
+                    intent = new Intent(MainActivity.this,GqkshActivity.class);}
+                else if ("通信巡检".equals(type)){
+                    intent = new Intent(MainActivity.this,TxxjActivity.class);}
+                else if ("通信设备查询".equals(type)){
+                    intent = new Intent(MainActivity.this,TxsbcxActivity.class);}
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

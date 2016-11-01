@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.bean.MainBean;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
@@ -59,6 +60,7 @@ public class MainAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        holder.num.setText(position+"");
         return convertView;
 
     }

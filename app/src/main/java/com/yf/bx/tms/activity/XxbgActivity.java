@@ -18,11 +18,13 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.XxbgFramentPagerAdapter;
 import com.yf.bx.tms.fragment.AddGdtbFragment;
 import com.yf.bx.tms.fragment.CLGdclFragment;
+import com.yf.bx.tms.fragment.EditGdtbFragment;
 import com.yf.bx.tms.fragment.GdclFragment;
 import com.yf.bx.tms.fragment.GdpsFragment;
 import com.yf.bx.tms.fragment.GdtbFragment;
@@ -56,29 +58,34 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     private YhpjFragment yhpjFragment;
     private WwytpjFragment wwytpjFragment;
     private AddGdtbFragment addGdtbFragment;
+    private EditGdtbFragment editGdtbFragment;
     private CLGdclFragment clGdclFragment;
     private SearchFragment searchFragment;
     private ImageButton ib_back,ib_wwyt,ib_search;
     private TextView tv_notice;
     private RadioGroup rg_xxbg;
     private RadioButton rb_gdtb,rb_gdps,rb_gdcl,rb_yhpj,rb_wwytpj;
-    private XxbgFramentPagerAdapter xxbgFramentPagerAdapter;
+   // private XxbgFramentPagerAdapter xxbgFramentPagerAdapter;
 
     private String imagename;//拍照或从图库中取出，照片名字
     private boolean
             isSD = Environment.getExternalStorageDirectory().equals(Environment.MEDIA_MOUNTED);;//是否存在SD卡
    private Bundle addGdtbFragmentBundle = new Bundle();
 
+    private FragmentTransaction fragmentTransaction;
+    private List<Fragment> fragments;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xxbg);
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         initView();
         initData();
         initListener();
+        fragments = getSupportFragmentManager().getFragments();
+        //根据登录人权限判断展示页面
+
     }
-
-
 
     private void initView() {
         ib_back = (ImageButton) findViewById(R.id.ib_xxbg_back);
@@ -99,6 +106,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         yhpjFragment = new YhpjFragment();
         wwytpjFragment = new WwytpjFragment();
         addGdtbFragment = new AddGdtbFragment();
+        editGdtbFragment = new EditGdtbFragment();
         clGdclFragment = new CLGdclFragment();
         searchFragment = new SearchFragment();
     }
@@ -111,15 +119,87 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         gdtbFragment.setOnButtonClick(new GdtbFragment.OnAddClick() {
             @Override
             public void onClick(View view) {
-                ReplaceFragmentUtils.replaceF(XxbgActivity.this,addGdtbFragment,false,R.id.framelayout_xxbg);
+             //   ReplaceFragmentUtils.replaceF(XxbgActivity.this,addGdtbFragment,false,R.id.framelayout_xxbg);
+                if (fragments!=null&&(fragments.size()==2)){
+                    fragments.remove(1);
+                }
+
+                FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction2.replace(R.id.framelayout_xxbg, addGdtbFragment);
+                fragmentTransaction2.addToBackStack(null);
+                fragmentTransaction2.commit();
+            }
+
+            @Override
+            public void onClick2(View view) {
+                if (fragments!=null&&(fragments.size()==2)){
+                    fragments.remove(1);
+                }
+                FragmentTransaction fragmentTransaction3= getSupportFragmentManager().beginTransaction();
+                fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction3.replace(R.id.framelayout_xxbg, editGdtbFragment);
+                fragmentTransaction3.addToBackStack(null);
+                fragmentTransaction3.commit();
             }
         });
 
         gdclFragment.setOnButtonClick(new GdclFragment.OnAddClick() {
             @Override
             public void onClick(View view) {
-                ReplaceFragmentUtils.replaceF(XxbgActivity.this,clGdclFragment,false,R.id.framelayout_xxbg);
+              //  ReplaceFragmentUtils.replaceF(XxbgActivity.this,clGdclFragment,false,R.id.framelayout_xxbg);
+                FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction4.replace(R.id.framelayout_xxbg, clGdclFragment);
+                fragmentTransaction4.addToBackStack(null);
+                fragmentTransaction4.commit();
             }
+        });
+
+        addGdtbFragment.setOnReplaceListener(new AddGdtbFragment.OnReplaceListener() {
+            @Override
+            public void onReplace(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction5 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction5 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction5.replace(R.id.framelayout_xxbg, gdtbFragment);
+                fragmentTransaction5.commit();
+            }
+
+            @Override
+            public void onReplace2(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction7 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction7 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction7.replace(R.id.framelayout_xxbg, gdtbFragment);
+                fragmentTransaction7.commit();
+            }
+        });
+
+        editGdtbFragment.setOnReplaceListener(new EditGdtbFragment.OnReplaceListener() {
+            @Override
+            public void onReplace(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction8 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction8 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction8.replace(R.id.framelayout_xxbg, gdtbFragment);
+                fragmentTransaction8.commit();
+            }
+
+            @Override
+            public void onReplace2(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction6 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction6 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction6.replace(R.id.framelayout_xxbg, gdtbFragment);
+                fragmentTransaction6.commit();}
         });
 
     }
@@ -143,9 +223,11 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+        if (fragments!= null&&fragments.size() > 0) {
+            fragments.clear();
+        }
             switch (checkedId){
                 case R.id.rb_xxbg_gdtb:
-                    gdtbFragment.setArguments(addGdtbFragmentBundle);
                     ib_wwyt.setVisibility(View.INVISIBLE);
                    ReplaceFragmentUtils.replaceF(this,gdtbFragment,false,R.id.framelayout_xxbg);
                     break;
@@ -177,6 +259,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         if (requestCode==100&&resultCode==RESULT_OK){
         if (null!=data){
         String result = data.getExtras().getString("result");
+            Toast.makeText(this,"工单派送成功",Toast.LENGTH_SHORT).show();
         }
         }
 

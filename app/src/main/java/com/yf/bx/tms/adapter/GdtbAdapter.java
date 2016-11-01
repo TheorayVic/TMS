@@ -1,16 +1,21 @@
 package com.yf.bx.tms.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 /**
  * Created by 123 on 2016/10/26.
@@ -18,14 +23,21 @@ import java.util.List;
 
 public class GdtbAdapter extends BaseAdapter {
 
+    private final static String TAG = "GdtbAdapter";
     private List<String> list;
     private Context context;
+
+    private Map<Integer,Boolean> map;
 
     public GdtbAdapter(List<String> list, Context context) {
         this.list = list;
         this.context = context;
+        map = new HashMap<>();
     }
 
+    public  Map<Integer,Boolean> getMap(){
+        return map;
+    }
     @Override
     public int getCount() {
         return list.size();
@@ -42,7 +54,7 @@ public class GdtbAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView==null){
             holder = new ViewHolder();
@@ -58,7 +70,22 @@ public class GdtbAdapter extends BaseAdapter {
         }else {
             holder = (ViewHolder) convertView.getTag();
         }
+        holder.cb_gdtb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                map.put(position,b);
+                Log.i(TAG, "onCheckedChanged: list:"+list.toString());
+            }
+        });
+        if (null!=map.get(position)){
+        holder.cb_gdtb.setChecked(map.get(position));}
         return convertView;
+    }
+
+    public void initCheckbox(boolean flag){
+        for (int i = 0;i<list.size();i++){
+            map.put(i,flag);
+        }
     }
 
     class ViewHolder{
