@@ -60,7 +60,8 @@ public class MainAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.num.setText(position+"");
+        holder.num.setText(position+1+"");
+        holder.type.setText(list.get(position));
         return convertView;
 
     }

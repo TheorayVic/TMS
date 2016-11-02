@@ -50,7 +50,8 @@ public class GdpsFragment extends Fragment {
         lv_gdps = (ListView) view.findViewById(R.id.listview_gdps);
         //实验数据
         List<String> list = new ArrayList<>();
-        list.add("试验数据");
+        list.add("试验数据1");
+        list.add("试验数据2");
         gdpsAdapter = new GdpsAdapter(getActivity(),list);
         lv_gdps.setAdapter(gdpsAdapter);
 

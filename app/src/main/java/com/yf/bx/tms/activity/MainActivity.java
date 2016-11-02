@@ -44,7 +44,10 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
         iv_banner4.setOnClickListener(this);
         tv_notice.setOnClickListener(this);
 
-
+        list.add("信息办公设备工单");
+        list.add("光纤可视化");
+        list.add("通信巡检");
+        list.add("通信设备查询");
         MainAdapter mainAdapter = new MainAdapter(this,list);
         lv_main.setAdapter(mainAdapter);
         lv_main.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -184,7 +184,7 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
 
                 //提交后自动返回
                 if (onReplaceListener!=null){
-                    onReplaceListener.onReplace2(ll_commit);
+                    onReplaceListener.onReplace(ll_commit);
                 }
                 Toast.makeText(getActivity(),"提交成功",Toast.LENGTH_SHORT).show();
                 break;
@@ -199,7 +199,7 @@ public class AddGdtbFragment extends Fragment implements View.OnClickListener{
 
     public interface OnReplaceListener{
         void onReplace(View view);
-        void onReplace2(View view);
+      //  void onReplace2(View view);
     }
 
 //内部广播，接收XxbgActivity发过来的图片

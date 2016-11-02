@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.GdpsAddPeopleActivity;
 import com.yf.bx.tms.activity.XxbgActivity;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -70,12 +71,14 @@ public class GdpsAdapter extends BaseAdapter {
             holder.tv_psgd = (TextView) convertView.findViewById(R.id.tv_gdps_item_psgd);
             holder.ll_gdps_cl = (LinearLayout) convertView.findViewById(R.id.ll_gdps_item_cl);
             convertView.setTag(holder);
+            //对于listview，注意添加这一行，即可在item上使用高度
+            AutoUtils.autoSize(convertView);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.tv_gdbh.setText(list.get(position));
-        holder.tv_num.setText(position+"");
+        holder.tv_num.setText(position+1+"");
         //点击派送工单，成功后显示派送成功，然后才能点击领取工单，领取工单后，
         // 整个ll变成“处理中”，背景变绿色
         final boolean[] isPs = {false};

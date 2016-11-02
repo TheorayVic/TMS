@@ -26,6 +26,7 @@
         android:textSize="16sp"
         android:textColor="@color/white"/>
     <TextView
+        android:layout_marginLeft="8px"
         android:layout_width="150px"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -33,6 +34,7 @@
         android:textSize="16sp"
         android:textColor="@color/white"/>
     <TextView
+        android:layout_marginLeft="8px"
         android:layout_width="180px"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -40,6 +42,7 @@
         android:textSize="16sp"
         android:textColor="@color/white"/>
     <TextView
+        android:layout_marginLeft="8px"
         android:layout_width="250px"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -47,6 +50,7 @@
         android:textSize="16sp"
         android:textColor="@color/white"/>
     <TextView
+        android:layout_marginLeft="1px"
         android:layout_width="170px"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -54,6 +58,7 @@
         android:textSize="16sp"
         android:textColor="@color/white"/>
     <TextView
+        android:layout_marginLeft="8px"
         android:layout_width="170px"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -67,7 +72,7 @@
         android:divider="@drawable/dash_listview_divier"
         android:layerType="software"
         android:dividerHeight="2dp"
-        android:layout_height="0dp"
+        android:layout_height="fill_parent"
         android:layout_weight="1">
     </ListView>
     <LinearLayout

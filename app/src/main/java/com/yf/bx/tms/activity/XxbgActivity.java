@@ -28,6 +28,8 @@ import com.yf.bx.tms.fragment.EditGdtbFragment;
 import com.yf.bx.tms.fragment.GdclFragment;
 import com.yf.bx.tms.fragment.GdpsFragment;
 import com.yf.bx.tms.fragment.GdtbFragment;
+import com.yf.bx.tms.fragment.HxclFragment;
+import com.yf.bx.tms.fragment.PjYhpjFragment;
 import com.yf.bx.tms.fragment.ReplaceFragmentUtils;
 import com.yf.bx.tms.fragment.SearchFragment;
 import com.yf.bx.tms.fragment.WwytpjFragment;
@@ -56,11 +58,13 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     private GdpsFragment gdpsFragment;
     private GdclFragment gdclFragment;
     private YhpjFragment yhpjFragment;
+    private PjYhpjFragment pjYhpjFragment;
     private WwytpjFragment wwytpjFragment;
     private AddGdtbFragment addGdtbFragment;
     private EditGdtbFragment editGdtbFragment;
     private CLGdclFragment clGdclFragment;
     private SearchFragment searchFragment;
+    private HxclFragment hxclFragment;
     private ImageButton ib_back,ib_wwyt,ib_search;
     private TextView tv_notice;
     private RadioGroup rg_xxbg;
@@ -83,6 +87,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         initData();
         initListener();
         fragments = getSupportFragmentManager().getFragments();
+
         //根据登录人权限判断展示页面
 
     }
@@ -109,6 +114,8 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         editGdtbFragment = new EditGdtbFragment();
         clGdclFragment = new CLGdclFragment();
         searchFragment = new SearchFragment();
+        hxclFragment = new HxclFragment();
+        pjYhpjFragment = new PjYhpjFragment();
     }
 
     private void initListener() {
@@ -167,16 +174,6 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
                 fragmentTransaction5.commit();
             }
 
-            @Override
-            public void onReplace2(View view) {
-                if (fragments!= null&&fragments.size() > 0) {
-                    fragments.clear();
-                }
-                FragmentTransaction fragmentTransaction7 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction7 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction7.replace(R.id.framelayout_xxbg, gdtbFragment);
-                fragmentTransaction7.commit();
-            }
         });
 
         editGdtbFragment.setOnReplaceListener(new EditGdtbFragment.OnReplaceListener() {
@@ -202,6 +199,67 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
                 fragmentTransaction6.commit();}
         });
 
+        clGdclFragment.setOnReplaceListener(new CLGdclFragment.OnReplaceListener() {
+            @Override
+            public void onReplace(View view) {
+                if (fragments!=null&&(fragments.size()==2)){
+                    fragments.remove(1);
+                }
+                FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.framelayout_xxbg, hxclFragment);
+          //      fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+
+            @Override
+            public void onReplace2(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.framelayout_xxbg, gdclFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        hxclFragment.setOnReplaceListener(new HxclFragment.OnReplaceListener() {
+            @Override
+            public void onReplace(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.framelayout_xxbg, gdclFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        yhpjFragment.setOnButtonClick(new YhpjFragment.OnAddClick() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction4.replace(R.id.framelayout_xxbg, pjYhpjFragment);
+                fragmentTransaction4.addToBackStack(null);
+                fragmentTransaction4.commit();
+            }
+        });
+
+        pjYhpjFragment.setOnButtonClick(new PjYhpjFragment.OnAddClick() {
+            @Override
+            public void onClick(View view) {
+                if (fragments!= null&&fragments.size() > 0) {
+                    fragments.clear();
+                }
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.framelayout_xxbg, yhpjFragment);
+                fragmentTransaction.commit();
+            }
+        });
     }
 
     @Override

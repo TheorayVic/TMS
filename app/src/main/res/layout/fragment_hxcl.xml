@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   android:id="@+id/ll_gdcl_cl_outer"
+   android:id="@+id/ll_hxcl_outer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_marginLeft="47px"
-            android:id="@+id/tv_gdcl_cl_wtbt2"
+            android:id="@+id/tv_hxcl_wtbt2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="问题标题:"
@@ -22,16 +22,16 @@
             android:layout_gravity="center_vertical"
             android:textSize="18sp"/>
         <EditText
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtbt2"
-            android:id="@+id/tv_gdcl_cl_wtbt"
+            android:layout_toRightOf="@id/tv_hxcl_wtbt2"
+            android:id="@+id/tv_hxcl_wtbt"
             android:maxLength="20"
             android:layout_width="600px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
         <TextView
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtbt"
+            android:layout_toRightOf="@id/tv_hxcl_wtbt"
             android:layout_marginLeft="10px"
-            android:id="@+id/tv_gdcl_cl_wtlx2"
+            android:id="@+id/tv_hxcl_wtlx2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:gravity="center_vertical"
@@ -41,17 +41,17 @@
             android:layout_gravity="center_vertical"
             android:textSize="18sp"/>
         <Spinner
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtlx2"
-            android:id="@+id/tv_gdcl_cl_wtlx"
+            android:layout_toRightOf="@id/tv_hxcl_wtlx2"
+            android:id="@+id/tv_hxcl_wtlx"
             android:layout_width="310px"
             android:layout_height="50px"
             android:background="@drawable/gdtb_spinner"/>
 
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_wtms2"
-            android:layout_below="@id/tv_gdcl_cl_wtbt"
-            android:layout_alignRight="@id/tv_gdcl_cl_wtbt2"
+            android:id="@+id/tv_hxcl_wtms2"
+            android:layout_below="@id/tv_hxcl_wtbt"
+            android:layout_alignRight="@id/tv_hxcl_wtbt2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="问题描述:"
@@ -63,18 +63,18 @@
         <EditText
             android:layout_marginTop="5px"
             android:maxLength="80"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtms2"
-            android:layout_below="@id/tv_gdcl_cl_wtbt"
-            android:id="@+id/tv_gdcl_cl_wtms"
+            android:layout_toRightOf="@id/tv_hxcl_wtms2"
+            android:layout_below="@id/tv_hxcl_wtbt"
+            android:id="@+id/tv_hxcl_wtms"
             android:layout_width="wrap_content"
-            android:layout_alignRight="@id/tv_gdcl_cl_wtlx"
+            android:layout_alignRight="@id/tv_hxcl_wtlx"
             android:layout_height="85px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_lxr2"
-            android:layout_below="@id/tv_gdcl_cl_wtms"
-            android:layout_alignRight="@id/tv_gdcl_cl_wtbt2"
+            android:id="@+id/tv_hxcl_lxr2"
+            android:layout_below="@id/tv_hxcl_wtms"
+            android:layout_alignRight="@id/tv_hxcl_wtbt2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="联系人:"
@@ -85,17 +85,17 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_lxr2"
-            android:layout_below="@id/tv_gdcl_cl_wtms"
-            android:id="@+id/tv_gdcl_cl_lxr"
+            android:layout_toRightOf="@id/tv_hxcl_lxr2"
+            android:layout_below="@id/tv_hxcl_wtms"
+            android:id="@+id/tv_hxcl_lxr"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_lxdh2"
-            android:layout_below="@id/tv_gdcl_cl_wtms"
-            android:layout_toRightOf="@id/tv_gdcl_cl_lxr"
+            android:id="@+id/tv_hxcl_lxdh2"
+            android:layout_below="@id/tv_hxcl_wtms"
+            android:layout_toRightOf="@id/tv_hxcl_lxr"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="联系电话:"
@@ -106,17 +106,17 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_lxdh2"
-            android:layout_below="@id/tv_gdcl_cl_wtms"
-            android:id="@+id/tv_gdcl_cl_lxdh"
+            android:layout_toRightOf="@id/tv_hxcl_lxdh2"
+            android:layout_below="@id/tv_hxcl_wtms"
+            android:id="@+id/tv_hxcl_lxdh"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
 
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_wtfssj2"
-            android:layout_below="@id/tv_gdcl_cl_lxr"
+            android:id="@+id/tv_hxcl_wtfssj2"
+            android:layout_below="@id/tv_hxcl_lxr"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="问题发生时间:"
@@ -127,17 +127,17 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtfssj2"
-            android:layout_below="@id/tv_gdcl_cl_lxr"
-            android:id="@+id/tv_gdcl_cl_wtfssj"
+            android:layout_toRightOf="@id/tv_hxcl_wtfssj2"
+            android:layout_below="@id/tv_hxcl_lxr"
+            android:id="@+id/tv_hxcl_wtfssj"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_fsdd2"
-            android:layout_below="@id/tv_gdcl_cl_lxr"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtfssj"
+            android:id="@+id/tv_hxcl_fsdd2"
+            android:layout_below="@id/tv_hxcl_lxr"
+            android:layout_toRightOf="@id/tv_hxcl_wtfssj"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="发生地点:"
@@ -148,9 +148,9 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_fsdd2"
-            android:layout_below="@id/tv_gdcl_cl_lxr"
-            android:id="@+id/tv_gdcl_cl_fsdd"
+            android:layout_toRightOf="@id/tv_hxcl_fsdd2"
+            android:layout_below="@id/tv_hxcl_lxr"
+            android:id="@+id/tv_hxcl_fsdd"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
@@ -158,9 +158,9 @@
 
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_bm2"
-            android:layout_alignRight="@id/tv_gdcl_cl_wtfssj2"
-            android:layout_below="@id/tv_gdcl_cl_wtfssj2"
+            android:id="@+id/tv_hxcl_bm2"
+            android:layout_alignRight="@id/tv_hxcl_wtfssj2"
+            android:layout_below="@id/tv_hxcl_wtfssj2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="部门:"
@@ -171,20 +171,20 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_bm2"
-            android:layout_below="@id/tv_gdcl_cl_wtfssj2"
-            android:id="@+id/tv_gdcl_cl_bm"
+            android:layout_toRightOf="@id/tv_hxcl_bm2"
+            android:layout_below="@id/tv_hxcl_wtfssj2"
+            android:id="@+id/tv_hxcl_bm"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_sbbm2"
-            android:layout_below="@id/tv_gdcl_cl_wtfssj2"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtfssj"
+            android:id="@+id/tv_hxcl_sbbm2"
+            android:layout_below="@id/tv_hxcl_wtfssj2"
+            android:layout_toRightOf="@id/tv_hxcl_wtfssj"
             android:layout_width="wrap_content"
             android:layout_height="50px"
-            android:layout_alignRight="@id/tv_gdcl_cl_fsdd2"
+            android:layout_alignRight="@id/tv_hxcl_fsdd2"
             android:text="设备编码:"
             android:textColor="#3171AF"
             android:gravity="center_vertical|right"
@@ -192,18 +192,18 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_fsdd2"
-            android:layout_below="@id/tv_gdcl_cl_wtfssj2"
-            android:id="@+id/tv_gdcl_cl_sbbm"
+            android:layout_toRightOf="@id/tv_hxcl_fsdd2"
+            android:layout_below="@id/tv_hxcl_wtfssj2"
+            android:id="@+id/tv_hxcl_sbbm"
             android:layout_width="260px"
             android:layout_height="50px"
             android:background="@drawable/tv_bg"/>
 
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_sbms2"
-            android:layout_alignRight="@id/tv_gdcl_cl_wtfssj2"
-            android:layout_below="@id/tv_gdcl_cl_bm"
+            android:id="@+id/tv_hxcl_sbms2"
+            android:layout_alignRight="@id/tv_hxcl_wtfssj2"
+            android:layout_below="@id/tv_hxcl_bm"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="设备描述:"
@@ -214,18 +214,18 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtfssj2"
-            android:layout_below="@id/tv_gdcl_cl_bm"
-            android:id="@+id/tv_gdcl_cl_sbms"
+            android:layout_toRightOf="@id/tv_hxcl_wtfssj2"
+            android:layout_below="@id/tv_hxcl_bm"
+            android:id="@+id/tv_hxcl_sbms"
             android:layout_width="460px"
             android:layout_height="50px"
             android:maxLength="20"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_jjcd2"
-            android:layout_below="@id/tv_gdcl_cl_bm"
-            android:layout_toRightOf="@id/tv_gdcl_cl_wtfssj"
+            android:id="@+id/tv_hxcl_jjcd2"
+            android:layout_below="@id/tv_hxcl_bm"
+            android:layout_toRightOf="@id/tv_hxcl_wtfssj"
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="紧急程度:"
@@ -236,19 +236,19 @@
             android:textSize="18sp"/>
         <Spinner
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_fsdd2"
-            android:layout_below="@id/tv_gdcl_cl_bm"
-            android:id="@+id/spinner_gdcl_cl_jjcd"
+            android:layout_toRightOf="@id/tv_hxcl_fsdd2"
+            android:layout_below="@id/tv_hxcl_bm"
+            android:id="@+id/spinner_hxcl_jjcd"
             android:layout_width="360px"
             android:layout_height="50px"
             android:background="@drawable/gdtb_spinner"/>
 
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_jdwtlx2"
-            android:layout_below="@id/tv_gdcl_cl_sbms"
+            android:id="@+id/tv_hxcl_jdwtlx2"
+            android:layout_below="@id/tv_hxcl_sbms"
             android:layout_width="wrap_content"
-            android:layout_alignRight="@id/tv_gdcl_cl_sbms2"
+            android:layout_alignRight="@id/tv_hxcl_sbms2"
             android:layout_height="50px"
             android:text="鉴定问题类型:"
             android:textColor="#3171AF"
@@ -257,18 +257,18 @@
             android:textSize="18sp"/>
         <Spinner
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_jdwtlx2"
-            android:layout_below="@id/tv_gdcl_cl_sbms"
-            android:id="@+id/spinner_gdcl_cl_jdwtlx"
+            android:layout_toRightOf="@id/tv_hxcl_jdwtlx2"
+            android:layout_below="@id/tv_hxcl_sbms"
+            android:id="@+id/spinner_hxcl_jdwtlx"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/gdtb_spinner"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_cljg2"
-            android:layout_below="@id/tv_gdcl_cl_sbms"
+            android:id="@+id/tv_hxcl_cljg2"
+            android:layout_below="@id/tv_hxcl_sbms"
             android:layout_width="wrap_content"
-            android:layout_alignRight="@id/tv_gdcl_cl_fsdd2"
+            android:layout_alignRight="@id/tv_hxcl_fsdd2"
             android:layout_height="50px"
             android:text="处理结果:"
             android:textColor="#3171AF"
@@ -277,19 +277,19 @@
             android:textSize="18sp"/>
         <Spinner
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_cljg2"
-            android:layout_below="@id/tv_gdcl_cl_sbms"
-            android:layout_alignRight="@id/tv_gdcl_cl_fsdd"
-            android:id="@+id/spinner_gdcl_cl_cljg"
+            android:layout_toRightOf="@id/tv_hxcl_cljg2"
+            android:layout_below="@id/tv_hxcl_sbms"
+            android:layout_alignRight="@id/tv_hxcl_fsdd"
+            android:id="@+id/spinner_hxcl_cljg"
             android:layout_width="460px"
             android:layout_height="50px"
             android:background="@drawable/gdtb_spinner"/>
         <TextView
             android:layout_marginTop="5px"
-            android:id="@+id/tv_gdcl_cl_jjbf2"
-            android:layout_below="@id/spinner_gdcl_cl_cljg"
+            android:id="@+id/tv_hxcl_jjbf2"
+            android:layout_below="@id/spinner_hxcl_cljg"
             android:layout_width="wrap_content"
-            android:layout_alignRight="@id/tv_gdcl_cl_sbms2"
+            android:layout_alignRight="@id/tv_hxcl_sbms2"
             android:layout_height="50px"
             android:text="解决办法:"
             android:textColor="#3171AF"
@@ -298,41 +298,42 @@
             android:textSize="18sp"/>
         <EditText
             android:layout_marginTop="5px"
-            android:layout_toRightOf="@id/tv_gdcl_cl_jjbf2"
-            android:layout_below="@id/spinner_gdcl_cl_cljg"
-            android:id="@+id/tv_gdcl_cl_jjbf"
-            android:layout_alignRight="@id/spinner_gdcl_cl_cljg"
+            android:layout_toRightOf="@id/tv_hxcl_jjbf2"
+            android:layout_below="@id/spinner_hxcl_cljg"
+            android:id="@+id/tv_hxcl_jjbf"
+            android:layout_alignRight="@id/spinner_hxcl_cljg"
             android:layout_width="wrap_content"
             android:layout_height="80px"
             android:maxLength="20"
             android:background="@drawable/tv_bg"/>
-
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10px"
-        android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_gdcl_cl_savephoto"
+            android:id="@+id/tv_hxcl_hxjjbf2"
             android:layout_marginLeft="5px"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/tv_gdcl_hxcl"
-        android:layout_marginLeft="10px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gdtb_down_bg"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:text="后续处理"/>
-    </LinearLayout>
-
+            android:layout_width="wrap_content"
+            android:layout_below="@id/tv_hxcl_jjbf"
+            android:text="后续解决办法:"
+            android:layout_alignRight="@id/tv_hxcl_jjbf2"
+            android:layout_height="50px"
+            android:textColor="#3171AF"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_marginTop="5px"
+            android:layout_toRightOf="@id/tv_hxcl_hxjjbf2"
+            android:layout_below="@id/tv_hxcl_jjbf"
+            android:id="@+id/tv_hxcl_hxjjbf"
+            android:layout_alignRight="@id/spinner_hxcl_cljg"
+            android:layout_width="wrap_content"
+            android:layout_height="80px"
+            android:maxLength="20"
+            android:background="@drawable/tv_bg"/>
+    </RelativeLayout>
+<TextView
+    android:id="@+id/tv_hxcl_savephoto"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
     <LinearLayout
         android:paddingBottom="0dp"
         android:layout_width="match_parent"
@@ -342,7 +343,7 @@
         android:gravity="center">
         <LinearLayout
             android:paddingBottom="0dp"
-            android:id="@+id/ll_gdcl_cl_photo"
+            android:id="@+id/ll_hxcl_photo"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -365,7 +366,7 @@
 
         <LinearLayout
             android:paddingBottom="0dp"
-            android:id="@+id/ll_gdcl_cl_save"
+            android:id="@+id/ll_hxcl_save"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
             android:layout_width="0dp"
@@ -388,7 +389,7 @@
 
         <LinearLayout
             android:paddingBottom="0dp"
-            android:id="@+id/ll_gdcl_cl_commit"
+            android:id="@+id/ll_hxcl_commit"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
             android:layout_width="0dp"

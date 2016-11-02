@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,13 +29,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by 123 on 2016/10/27.
+/*工单处理 后续处理
+ * Created by 123 on 2016/11/2.
  */
 
-public class CLGdclFragment extends Fragment implements View.OnClickListener{
+public class HxclFragment extends Fragment implements View.OnClickListener{
 
-    private static final String TAG ="CLGdclFragment";
+    private static final String TAG ="HxclFragment";
     private View view;
     private LinearLayout ll_photo,ll_save,ll_commit;
     private Spinner spinner_wtlx,spinner_jjcd,spinner_jdwtlx,spinner_cljg;
@@ -46,7 +45,7 @@ public class CLGdclFragment extends Fragment implements View.OnClickListener{
     private List<String> list_cljg = new ArrayList<>();
     private View.OnClickListener listener;
 
-    private TextView tv_wtfssj,tv_savePhoto,tv_hxcl;
+    private TextView tv_wtfssj,tv_savePhoto;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
 
@@ -54,39 +53,38 @@ public class CLGdclFragment extends Fragment implements View.OnClickListener{
     private PhotoBroadcastReceiver photoBroadcastReceiver;
     private OnReplaceListener onReplaceListener;
 
-    public CLGdclFragment() {
+    public HxclFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //注册广播
-        photoBroadcastReceiver = new PhotoBroadcastReceiver();
-        IntentFilter intentFilter1 = new IntentFilter();
-        intentFilter1.addAction("addPhoto");
-        getActivity().registerReceiver(photoBroadcastReceiver,intentFilter1);
-    }
+    //注册广播
+    photoBroadcastReceiver = new PhotoBroadcastReceiver();
+    IntentFilter intentFilter1 = new IntentFilter();
+    intentFilter1.addAction("addPhoto");
+    getActivity().registerReceiver(photoBroadcastReceiver,intentFilter1);
+}
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_gdcl_cl,null);
+        view = inflater.inflate(R.layout.fragment_hxcl,null);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ll_photo = (LinearLayout) view.findViewById(R.id.ll_gdcl_cl_photo);
-        ll_save = (LinearLayout) view.findViewById(R.id.ll_gdcl_cl_save);
-        ll_commit = (LinearLayout) view.findViewById(R.id.ll_gdcl_cl_commit);
-        spinner_wtlx = (Spinner) view.findViewById(R.id.tv_gdcl_cl_wtlx);
-        spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_gdcl_cl_jjcd);
-        spinner_jdwtlx = (Spinner) view.findViewById(R.id.spinner_gdcl_cl_jdwtlx);
-        spinner_cljg = (Spinner) view.findViewById(R.id.spinner_gdcl_cl_cljg);
-        tv_wtfssj = (TextView) view.findViewById(R.id.tv_gdcl_cl_wtfssj);
-        tv_savePhoto = (TextView) view.findViewById(R.id.tv_gdcl_cl_savephoto);
-        tv_hxcl = (TextView) view.findViewById(R.id.tv_gdcl_hxcl);
+        ll_photo = (LinearLayout) view.findViewById(R.id.ll_hxcl_photo);
+        ll_save = (LinearLayout) view.findViewById(R.id.ll_hxcl_save);
+        ll_commit = (LinearLayout) view.findViewById(R.id.ll_hxcl_commit);
+        spinner_wtlx = (Spinner) view.findViewById(R.id.tv_hxcl_wtlx);
+        spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_hxcl_jjcd);
+        spinner_jdwtlx = (Spinner) view.findViewById(R.id.spinner_hxcl_jdwtlx);
+        spinner_cljg = (Spinner) view.findViewById(R.id.spinner_hxcl_cljg);
+        tv_wtfssj = (TextView) view.findViewById(R.id.tv_hxcl_wtfssj);
+        tv_savePhoto = (TextView) view.findViewById(R.id.tv_hxcl_savephoto);
         list_jjcd.add("高");
         list_jjcd.add("中");
         list_jjcd.add("低");
@@ -107,7 +105,6 @@ public class CLGdclFragment extends Fragment implements View.OnClickListener{
         ll_photo.setOnClickListener(this);
         ll_save.setOnClickListener(this);
         ll_commit.setOnClickListener(this);
-        tv_hxcl.setOnClickListener(this);
 
         listener = new View.OnClickListener(){
             @Override
@@ -168,59 +165,53 @@ public class CLGdclFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.ll_gdcl_cl_photo:
+            case R.id.ll_hxcl_photo:
                 View popupView = LayoutInflater.from(getActivity()).inflate(R.layout.photopopupwindow,null);
                 PhotoUtils mPopupwindow = new PhotoUtils(getActivity(),popupView,listener);
-                mPopupwindow.showAtLocation(view.findViewById(R.id.ll_gdcl_cl_outer), Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
+                mPopupwindow.showAtLocation(view.findViewById(R.id.ll_hxcl_outer), Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
                 break;
-            case R.id.ll_gdcl_cl_save:
+            case R.id.ll_hxcl_save:
 
                 //保存后自动返回
                 if (onReplaceListener!=null){
-                    onReplaceListener.onReplace2(ll_save);
+                    onReplaceListener.onReplace(ll_save);
                 }
                 Toast.makeText(getActivity(),"保存成功",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ll_gdcl_cl_commit:
+            case R.id.ll_hxcl_commit:
 
                 //提交后自动返回
                 if (onReplaceListener!=null){
-                    onReplaceListener.onReplace2(ll_commit);
+                    onReplaceListener.onReplace(ll_commit);
                 }
                 Toast.makeText(getActivity(),"提交成功",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.tv_gdcl_hxcl:
-                if (onReplaceListener!=null){
-                    onReplaceListener.onReplace(tv_hxcl);
-                }
-                break;
+
         }
     };
-    public OnReplaceListener getOnReplaceListener(){
+public OnReplaceListener getOnReplaceListener(){
         return onReplaceListener;
-    }
-    public void setOnReplaceListener(OnReplaceListener onReplaceListener){
+        }
+public void setOnReplaceListener(OnReplaceListener onReplaceListener){
         this.onReplaceListener = onReplaceListener;
-    }
+        }
 
-    public interface OnReplaceListener{
-        void onReplace(View view);
-        void onReplace2(View view);
-       // void onReplace3(View view);
-    }
+public interface OnReplaceListener{
+    void onReplace(View view);
+}
 
-    //内部广播，接收XxbgActivity发过来的图片
-    public class PhotoBroadcastReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String filename = intent.getStringExtra("bitmap");
-            if (null!=filename){
-                imgsb.append(filename+";");
-                Log.i(TAG, "onReceive: imgsb:"+imgsb.toString());
-                tv_savePhoto.setText(imgsb.toString());
-            }
+//内部广播，接收XxbgActivity发过来的图片
+public class PhotoBroadcastReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String filename = intent.getStringExtra("bitmap");
+        if (null!=filename){
+            imgsb.append(filename+";");
+            Log.i(TAG, "onReceive: imgsb:"+imgsb.toString());
+            tv_savePhoto.setText(imgsb.toString());
         }
     }
+}
 
     @Override
     public void onDestroy() {

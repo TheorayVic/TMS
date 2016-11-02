@@ -69,7 +69,8 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
         ll_del.setOnClickListener(this);
         ll_commit.setOnClickListener(this);
         list = new ArrayList<>();
-        list.add("实验数据");
+        list.add("实验数据1");
+        list.add("实验数据2");
         adapter = new GdtbAdapter(list,getActivity());
         listView.setAdapter(adapter);
         cb_gdtb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -93,7 +94,8 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
         Map<Integer,Boolean> map =adapter.getMap();
         list_cb = new ArrayList<>();
         for (int i =0;i<map.size();i++){
-            list_cb.add(list.get(i));
+            if (map.get(i)){
+            list_cb.add(list.get(i));}
         }
         int len = list_cb.size();
         Log.i(TAG, "onClick: len:"+len);

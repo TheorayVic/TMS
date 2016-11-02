@@ -17,22 +17,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 /**
- * Created by 123 on 2016/10/26.
+ * Created by 123 on 2016/11/2.
  */
 
-public class GdtbAdapter extends BaseAdapter {
-
-    private final static String TAG = "GdtbAdapter";
-    private List<String> list;
+public class YhpjAdapter extends BaseAdapter {
+    private final static String TAG = "GdclAdapter";
     private Context context;
-
+    private List<String> list;
     private Map<Integer,Boolean> map;
-
-    public GdtbAdapter(List<String> list, Context context) {
-        this.list = list;
+    public YhpjAdapter(Context context, List<String> list) {
         this.context = context;
+        this.list = list;
         map = new HashMap<>();
         initCheckbox(false);
     }
@@ -56,18 +52,18 @@ public class GdtbAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView==null){
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.listview_gdtb_item,null);
-            holder.cb_gdtb = (CheckBox) convertView.findViewById(R.id.cb_gdtb_item);
-            holder.tv_lxr = (TextView) convertView.findViewById(R.id.tv_gdtb_item_lxr);
-            holder.tv_lxdh = (TextView) convertView.findViewById(R.id.tv_gdtb_item_lxdh);
-            holder.tv_fsdd = (TextView) convertView.findViewById(R.id.tv_gdtb_item_fsdd);
-            holder.tv_gdzt = (TextView) convertView.findViewById(R.id.tv_gdtb_item_gdzt);
-            holder.tv_jjcd = (TextView) convertView.findViewById(R.id.tv_gdtb_item_jjcd);
-            holder.tv_wtbt = (TextView) convertView.findViewById(R.id.tv_gdtb_item_wtbt);
+            convertView = LayoutInflater.from(context).inflate(R.layout.listview_gdcl_item,null);
+            holder.cb_gdtb = (CheckBox) convertView.findViewById(R.id.cb_gdcl_item);
+            holder.tv_lxr = (TextView) convertView.findViewById(R.id.tv_gdcl_item_lxr);
+            holder.tv_lxdh = (TextView) convertView.findViewById(R.id.tv_gdcl_item_lxdh);
+            holder.tv_fsdd = (TextView) convertView.findViewById(R.id.tv_gdcl_item_fsdd);
+            holder.tv_gdzt = (TextView) convertView.findViewById(R.id.tv_gdcl_item_gdzt);
+            holder.tv_jjcd = (TextView) convertView.findViewById(R.id.tv_gdcl_item_jjcd);
+            holder.tv_wtbt = (TextView) convertView.findViewById(R.id.tv_gdcl_item_wtbt);
             convertView.setTag(holder);
             //对于listview，注意添加这一行，即可在item上使用高度
             AutoUtils.autoSize(convertView);
@@ -78,11 +74,11 @@ public class GdtbAdapter extends BaseAdapter {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 map.put(position,b);
-                Log.i(TAG, "onCheckedChanged: list:"+list.toString());
+                Log.i(TAG, "onCheckedChanged: map:"+map.get(position)+","+position);
             }
         });
         if (null!=map.get(position)){
-        holder.cb_gdtb.setChecked(map.get(position));}
+            holder.cb_gdtb.setChecked(map.get(position));}
         return convertView;
     }
 
@@ -93,7 +89,7 @@ public class GdtbAdapter extends BaseAdapter {
     }
 
     class ViewHolder{
-      CheckBox cb_gdtb;
-      TextView tv_wtbt,tv_lxr,tv_lxdh,tv_fsdd,tv_gdzt,tv_jjcd;
+        CheckBox cb_gdtb;
+        TextView tv_wtbt,tv_lxr,tv_lxdh,tv_fsdd,tv_gdzt,tv_jjcd;
     }
 }

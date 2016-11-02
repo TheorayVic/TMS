@@ -1,173 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#EAF1F9">
     <LinearLayout
+        android:id="@+id/ll_yhpj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70px"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_marginTop="5px"
-            android:id="@+id/tv_yhpj_gdbh2"
+        android:orientation="horizontal"
+        android:background="@drawable/gdtb_title"
+        android:gravity="center_vertical">
+        <CheckBox
+            android:id="@+id/cb_yhpj"
+            android:layout_marginLeft="5px"
+            android:text="全选"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
-            android:layout_height="70px"
-            android:text="工单编号:"
-            android:textColor="#3171AF"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:textSize="18sp"/>
-        <EditText
-            android:layout_marginTop="5px"
-            android:id="@+id/tv_yhpj_gdbh"
-            android:layout_width="660px"
-            android:layout_height="70px"
-            android:background="@drawable/tv_bg"/>
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="3px"
+            android:layout_width="180px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="问题标题"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_marginLeft="1px"
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="联系人"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_marginLeft="1px"
+            android:layout_width="180px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="联系电话"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_marginLeft="1px"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="发生地点"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_marginLeft="1px"
+            android:layout_width="170px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="工单状态"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_marginLeft="23px"
+            android:layout_width="170px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="紧急程度"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/listview_yhpj"
+        android:divider="@drawable/dash_listview_divier"
+        android:dividerHeight="2dp"
+        android:layerType="software"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    </ListView>
     <LinearLayout
+        android:paddingBottom="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10px"
-        android:layout_marginLeft="70px"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_yhpj_wtms2"
-            android:layout_width="wrap_content"
-            android:layout_height="70px"
-            android:text="问题描述:"
-            android:textColor="#3171AF"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:textSize="18sp"/>
-        <EditText
-            android:id="@+id/tv_yhpj_lxr"
-            android:layout_width="1000px"
-            android:layout_height="140px"
-            android:background="@drawable/tv_bg"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="1300px"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:gravity="center">
 
-        <LinearLayout
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:layout_height="70px"
-          android:orientation="horizontal"
-          android:gravity="center">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="70px"
-        android:text="响应时间:  "
-        android:textSize="18sp"
-        android:gravity="center_vertical"
-        android:textColor="#3171AF"
-        />
-       <RatingBar
-        android:id="@+id/ratingbar_yhpj_xysj"
-        android:layout_width="wrap_content"
-        android:layout_height="70px"
-        android:numStars="5"
-        android:rating="1"
-        android:stepSize="1"
-        style="@style/roomRatingBar"
-        />
-         </LinearLayout>
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_yhpj_pj"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="70px"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70px"
-                android:text="服务态度:  "
-                android:textSize="18sp"
-                android:gravity="center_vertical"
-                android:textColor="#3171AF"
-                />
-            <RatingBar
-                android:id="@+id/ratingbar_yhpj_fwtd"
-                android:layout_width="wrap_content"
-                android:layout_height="70px"
-                android:numStars="5"
-                android:rating="1"
-                android:stepSize="1"
-                style="@style/roomRatingBar"
-                />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="650px"
-        android:layout_height="70px"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="70px"
-            android:text="处理结果:  "
-            android:textSize="18sp"
-            android:gravity="center_vertical"
-            android:textColor="#3171AF"
-            />
-        <RatingBar
-            android:id="@+id/ratingbar_yhpj_cljg"
-            android:layout_width="wrap_content"
-            android:layout_height="70px"
-            android:numStars="5"
-            android:rating="1"
-            android:stepSize="1"
-            style="@style/roomRatingBar"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10px"
-        android:layout_marginLeft="70px"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_yhpj_pj2"
-            android:layout_width="wrap_content"
-            android:layout_height="70px"
-            android:text="        评价:"
-            android:textColor="#3171AF"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:textSize="18sp"/>
-        <EditText
-            android:id="@+id/tv_yhpj_pj"
-            android:layout_width="1000px"
-            android:layout_height="150px"
-            android:background="@drawable/tv_bg"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="1200px"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <LinearLayout
-        android:layout_marginTop="10px"
-        android:id="@+id/ll_yhpj_commit"
-        android:background="@drawable/gdtb_down_bg"
-        android:layout_width="match_parent"
-        android:layout_height="70px"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/gdtb_commit"/>
-        <TextView
-            android:layout_marginLeft="20px"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:text="评价"
+            android:gravity="center"
+            android:background="@drawable/gdps_item_lqgd"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:text="提交"/>
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tv_yhpj_tj"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="提交"
+            android:background="@drawable/gdps_item_psgd"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
     </LinearLayout>
 </LinearLayout>
