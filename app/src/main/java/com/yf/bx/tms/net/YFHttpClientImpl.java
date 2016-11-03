@@ -37,6 +37,7 @@ public class YFHttpClientImpl implements YFHttpClient {
             final int widthRatio = Math.round((float) width / (float) reqWidth);
             inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
         }
+
         return inSampleSize;// 求出缩放值
     }
 
