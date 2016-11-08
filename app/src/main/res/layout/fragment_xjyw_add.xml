@@ -24,7 +24,7 @@
         android:layout_width="480px"
         android:layout_height="60px"
         android:textSize="18sp"
-        android:gravity="center_horizontal"
+        android:gravity="center_vertical"
         android:background="@drawable/tv_bg"/>
     <TextView
         android:layout_marginLeft="38px"
@@ -65,7 +65,7 @@
         android:layout_width="480px"
         android:layout_height="60px"
         android:textSize="18sp"
-        android:gravity="center_horizontal"
+        android:gravity="center_vertical"
         android:background="@drawable/tv_bg"/>
     <TextView
         android:layout_marginTop="10px"
@@ -94,6 +94,7 @@
         <TextView
             android:layout_marginTop="10px"
             android:layout_below="@id/spi_xjyw_add_jcfzr"
+            android:layout_alignRight="@id/tv_xjyw_add_xjdw"
             android:id="@+id/tv_xjyw_add_gzpbh"
             android:layout_width="wrap_content"
             android:layout_height="60px"
@@ -110,7 +111,19 @@
             android:layout_width="480px"
             android:layout_height="60px"
             android:textSize="18sp"
-            android:gravity="center_horizontal"
+            android:gravity="center_vertical"
             android:background="@drawable/tv_bg"/>
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_xjyw_add_xjsq"
+        android:layout_marginTop="25px"
+        android:layout_width="200px"
+        android:layout_height="70px"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:background="#FF9900"
+        android:text="巡检申请"/>
 </LinearLayout>
