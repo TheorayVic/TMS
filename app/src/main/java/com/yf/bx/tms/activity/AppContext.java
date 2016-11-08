@@ -22,7 +22,9 @@ import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -42,6 +44,7 @@ public class AppContext extends Application {
     private String loginUid = "0";	//登录用户的id
     private Hashtable<String, Object> memCacheRegion = new Hashtable<String, Object>();
 
+    public List<String> list_xjdw,list_txz,list_jcfzr;
 
     public boolean isOnline=true;
 
@@ -61,6 +64,19 @@ public class AppContext extends Application {
 //        Thread.setDefaultUncaughtExceptionHandler(AppException.getAppExceptionHandler());
 //        init();
 
+        list_xjdw = new ArrayList<>();
+        list_jcfzr = new ArrayList<>();
+        list_txz = new ArrayList<>();
+        list_xjdw.add("运检中心");
+        list_xjdw.add("工程中心");
+        list_xjdw.add("巡检中心");
+        list_txz.add("500KV大泽变");
+        list_txz.add("500KV文亭变");
+        list_txz.add("500KV德州变");
+        list_txz.add("500KV琅邪变");
+        list_jcfzr.add("菏泽公司");
+        list_jcfzr.add("德州公司");
+        list_jcfzr.add("青岛公司");
     }
 
     /**

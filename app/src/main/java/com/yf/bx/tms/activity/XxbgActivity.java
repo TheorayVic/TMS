@@ -21,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yf.bx.tms.R;
-import com.yf.bx.tms.adapter.XxbgFramentPagerAdapter;
 import com.yf.bx.tms.fragment.AddGdtbFragment;
 import com.yf.bx.tms.fragment.CLGdclFragment;
 import com.yf.bx.tms.fragment.EditGdtbFragment;
@@ -102,6 +101,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         rb_yhpj = (RadioButton) findViewById(R.id.rb_xxbg_yhpj);
         rb_wwytpj = (RadioButton) findViewById(R.id.rb_xxbg_wwytpj);
         rg_xxbg = (RadioGroup) findViewById(R.id.xxbg_rg);
+        tv_notice = (TextView) findViewById(R.id.tv_gdtb_notice);
     }
 
     private void initData() {

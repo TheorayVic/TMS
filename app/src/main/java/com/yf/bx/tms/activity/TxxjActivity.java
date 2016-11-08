@@ -1,54 +1,145 @@
 package com.yf.bx.tms.activity;
 
-import android.bluetooth.BluetoothAdapter;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.provider.Settings;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
-
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.adapter.TxxjFragmentPagerAdapter;
+import com.yf.bx.tms.fragment.CqjywFragment;
+import com.yf.bx.tms.fragment.FxwtFragment;
+import com.yf.bx.tms.fragment.GzzdFragment;
+import com.yf.bx.tms.fragment.XjywFragment;
 import com.zhy.autolayout.AutoLayoutActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by 123 on 2016/10/25.
  */
 
-public class TxxjActivity extends AutoLayoutActivity {
+public class TxxjActivity extends AutoLayoutActivity implements View.OnClickListener,
+        RadioGroup.OnCheckedChangeListener,ViewPager.OnPageChangeListener{
 
-    private Button btn_open,btn_search;
-    private ListView lv_unmatched,lv_matched;
+    private final static String TAG = "TxxjActivity";
+    private ImageButton ib_back;
+    private TextView tv_notice,tv_top;
+    private RadioGroup rg_txxj;
+    private RadioButton rb_xjyw,rb_cqjyw,rb_fxwt,rb_gzzd;
+    private ViewPager viewPager;
+    private FragmentTransaction fragmentTransaction;
+    private TxxjFragmentPagerAdapter tfpadapter;
+    private FragmentManager fm;
+    private List<Fragment> fragments;
+    private XjywFragment xjywFragment;
+    private CqjywFragment cqjywFragment;
+    private FxwtFragment fxwtFragment;
+    private GzzdFragment gzzdFragment;
 
-    //判断当前设备是否支持蓝牙
-    private boolean isSupportBt,isOpenBt;
-    private BluetoothAdapter bluetoothAdapter;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_txxj);
-        isSupportBt=BluetoothAdapter.getDefaultAdapter() != null ? true : false;
-        if (isSupportBt){
-            bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-            //判断蓝牙是否已经开启
-            isOpenBt = bluetoothAdapter.isEnabled();
-            if (!isOpenBt){
-                bluetoothAdapter.enable();
-                
-            }
-        }
-
-        btn_open = (Button) findViewById(R.id.btn_open_ble);
-        btn_search = (Button) findViewById(R.id.btn_search_ble);
-        btn_open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TxxjActivity.this.startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS));
-            }
-        });
+        fm = getSupportFragmentManager();
+        fragmentTransaction = fm.beginTransaction();
+        initView();
+        initData();
+        initListener();
     }
 
+    private void initView() {
+        rg_txxj = (RadioGroup) findViewById(R.id.txxj_rg);
+        rb_xjyw = (RadioButton) findViewById(R.id.rb_txxj_xjyw);
+        rb_cqjyw = (RadioButton) findViewById(R.id.rb_txxj_cqjyw);
+        rb_fxwt = (RadioButton) findViewById(R.id.rb_txxj_fxwt);
+        rb_gzzd = (RadioButton) findViewById(R.id.rb_txxj_gzzd);
+        ib_back = (ImageButton) findViewById(R.id.ib_txxj_back);
+        tv_notice = (TextView) findViewById(R.id.tv_txxj_notice);
+        tv_top = (TextView) findViewById(R.id.tv_txxj_top);
+        viewPager = (ViewPager) findViewById(R.id.viewPager_txxj);
+    }
 
+    private void initData(){
+        fragments = new ArrayList<>();
+        xjywFragment = new XjywFragment();
+        cqjywFragment = new CqjywFragment();
+        fxwtFragment = new FxwtFragment();
+        gzzdFragment = new GzzdFragment();
+        fragments.add(xjywFragment);
+        fragments.add(cqjywFragment);
+        fragments.add(fxwtFragment);
+        fragments.add(gzzdFragment);
+        tfpadapter = new TxxjFragmentPagerAdapter(fm,fragments);
+        viewPager.setAdapter(tfpadapter);
+        rb_xjyw.setChecked(true);
+    }
+
+    private void initListener(){
+        rg_txxj.setOnCheckedChangeListener(this);
+        tv_notice.setOnClickListener(this);
+        ib_back.setOnClickListener(this);
+        viewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.ib_txxj_back:
+                finish();
+                break;
+            case R.id.tv_txxj_notice:
+
+                break;
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+        switch (checkedId){
+            case R.id.rb_txxj_xjyw:
+                tv_top.setText("通信检修");
+                viewPager.setCurrentItem(0);
+                break;
+            case R.id.rb_txxj_cqjyw:
+                tv_top.setText("通信检修");
+                viewPager.setCurrentItem(1);
+                break;
+            case R.id.rb_txxj_fxwt:
+                tv_top.setText("巡检结果核查");
+                viewPager.setCurrentItem(2);
+                break;
+            case R.id.rb_txxj_gzzd:
+                tv_top.setText("规章制度和标准规范");
+                viewPager.setCurrentItem(3);
+                break;
+        }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+           //获得当前ViewPager对应的RadioButton
+        RadioButton radioButton = (RadioButton) rg_txxj.getChildAt(position);
+        radioButton.setChecked(true);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 }
