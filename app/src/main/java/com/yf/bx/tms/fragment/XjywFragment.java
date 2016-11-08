@@ -3,6 +3,8 @@ package com.yf.bx.tms.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,7 +29,7 @@ import java.util.List;
  * Created by 123 on 2016/11/7.
  */
 
-public class XjywFragment extends Fragment implements View.OnClickListener{
+public class XjywFragment extends CommonFra implements View.OnClickListener{
 
     private View view;
     private Spinner spi_xjdw,spi_txz,spi_jcfzr;
@@ -35,6 +37,9 @@ public class XjywFragment extends Fragment implements View.OnClickListener{
     private AppContext appContext;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
     private DefaultXjywFragment defaultXjywFragment;
+    private AddXjywFragment addXjywFragment;
+    private FragmentManager fm;
+    private List<Fragment> fragments;
     private TextView tv_add,tv_search,tv_reset;
 
     public XjywFragment() {
@@ -50,7 +55,13 @@ public class XjywFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_xjyw,null);
         defaultXjywFragment = new DefaultXjywFragment();
-        ReplaceFragmentUtils.replaceF(getActivity(),defaultXjywFragment,false,R.id.framelayout_txxj);
+        fm = getActivity().getSupportFragmentManager();
+        if (fm.getFragments()!=null){ fm.getFragments().clear();}
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.framelayout_txxj,defaultXjywFragment);
+        // fragmentTransaction.addToBackStack(null);
+        ft.commit();
+     //   ReplaceFragmentUtils.replaceF(getActivity(),defaultXjywFragment,false,R.id.framelayout_txxj);
         return view;
     }
 
@@ -65,6 +76,10 @@ public class XjywFragment extends Fragment implements View.OnClickListener{
         tv_add = (TextView) view.findViewById(R.id.xjyw_add);
         tv_search = (TextView) view.findViewById(R.id.xjyw_search);
         tv_reset = (TextView) view.findViewById(R.id.xjyw_reset);
+        addXjywFragment = new AddXjywFragment();
+        tv_add.setOnClickListener(this);
+        tv_search.setOnClickListener(this);
+        tv_reset.setOnClickListener(this);
         appContext = (AppContext) getActivity().getApplicationContext();
         ArrayAdapter<String> adapter_xjdw = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line,appContext.list_xjdw);
@@ -76,62 +91,8 @@ public class XjywFragment extends Fragment implements View.OnClickListener{
         spi_txz.setAdapter(adapter_txz);
         spi_jcfzr.setAdapter(adapter_jcfzr);
         //时间日期选择
-        final SlideDateTimeListener jcsj_listener = new SlideDateTimeListener() {
-            @Override
-            public void onDateTimeSet(Date date)
-            {
-                // Do something with the date. This Date object contains
-                // the date and time that the user has selected.
-                String date2 = dateFormat.format(date);
-                spi_jcsj.setText(date2);
-            }
-
-            @Override
-            public void onDateTimeCancel()
-            {
-                // Overriding onDateTimeCancel() is optional.
-            }
-        };
-        final SlideDateTimeListener jcsj_listener2 = new SlideDateTimeListener() {
-            @Override
-            public void onDateTimeSet(Date date)
-            {
-                // Do something with the date. This Date object contains
-                // the date and time that the user has selected.
-                String date2 = dateFormat.format(date);
-                spi_jcsj2.setText(date2);
-            }
-
-            @Override
-            public void onDateTimeCancel()
-            {
-                // Overriding onDateTimeCancel() is optional.
-            }
-        };
-        spi_jcsj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new SlideDateTimePicker.Builder(getActivity().getSupportFragmentManager())
-                        .setListener(jcsj_listener)
-                        .setInitialDate(new Date())
-                        .setIs24HourTime(true)
-                        .build()
-                        .show();
-            }
-        });
-        spi_jcsj2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new SlideDateTimePicker.Builder(getActivity().getSupportFragmentManager())
-                        .setListener(jcsj_listener2)
-                        .setInitialDate(new Date())
-                        .setIs24HourTime(true)
-                        .build()
-                        .show();
-            }
-        });
-
-
+        selectDate(spi_jcsj);
+        selectDate(spi_jcsj2);
     }
 
 
@@ -139,10 +100,20 @@ public class XjywFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.xjyw_add:
+                fragments = fm.getFragments();
+                if (fragments!=null){
+                    if (fragments.contains(addXjywFragment))
+                    fragments.remove(addXjywFragment);
+                }
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.framelayout_txxj,addXjywFragment);
+                ft.addToBackStack(null);
+                ft.commit();
                 break;
             case R.id.xjyw_search:
                 break;
             case R.id.xjyw_reset:
+
                 break;
         }
     }
