@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -32,7 +33,8 @@ import java.util.List;
 public class XjywFragment extends CommonFra implements View.OnClickListener{
 
     private View view;
-    private Spinner spi_xjdw,spi_txz,spi_jcfzr;
+    private EditText spi_xjdw,spi_jcfzr;
+    private Spinner spi_txz;
     private TextView spi_jcsj,spi_jcsj2;
     private AppContext appContext;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm");
@@ -53,9 +55,11 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.fragment_xjyw,null);
         defaultXjywFragment = new DefaultXjywFragment();
         fm = getActivity().getSupportFragmentManager();
+      //  fm = getChildFragmentManager();
         if (fm.getFragments()!=null){ fm.getFragments().clear();}
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.framelayout_txxj,defaultXjywFragment);
@@ -68,9 +72,9 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        spi_xjdw = (Spinner) view.findViewById(R.id.spi_xjyw_xjdw);
+        spi_xjdw = (EditText) view.findViewById(R.id.spi_xjyw_xjdw);
         spi_txz = (Spinner) view.findViewById(R.id.spi_xjyw_txz);
-        spi_jcfzr = (Spinner) view.findViewById(R.id.spi_xjyw_jcfzr);
+        spi_jcfzr = (EditText) view.findViewById(R.id.spi_xjyw_jcfzr);
         spi_jcsj = (TextView) view.findViewById(R.id.spi_xjyw_jcsj);
         spi_jcsj2 = (TextView) view.findViewById(R.id.spi_xjyw_jcsj2);
         tv_add = (TextView) view.findViewById(R.id.xjyw_add);
@@ -81,15 +85,7 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
         tv_search.setOnClickListener(this);
         tv_reset.setOnClickListener(this);
         appContext = (AppContext) getActivity().getApplicationContext();
-        ArrayAdapter<String> adapter_xjdw = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line,appContext.list_xjdw);
-        ArrayAdapter<String> adapter_txz = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line,appContext.list_txz);
-        ArrayAdapter<String> adapter_jcfzr = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line,appContext.list_jcfzr);
-        spi_xjdw.setAdapter(adapter_xjdw);
-        spi_txz.setAdapter(adapter_txz);
-        spi_jcfzr.setAdapter(adapter_jcfzr);
+        spi_txz.setAdapter(appContext.getAdapter_txz(getActivity()));
         //时间日期选择
         selectDate(spi_jcsj);
         selectDate(spi_jcsj2);
@@ -116,6 +112,11 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
 
                 break;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
 
