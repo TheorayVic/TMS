@@ -18,12 +18,12 @@
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:textSize="18sp"/>
-        <Spinner
+        <EditText
             android:layout_toRightOf="@id/tv_xjyw_xjdw"
             android:id="@+id/spi_xjyw_xjdw"
             android:layout_width="480px"
             android:layout_height="60px"
-            android:background="@drawable/gdtb_spinner"/>
+            android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginLeft="38px"
             android:id="@+id/tv_xjyw_txz"
@@ -55,14 +55,14 @@
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:textSize="18sp"/>
-        <Spinner
+        <EditText
             android:layout_marginTop="10px"
             android:layout_below="@id/spi_xjyw_txz"
             android:layout_toRightOf="@id/tv_xjyw_jcfzr"
             android:id="@+id/spi_xjyw_jcfzr"
             android:layout_width="480px"
             android:layout_height="60px"
-            android:background="@drawable/gdtb_spinner"/>
+            android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="10px"
             android:layout_below="@id/spi_xjyw_txz"

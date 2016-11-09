@@ -4,14 +4,12 @@ package com.yf.bx.tms.activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -30,18 +28,16 @@ import com.yf.bx.tms.fragment.GdtbFragment;
 import com.yf.bx.tms.fragment.HxclFragment;
 import com.yf.bx.tms.fragment.PjYhpjFragment;
 import com.yf.bx.tms.fragment.ReplaceFragmentUtils;
-import com.yf.bx.tms.fragment.SearchFragment;
+import com.yf.bx.tms.fragment.SearchXxbgFragment;
 import com.yf.bx.tms.fragment.WwytpjFragment;
 import com.yf.bx.tms.fragment.YhpjFragment;
 import com.zhy.autolayout.AutoLayoutActivity;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -62,7 +58,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
     private AddGdtbFragment addGdtbFragment;
     private EditGdtbFragment editGdtbFragment;
     private CLGdclFragment clGdclFragment;
-    private SearchFragment searchFragment;
+    private SearchXxbgFragment searchFragment;
     private HxclFragment hxclFragment;
     private ImageButton ib_back,ib_wwyt,ib_search;
     private TextView tv_notice;
@@ -113,7 +109,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         addGdtbFragment = new AddGdtbFragment();
         editGdtbFragment = new EditGdtbFragment();
         clGdclFragment = new CLGdclFragment();
-        searchFragment = new SearchFragment();
+        searchFragment = new SearchXxbgFragment();
         hxclFragment = new HxclFragment();
         pjYhpjFragment = new PjYhpjFragment();
     }

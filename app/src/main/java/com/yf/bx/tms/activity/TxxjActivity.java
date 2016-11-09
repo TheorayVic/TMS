@@ -66,6 +66,7 @@ public class TxxjActivity extends AutoLayoutActivity implements View.OnClickList
         tv_notice = (TextView) findViewById(R.id.tv_txxj_notice);
         tv_top = (TextView) findViewById(R.id.tv_txxj_top);
         viewPager = (ViewPager) findViewById(R.id.viewPager_txxj);
+        rb_xjyw.setChecked(true);
     }
 
     private void initData(){
@@ -78,9 +79,9 @@ public class TxxjActivity extends AutoLayoutActivity implements View.OnClickList
         fragments.add(cqjywFragment);
         fragments.add(fxwtFragment);
         fragments.add(gzzdFragment);
-        tfpadapter = new TxxjFragmentPagerAdapter(fm,fragments);
+        Log.i(TAG, "initData: fragments:"+fragments.size());
+        tfpadapter = new TxxjFragmentPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(tfpadapter);
-        rb_xjyw.setChecked(true);
     }
 
     private void initListener(){
@@ -110,18 +111,22 @@ public class TxxjActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.rb_txxj_xjyw:
                 tv_top.setText("通信检修");
                 viewPager.setCurrentItem(0);
+                Log.i(TAG, "onCheckedChanged: fagments[0]:"+fragments.get(0));
                 break;
             case R.id.rb_txxj_cqjyw:
                 tv_top.setText("通信检修");
                 viewPager.setCurrentItem(1);
+                Log.i(TAG, "onCheckedChanged: fagments[1]:"+fragments.get(1));
                 break;
             case R.id.rb_txxj_fxwt:
                 tv_top.setText("巡检结果核查");
                 viewPager.setCurrentItem(2);
+                Log.i(TAG, "onCheckedChanged: fagments[2]:"+fragments.get(2));
                 break;
             case R.id.rb_txxj_gzzd:
                 tv_top.setText("规章制度和标准规范");
                 viewPager.setCurrentItem(3);
+                Log.i(TAG, "onCheckedChanged: fagments[3]:"+fragments.get(3));
                 break;
         }
     }

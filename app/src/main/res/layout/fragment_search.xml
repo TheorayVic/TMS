@@ -12,7 +12,7 @@
         android:gravity="center">
     <android.support.v7.widget.SearchView
         android:id="@+id/searchview_xxbg"
-        android:background="@color/white"
+        android:background="@drawable/tv_bg"
         android:queryHint="搜索"
         android:layout_width="900px"
         android:layout_height="match_parent">

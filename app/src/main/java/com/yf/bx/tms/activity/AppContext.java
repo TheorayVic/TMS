@@ -1,11 +1,13 @@
 package com.yf.bx.tms.activity;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.ArrayAdapter;
 
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.yf.bx.tms.bean.User;
@@ -44,8 +46,8 @@ public class AppContext extends Application {
     private String loginUid = "0";	//登录用户的id
     private Hashtable<String, Object> memCacheRegion = new Hashtable<String, Object>();
 
-    public List<String> list_xjdw,list_txz,list_jcfzr;
-
+    public List<String> list_txz;
+    public ArrayAdapter<String> adapter_txz;
     public boolean isOnline=true;
 
 //	private Handler unLoginHandler = new Handler(){
@@ -63,22 +65,19 @@ public class AppContext extends Application {
         //注册App异常崩溃处理器
 //        Thread.setDefaultUncaughtExceptionHandler(AppException.getAppExceptionHandler());
 //        init();
+    }
 
-        list_xjdw = new ArrayList<>();
-        list_jcfzr = new ArrayList<>();
+    public ArrayAdapter<String> getAdapter_txz(Activity activity){
         list_txz = new ArrayList<>();
-        list_xjdw.add("运检中心");
-        list_xjdw.add("工程中心");
-        list_xjdw.add("巡检中心");
         list_txz.add("500KV大泽变");
         list_txz.add("500KV文亭变");
         list_txz.add("500KV德州变");
         list_txz.add("500KV琅邪变");
-        list_jcfzr.add("菏泽公司");
-        list_jcfzr.add("德州公司");
-        list_jcfzr.add("青岛公司");
-    }
 
+        adapter_txz = new ArrayAdapter<String>(activity,
+                android.R.layout.simple_dropdown_item_1line,list_txz);
+        return adapter_txz;
+    }
     /**
      * 初始化
      */

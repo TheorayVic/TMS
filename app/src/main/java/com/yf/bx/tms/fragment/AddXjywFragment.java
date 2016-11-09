@@ -51,9 +51,7 @@ public class AddXjywFragment extends CommonFra {
         tv_jcsj = (TextView) view.findViewById(R.id.spi_xjyw_add_jcsj);
         tv_xj = (TextView) view.findViewById(R.id.tv_xjyw_add_xjsq);
         appContext = (AppContext) getActivity().getApplicationContext();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line,appContext.list_txz);
-        spi_txz.setAdapter(adapter);
+        spi_txz.setAdapter(appContext.adapter_txz);
         selectDate(tv_jcsj);
         tv_xj.setOnClickListener(new View.OnClickListener() {
             @Override

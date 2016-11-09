@@ -16,11 +16,11 @@ import com.yf.bx.tms.R;
  * Created by 123 on 2016/10/31.
  */
 
-public class SearchFragment extends Fragment {
+public class SearchXxbgFragment extends Fragment {
 
     private View view;
     private SearchView searchView ;
-    public SearchFragment() {
+    public SearchXxbgFragment() {
     }
 
     @Override
