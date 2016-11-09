@@ -14,6 +14,8 @@ import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by 123 on 2016/11/8.
  */
@@ -31,6 +33,7 @@ public class CommonFra extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this,view);
     }
 
     @Override

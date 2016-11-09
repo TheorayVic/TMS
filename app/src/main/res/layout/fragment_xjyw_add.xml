@@ -117,13 +117,6 @@
 
     <TextView
         android:id="@+id/tv_xjyw_add_xjsq"
-        android:layout_marginTop="25px"
-        android:layout_width="200px"
-        android:layout_height="70px"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:background="#FF9900"
-        android:text="巡检申请"/>
+        android:text="巡检申请"
+        style="@style/yellow_button_style"/>
 </LinearLayout>
