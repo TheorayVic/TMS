@@ -2,31 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
+<RadioGroup
+    android:id="@+id/rg_gzzd"
     android:layout_width="match_parent"
     android:layout_height="90px"
     android:orientation="horizontal">
-    <TextView
+    <RadioButton
         android:id="@+id/tv_gzzd"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:text="规章制度"
         android:textSize="18sp"
-        android:background="#000099"
+        android:background="@drawable/radio_bzgf"
         android:gravity="center"
+        android:button="@null"
         android:textColor="@color/white"/>
-    <TextView
+    <RadioButton
         android:id="@+id/tv_bzgf"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:text="标准规范"
         android:textSize="18sp"
-        android:background="#339966"
+        android:background="@drawable/radio_gzzd"
         android:gravity="center"
+        android:button="@null"
         android:textColor="@color/white"/>
-</LinearLayout>
+</RadioGroup>
     <LinearLayout
         android:layout_marginTop="10px"
         android:layout_width="match_parent"
@@ -34,14 +37,14 @@
         android:orientation="horizontal"
         android:gravity="center_vertical|right">
         <android.support.v7.widget.SearchView
-            android:id="@+id/searchview_xxbg"
+            android:id="@+id/searchview_gzzd"
             android:background="@drawable/tv_bg"
             android:queryHint="搜索"
             android:layout_width="500px"
             android:layout_height="match_parent">
         </android.support.v7.widget.SearchView>
         <ImageButton
-            android:id="@+id/ib_xxbg_search_inner"
+            android:id="@+id/ib_gzzd_search_inner"
             android:src="@drawable/search_button"
             android:scaleType="fitXY"
             android:background="@color/transfer"

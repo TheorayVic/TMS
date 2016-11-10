@@ -15,4 +15,5 @@
         completions."
     </string>
     <string name="title_activity_gdps_add_people">GdpsAddPeopleActivity</string>
+    <string name="title_activity_ksxj">KsxjActivity</string>
 </resources>

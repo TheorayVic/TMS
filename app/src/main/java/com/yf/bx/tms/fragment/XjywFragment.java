@@ -58,8 +58,7 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
 
         view = inflater.inflate(R.layout.fragment_xjyw,null);
         defaultXjywFragment = new DefaultXjywFragment();
-        fm = getActivity().getSupportFragmentManager();
-      //  fm = getChildFragmentManager();
+        fm = getChildFragmentManager();
         if (fm.getFragments()!=null){ fm.getFragments().clear();}
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.framelayout_txxj,defaultXjywFragment);

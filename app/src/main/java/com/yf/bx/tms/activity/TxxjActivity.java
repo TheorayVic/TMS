@@ -67,6 +67,7 @@ public class TxxjActivity extends AutoLayoutActivity implements View.OnClickList
         tv_top = (TextView) findViewById(R.id.tv_txxj_top);
         viewPager = (ViewPager) findViewById(R.id.viewPager_txxj);
         rb_xjyw.setChecked(true);
+        tv_top.setText("通信检修");
     }
 
     private void initData(){
