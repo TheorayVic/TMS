@@ -67,6 +67,11 @@
             android:name=".activity.AddWwytActivity"
             android:screenOrientation="landscape"
             android:theme="@style/MyDialogStyleBottom"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".activity.CqjXzActivity"
+            android:screenOrientation="landscape">
+        </activity>
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.KsxjActivity"

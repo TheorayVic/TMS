@@ -15,6 +15,9 @@
         completions."
     </string>
     <string name="title_activity_gdps_add_people">GdpsAddPeopleActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_ksxj">KsxjActivity</string>
     <string name="title_activity_xjyw_wwyt">XjywWwytActivity</string>
 </resources>
