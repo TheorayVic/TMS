@@ -1,6 +1,7 @@
 package com.yf.bx.tms.fragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.activity.CqjXzActivity;
 import com.yf.bx.tms.view.ZengjiaJianShaoGridView;
 
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ public class CqjywFragment extends XjywFragment {
     public static final String[] TITLES = {"通讯站安全检查", "站内光缆安全检查", "ADSS光缆安全检查", "OPGW光缆安全检查",
             "普通光缆安全检查", "备用纤芯安全检查", "通信电源系统", "通信电源-蓄电池", "微波设备安全检查", "光传输设备安全检查", "交换设备安全检查",
             "电视电话会议系统", "数据网设备安全检查", "同步设备安全检查", "网关系统安全检查", "通信运行方式及重要业务通道"};
+    public static List<CQJItem> list;
 
     @Override
     public void add(View v) {
@@ -56,17 +59,34 @@ public class CqjywFragment extends XjywFragment {
         lp.height = display.getHeight();
         dialog.getWindow().setAttributes(lp);
         ZengjiaJianShaoGridView gridView = (ZengjiaJianShaoGridView) dialog.findViewById(R.id.grid_view);
-        List<CQJItem> list = new ArrayList<>();
+        list = new ArrayList<>();
         for (int i = 0; i < TITLES.length; i++) {
             CQJItem cqjItem = new CQJItem(0, TITLES[i]);
             list.add(cqjItem);
         }
         gridView.setList(list);
+        dialog.findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CqjXzActivity.class));
+            }
+        });
     }
 
-    static class CQJItem implements ZengjiaJianShaoGridView.GridItem {
+    public static class CQJItem implements ZengjiaJianShaoGridView.GridItem, Cloneable {
         public String title;
         public int count;
+
+        public CQJItem() {
+        }
+
+        @Override
+        public Object clone() throws CloneNotSupportedException {
+            CQJItem cqjItem = (CQJItem) super.clone();
+            cqjItem.count = count;
+            cqjItem.title = title;
+            return cqjItem;
+        }
 
         public CQJItem(int count, String title) {
             this.count = count;
