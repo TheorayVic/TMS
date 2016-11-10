@@ -117,6 +117,8 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
     public void onDestroy() {
         super.onDestroy();
     }
+
+    public void add(View v) {}
 }
 
 

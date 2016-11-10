@@ -1,5 +1,6 @@
 package com.yf.bx.tms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -134,6 +135,8 @@ public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnChe
                 finish();
                 break;
             case R.id.ib_ksxj_wwyt:
+                Intent intent = new Intent(this,XjywWwytActivity.class);
+                startActivity(intent);
                 break;
         }
     }

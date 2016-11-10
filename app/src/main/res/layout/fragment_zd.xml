@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"    android:layout_marginLeft="20px"
+    android:layout_marginTop="10px">
+    <TextView
+        android:layout_marginLeft="15px"
+        android:id="@+id/tv_bz1"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:text="通信站巡视标准化作业指导书.docx"/>
+    <TextView
+        android:layout_marginLeft="15px"
+        android:id="@+id/tv_bz2"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:text="国家电网公司安全工作规定.doc"/>
+
+</LinearLayout>

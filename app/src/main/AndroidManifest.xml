@@ -71,7 +71,13 @@
         <activity
             android:name=".activity.KsxjActivity"
             android:label="@string/title_activity_ksxj"
-            android:theme="@style/AppTheme"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.XjywWwytActivity"
+            android:label="@string/title_activity_xjyw_wwyt"
+            android:screenOrientation="landscape"
+            android:theme="@style/MyDialogStyleBottom"/>
     </application>
 
 </manifest>
