@@ -14,7 +14,7 @@ public class PerferenceModel {
     protected static Context context;
 
     public static PerferenceModel getPM(Context context) {
-        PerferenceModel.context = context;
+        PerferenceModel.context = context.getApplicationContext()   ;
         if (pm != null) {
             return pm;
         } else {

@@ -1,17 +1,24 @@
 package com.yf.bx.tms.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.AlertDialog;
+import android.view.Display;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
+
+import com.yf.bx.tms.R;
+import com.yf.bx.tms.view.ZengjiaJianShaoGridView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by 123 on 2016/11/7.
+ * 春秋检业务 * Created by 123 on 2016/11/7.
  */
 
-public class CqjywFragment extends Fragment {
+public class CqjywFragment extends XjywFragment {
 
     public CqjywFragment() {
     }
@@ -21,14 +28,84 @@ public class CqjywFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
+//    @Nullable
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        return inflater.inflate(R.layout.fragment_cqjyw,container,false);
+//    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    public static final String[] TITLES = {"通讯站安全检查", "站内光缆安全检查", "ADSS光缆安全检查", "OPGW光缆安全检查",
+            "普通光缆安全检查", "备用纤芯安全检查", "通信电源系统", "通信电源-蓄电池", "微波设备安全检查", "光传输设备安全检查", "交换设备安全检查",
+            "电视电话会议系统", "数据网设备安全检查", "同步设备安全检查", "网关系统安全检查", "通信运行方式及重要业务通道"};
+
+    @Override
+    public void add(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(R.layout.dialog_add_cqjyw);
+        Dialog dialog = builder.create();
+        dialog.show();
+        WindowManager windowManager = getActivity().getWindowManager();
+        Display display = windowManager.getDefaultDisplay();
+        WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+        lp.width = (int) (display.getWidth()); //设置宽度
+        lp.height = display.getHeight();
+        dialog.getWindow().setAttributes(lp);
+        ZengjiaJianShaoGridView gridView = (ZengjiaJianShaoGridView) dialog.findViewById(R.id.grid_view);
+        List<CQJItem> list = new ArrayList<>();
+        for (int i = 0; i < TITLES.length; i++) {
+            CQJItem cqjItem = new CQJItem(0, TITLES[i]);
+            list.add(cqjItem);
+        }
+        gridView.setList(list);
+    }
+
+    static class CQJItem implements ZengjiaJianShaoGridView.GridItem {
+        public String title;
+        public int count;
+
+        public CQJItem(int count, String title) {
+            this.count = count;
+            this.title = title;
+        }
+
+        @Override
+        public String getId() {
+            return null;
+        }
+
+        @Override
+        public int getDefaultCount() {
+            return 0;
+        }
+
+        @Override
+        public String getTitle() {
+            return title;
+        }
+
+        @Override
+        public void setCount(int count) {
+            this.count = count;
+        }
+
+        @Override
+        public int getCount() {
+            return count;
+        }
+
+        @Override
+        public int getMax() {
+            return 10;
+        }
+
+        @Override
+        public int getMin() {
+            return 0;
+        }
     }
 }
