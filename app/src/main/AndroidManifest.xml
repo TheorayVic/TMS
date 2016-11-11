@@ -67,12 +67,11 @@
             android:name=".activity.AddWwytActivity"
             android:screenOrientation="landscape"
             android:theme="@style/MyDialogStyleBottom"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.CqjXzActivity"
-            android:screenOrientation="landscape">
-        </activity>
-            android:windowSoftInputMode="adjustPan" />
+            android:screenOrientation="landscape" />
+        android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.KsxjActivity"
             android:label="@string/title_activity_ksxj"
@@ -82,7 +81,12 @@
             android:name=".activity.XjywWwytActivity"
             android:label="@string/title_activity_xjyw_wwyt"
             android:screenOrientation="landscape"
-            android:theme="@style/MyDialogStyleBottom"/>
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name=".activity.XjywCkActivity"
+            android:label="@string/title_activity_xjyw_ck"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.KsxjPhotoActivity"></activity>
     </application>
 
 </manifest>

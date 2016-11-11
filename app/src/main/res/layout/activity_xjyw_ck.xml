@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_xjyw_ck"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EAF1F9">
+
+    <include layout="@layout/xjyw_ck_comon_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="10px">
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_jfhj"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_jfhj"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="机房环境"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+</LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_txdy1"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_txdy1"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="通信电源Ⅰ"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_txdy2"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_txdy2"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="通信电源Ⅱ"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_cssb"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_cssb"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="传输设备"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_jhsb"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_jhsb"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="交换设备"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_pxsb"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_pxsb"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="配线设备"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_xjyw_ck_item_mxjgl"
+            android:layout_marginTop="5px"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:orientation="horizontal"
+            android:background="@color/ck_green"
+            >
+            <ImageView
+                android:id="@+id/iv_xjyw_ck_item_mxjgl"
+                android:layout_marginLeft="20px"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xjyw_ck_item_yjs2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="门型架光缆"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

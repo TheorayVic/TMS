@@ -1,5 +1,6 @@
 package com.yf.bx.tms.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,12 +13,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.activity.KsxjPhotoActivity;
 
 /**
  * Created by 123 on 2016/11/9.
  */
 
-public class JfhjFragment extends KsxjCommonFra {
+public class JfhjFragment extends KsxjCommonFra implements View.OnClickListener {
 
     private View view;
     private EditText et6,et7,et8;
@@ -40,7 +42,9 @@ public class JfhjFragment extends KsxjCommonFra {
     public void onViewCreated(View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initview();
+        initListener();
     }
+
 
     private void initview() {
         rb_left1.setText("正常");
@@ -58,8 +62,31 @@ public class JfhjFragment extends KsxjCommonFra {
         et6 = (EditText) view.findViewById(R.id.et_jfhj_yy6);
         et7 = (EditText) view.findViewById(R.id.et_jfhj_yy7);
         et8 = (EditText) view.findViewById(R.id.et_jfhj_yy8);
+    }
+
+    private void initListener() {
         et6.setOnTouchListener(this);
         et7.setOnTouchListener(this);
         et8.setOnTouchListener(this);
+        ib_photo1.setOnClickListener(this);
+        ib_photo2.setOnClickListener(this);
+        ib_photo3.setOnClickListener(this);
+        ib_photo4.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getActivity(), KsxjPhotoActivity.class);
+        switch (v.getId()){
+            case R.id.ib_photo1:
+                break;
+            case R.id.ib_photo2:
+                break;
+            case R.id.ib_photo3:
+                break;
+            case R.id.ib_photo4:
+                break;
+
+        }
+        getActivity().startActivity(intent);
     }
 }

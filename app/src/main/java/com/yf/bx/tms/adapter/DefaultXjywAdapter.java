@@ -1,6 +1,7 @@
 package com.yf.bx.tms.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.activity.KsxjActivity;
+import com.yf.bx.tms.activity.XjywCkActivity;
 
 import java.util.List;
 
@@ -78,8 +81,13 @@ public class DefaultXjywAdapter extends BaseAdapter implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.xjyw_item_ck:
+                Intent intent_ck = new Intent(context, XjywCkActivity.class);
+                context.startActivity(intent_ck);
                 break;
             case R.id.xjyw_item_edit:
+                //带数据进入
+                Intent intent_edit = new Intent(context, KsxjActivity.class);
+                context.startActivity(intent_edit);
                 break;
             case R.id.xjyw_item_jsxj:
                 break;

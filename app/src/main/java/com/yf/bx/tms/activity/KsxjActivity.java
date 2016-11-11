@@ -29,14 +29,14 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//巡检业务中 开始巡检进入此界面
 public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnCheckedChangeListener,
         View.OnClickListener,ViewPager.OnPageChangeListener{
 
     private ImageButton ib_back,ib_wwyt;
     private TextView tv_notice;
     private RadioGroup rg;
-    private RadioButton rb_jfhj,rb_txdy1,rb_txdy2,rb_cssb,rb_jhsb,rb_pxsb,rb_mxjgl;
+    private RadioButton rb1,rb2,rb3,rb4,rb5,rb6,rb7;
     private ViewPager viewpager;
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -49,6 +49,8 @@ public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnChe
     private PxsbFragment pxsbFragment;
     private MxjglFragment mxjglFragment;
     private TxxjFragmentPagerAdapter txxjFragmentPagerAdapter;
+
+    private int ck_type = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,14 +60,54 @@ public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnChe
         initView();
         initData();
         initListener();
+        //在巡检业务界面点击查看后根据选择条目跳转
+        Intent intent_ck = getIntent();
+        if (intent_ck!=null){
+        ck_type = intent_ck.getIntExtra("ck",-1);
+            if (ck_type!=-1)
+            jump(ck_type);
+        }
+
     }
+    public void jump(int i){
+        switch (i){
+            case 1:
+                rb1.setChecked(true);
+                break;
+            case 2:
+                rb2.setChecked(true);
+                break;
+            case 3:
+                rb3.setChecked(true);
+                break;
+            case 4:
+                rb4.setChecked(true);
+                break;
+            case 5:
+                rb5.setChecked(true);
+                break;
+            case 6:
+                rb6.setChecked(true);
+                break;
+            case 7:
+                rb7.setChecked(true);
+                break;
+        }
+    }
+
     private void initView() {
         viewpager = (ViewPager) findViewById(R.id.viewPager_ksxj);
         rg = (RadioGroup) findViewById(R.id.ksxj_rg);
         tv_notice = (TextView) findViewById(R.id.tv_ksxj_notice);
         ib_back = (ImageButton) findViewById(R.id.ib_ksxj_back);
         ib_wwyt = (ImageButton) findViewById(R.id.ib_ksxj_wwyt);
-        rb_jfhj = (RadioButton) findViewById(R.id.rb_ksxj_jfhj);
+        rb1 = (RadioButton) findViewById(R.id.rb_ksxj_jfhj);
+        rb2 = (RadioButton) findViewById(R.id.rb_ksxj_txdy1);
+        rb3 = (RadioButton) findViewById(R.id.rb_ksxj_txdy2);
+        rb4 = (RadioButton) findViewById(R.id.rb_ksxj_cssb);
+        rb5 = (RadioButton) findViewById(R.id.rb_ksxj_jhsb);
+        rb6 = (RadioButton) findViewById(R.id.rb_ksxj_pxsb);
+        rb7 = (RadioButton) findViewById(R.id.rb_ksxj_mxjgl);
         viewpager.setOffscreenPageLimit(7);
     }
 
@@ -88,7 +130,7 @@ public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnChe
         fragments.add(mxjglFragment);
         txxjFragmentPagerAdapter = new TxxjFragmentPagerAdapter(fm,fragments);
         viewpager.setAdapter(txxjFragmentPagerAdapter);
-        rb_jfhj.setChecked(true);
+        rb1.setChecked(true);
     }
 
    private void initListener(){
