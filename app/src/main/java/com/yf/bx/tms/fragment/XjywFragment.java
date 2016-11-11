@@ -5,20 +5,26 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.github.jjobes.slidedatetimepicker.SlideDateTimeListener;
+import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.AppContext;
+import com.yf.bx.tms.adapter.DefaultXjywAdapter;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-import butterknife.OnClick;
 
 /**
  * Created by 123 on 2016/11/7.
@@ -53,7 +59,6 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
         view = inflater.inflate(R.layout.fragment_xjyw,null);
         defaultXjywFragment = new DefaultXjywFragment();
         fm = getChildFragmentManager();
-      //  fm = getChildFragmentManager();
         if (fm.getFragments()!=null){ fm.getFragments().clear();}
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.framelayout_txxj,defaultXjywFragment);
@@ -75,6 +80,7 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
         tv_search = (TextView) view.findViewById(R.id.xjyw_search);
         tv_reset = (TextView) view.findViewById(R.id.xjyw_reset);
         addXjywFragment = new AddXjywFragment();
+        tv_add.setOnClickListener(this);
         tv_search.setOnClickListener(this);
         tv_reset.setOnClickListener(this);
         appContext = (AppContext) getActivity().getApplicationContext();
@@ -84,21 +90,21 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
         selectDate(spi_jcsj2);
     }
 
-    @OnClick(R.id.xjyw_add)
-    public void add(View v){
-        fragments = fm.getFragments();
-        if (fragments!=null){
-            if (fragments.contains(addXjywFragment))
-                fragments.remove(addXjywFragment);
-        }
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.framelayout_txxj,addXjywFragment);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.xjyw_add:
+                fragments = fm.getFragments();
+                if (fragments!=null){
+                    if (fragments.contains(addXjywFragment))
+                    fragments.remove(addXjywFragment);
+                }
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.framelayout_txxj,addXjywFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+                break;
             case R.id.xjyw_search:
                 break;
             case R.id.xjyw_reset:
@@ -111,6 +117,8 @@ public class XjywFragment extends CommonFra implements View.OnClickListener{
     public void onDestroy() {
         super.onDestroy();
     }
+
+    public void add(View v) {}
 }
 
 

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by 123 on 2016/11/1.
+ * Created by 123 on 2016/11/1....
  */
 
 public class GdpsBean implements Parcelable {

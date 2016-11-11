@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_marginTop="20px"
+    android:layout_width="match_parent"
+    android:layout_height="80px"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/ksxj_save"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="保存"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:background="#FF6600"
+        android:gravity="center"
+        android:layout_marginLeft="330px"
+        />
+    <TextView
+        android:id="@+id/ksxj_cancel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="取消"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:background="#5899CF"
+        android:gravity="center"
+        android:layout_marginLeft="200px"
+        />
+    <TextView
+        android:layout_width="330px"
+        android:layout_height="match_parent" />
+</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20px" />
+</LinearLayout>

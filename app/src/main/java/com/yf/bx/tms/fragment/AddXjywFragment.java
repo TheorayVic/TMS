@@ -1,5 +1,6 @@
 package com.yf.bx.tms.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.AppContext;
+import com.yf.bx.tms.activity.KsxjActivity;
 
 /**
  * Created by 123 on 2016/11/8.
@@ -63,7 +65,8 @@ public class AddXjywFragment extends CommonFra {
 
                     tv_xj.setText("开始巡检");
                 }else if ("开始巡检".equals(content)){
-
+                    Intent intent = new Intent(getActivity(), KsxjActivity.class);
+                    getActivity().startActivity(intent);
                 }
             }
         });
