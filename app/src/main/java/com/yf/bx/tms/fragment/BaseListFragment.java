@@ -83,7 +83,7 @@ public abstract class BaseListFragment<T> extends CommonFra {
 
     //封装ViewHolder
     public final View getConvertView(int position, View convertView, ViewGroup parent) {
-        ViewHolder v = null;
+        ViewHolder v;
         if (convertView == null) {
             convertView = getView(getItemViewType(position), parent);
             v = new ViewHolder(convertView);
