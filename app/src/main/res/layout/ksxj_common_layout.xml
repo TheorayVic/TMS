@@ -17,33 +17,13 @@
         android:lines="2"/>
     <RadioGroup
         android:id="@+id/rg_jcjg1"
-        android:layout_width="300px"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center">
+        style="@style/radio_group_common">
         <RadioButton
             android:id="@+id/rb_jcjg_left1"
-            android:layout_marginLeft="10px"
-            android:layout_width="120px"
-            android:layout_height="50px"
-            android:background="@drawable/radio_left"
-            android:checked="true"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:button="@null"/>
+            style="@style/common_left_radio_button"/>
         <RadioButton
-            android:layout_marginLeft="2px"
             android:id="@+id/rb_jcjg_right1"
-            android:layout_width="120px"
-            android:layout_height="50px"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:background="@drawable/radio_right"
-            android:button="@null"/>
+            style="@style/common_right_radio_button"/>
     </RadioGroup>
  <EditText
      android:id="@+id/et_yy1"
@@ -79,33 +59,13 @@
             android:lines="2"/>
         <RadioGroup
             android:id="@+id/rg_jcjg2"
-            android:layout_width="300px"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            style="@style/radio_group_common">
             <RadioButton
                 android:id="@+id/rb_jcjg_left2"
-                android:layout_marginLeft="10px"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:background="@drawable/radio_left"
-                android:checked="true"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:button="@null"/>
+                style="@style/common_left_radio_button"/>
             <RadioButton
-                android:layout_marginLeft="2px"
                 android:id="@+id/rb_jcjg_right2"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:background="@drawable/radio_right"
-                android:button="@null"/>
+                style="@style/common_right_radio_button"/>
         </RadioGroup>
         <EditText
             android:id="@+id/et_yy2"
@@ -141,33 +101,13 @@
             android:lines="2"/>
         <RadioGroup
             android:id="@+id/rg_jcjg3"
-            android:layout_width="300px"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            style="@style/radio_group_common">
             <RadioButton
                 android:id="@+id/rb_jcjg_left3"
-                android:layout_marginLeft="10px"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:background="@drawable/radio_left"
-                android:checked="true"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:button="@null"/>
+                style="@style/common_left_radio_button"/>
             <RadioButton
-                android:layout_marginLeft="2px"
                 android:id="@+id/rb_jcjg_right3"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:background="@drawable/radio_right"
-                android:button="@null"/>
+                style="@style/common_right_radio_button"/>
         </RadioGroup>
         <EditText
             android:id="@+id/et_yy3"
@@ -203,33 +143,13 @@
             android:lines="2"/>
         <RadioGroup
             android:id="@+id/rg_jcjg4"
-            android:layout_width="300px"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            style="@style/radio_group_common">
             <RadioButton
                 android:id="@+id/rb_jcjg_left4"
-                android:layout_marginLeft="10px"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:background="@drawable/radio_left"
-                android:checked="true"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:button="@null"/>
+                style="@style/common_left_radio_button"/>
             <RadioButton
-                android:layout_marginLeft="2px"
                 android:id="@+id/rb_jcjg_right4"
-                android:layout_width="120px"
-                android:layout_height="50px"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:background="@drawable/radio_right"
-                android:button="@null"/>
+                style="@style/common_right_radio_button"/>
         </RadioGroup>
         <EditText
             android:id="@+id/et_yy4"

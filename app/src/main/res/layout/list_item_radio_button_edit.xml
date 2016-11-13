@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:minHeight="60dp"
+              android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:gravity="center"
+        android:text="运行维护责任落实情况"/>
+
+    <RadioGroup
+        android:id="@+id/rg_jcjg1"
+        style="@style/radio_group_common">
+
+        <RadioButton
+            android:id="@+id/rb_jcjg_left1"
+            style="@style/common_left_radio_button"
+            android:text="正常"/>
+
+        <RadioButton
+            android:id="@+id/rb_jcjg_right1"
+            style="@style/common_right_radio_button"
+            android:text="不正常"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

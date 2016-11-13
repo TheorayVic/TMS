@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.fragment.CqjywFragment;
-import com.yf.bx.tms.fragment.cqjxz.ADSSGuangLanFragment;
+import com.yf.bx.tms.fragment.cqjxz.ZnglFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,7 +101,7 @@ public class CqjXzActivity extends BaseActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ADSSGuangLanFragment();
+            return new ZnglFragment();
         }
 
         @Override
