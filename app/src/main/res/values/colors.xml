@@ -18,4 +18,8 @@
     <color name="transfer">#00000000</color>
     <color name="bgbottom">#4A82B5</color>
     <color name="button_blue">#546FB4</color>
+    <color name="ck_red">#EA68A2</color>
+    <color name="ck_blue">#8C97CB</color>
+    <color name="ck_green">#89C997</color>
+    <color name="activity_bg">#EAF1F9</color>
 </resources>

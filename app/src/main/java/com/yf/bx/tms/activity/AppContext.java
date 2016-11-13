@@ -15,6 +15,8 @@ import com.yf.bx.tms.utils.CyptoUtils;
 import com.yf.bx.tms.utils.FileUtils;
 import com.yf.bx.tms.utils.StringUtils;
 
+import org.xutils.x;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -62,6 +64,7 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        x.Ext.init(this);
         //注册App异常崩溃处理器
 //        Thread.setDefaultUncaughtExceptionHandler(AppException.getAppExceptionHandler());
 //        init();

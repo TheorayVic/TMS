@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 
 import com.yf.bx.tms.R;
 import com.zhy.autolayout.AutoLayoutActivity;
-
+//信息办公设备工单中 的五位一体，不是五位一体评价
 public class AddWwytActivity extends AutoLayoutActivity {
 
     @Override
