@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout style="@style/divider_linearlayout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_gravity="center_vertical"
+              android:background="@drawable/linear_bg"
+              android:gravity="center_vertical"
               android:minHeight="60dp"
               android:orientation="horizontal">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="5"
+        android:layout_weight="1"
         android:gravity="center"
-        android:text="运行维护责任落实情况"/>
+        android:text="运行维护责任落实情况"
+        android:textSize="18sp"/>
 
     <RadioGroup
         android:id="@+id/rg_jcjg1"
@@ -30,6 +34,8 @@
 
     <EditText
         android:id="@+id/et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="2"/>
 </LinearLayout>

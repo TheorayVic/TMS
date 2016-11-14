@@ -61,7 +61,7 @@ public class CqjywFragment extends XjywFragment {
         ZengjiaJianShaoGridView gridView = (ZengjiaJianShaoGridView) dialog.findViewById(R.id.grid_view);
         list = new ArrayList<>();
         for (int i = 0; i < TITLES.length; i++) {
-            CQJItem cqjItem = new CQJItem(0, TITLES[i]);
+            CQJItem cqjItem = new CQJItem(0, i, TITLES[i]);
             list.add(cqjItem);
         }
         gridView.setList(list);
@@ -76,8 +76,15 @@ public class CqjywFragment extends XjywFragment {
     public static class CQJItem implements ZengjiaJianShaoGridView.GridItem, Cloneable {
         public String title;
         public int count;
+        public int index;//作为id来标记用处
 
         public CQJItem() {
+        }
+
+        public CQJItem(int count, int index, String title) {
+            this.count = count;
+            this.index = index;
+            this.title = title;
         }
 
         @Override
@@ -85,6 +92,7 @@ public class CqjywFragment extends XjywFragment {
             CQJItem cqjItem = (CQJItem) super.clone();
             cqjItem.count = count;
             cqjItem.title = title;
+            cqjItem.index = index;
             return cqjItem;
         }
 
@@ -95,7 +103,7 @@ public class CqjywFragment extends XjywFragment {
 
         @Override
         public String getId() {
-            return null;
+            return String.valueOf(index);
         }
 
         @Override

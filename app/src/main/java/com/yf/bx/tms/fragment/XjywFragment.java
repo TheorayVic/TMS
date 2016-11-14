@@ -1,7 +1,5 @@
 package com.yf.bx.tms.fragment;
 
-import android.app.IntentService;
-import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -85,7 +83,6 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
         //时间日期选择
         selectDate(spi_jcsj);
         selectDate(spi_jcsj2);
-        IntentService
     }
 
 

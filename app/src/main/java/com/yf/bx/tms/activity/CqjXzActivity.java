@@ -13,6 +13,16 @@ import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.fragment.CqjywFragment;
+import com.yf.bx.tms.fragment.cqjxz.ADSSGuangLanFragment;
+import com.yf.bx.tms.fragment.cqjxz.BeiYongQianXinFragment;
+import com.yf.bx.tms.fragment.cqjxz.GuangChuanShuFragment;
+import com.yf.bx.tms.fragment.cqjxz.JiaoHuanSheBeiFragment;
+import com.yf.bx.tms.fragment.cqjxz.OPGLGuangLan;
+import com.yf.bx.tms.fragment.cqjxz.PTGuangLanFragment;
+import com.yf.bx.tms.fragment.cqjxz.ShuJuWangSheBeiFragment;
+import com.yf.bx.tms.fragment.cqjxz.TongXinDianYuanXiTongFragment;
+import com.yf.bx.tms.fragment.cqjxz.TongXinXuDianChiFragment;
+import com.yf.bx.tms.fragment.cqjxz.WeiBoSheBeiFragment;
 import com.yf.bx.tms.fragment.cqjxz.ZnglFragment;
 
 import java.util.ArrayList;
@@ -55,7 +65,7 @@ public class CqjXzActivity extends BaseActivity {
                 } catch (CloneNotSupportedException e) {
                     e.printStackTrace();
                 }
-                final int h  =mCQJItemList.size()-1;
+                final int h = mCQJItemList.size() - 1;
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -101,6 +111,33 @@ public class CqjXzActivity extends BaseActivity {
 
         @Override
         public Fragment getItem(int position) {
+            CqjywFragment.CQJItem cqjItem = mCQJItemList.get(position);
+            switch (cqjItem.getId()) {
+//                case 0:
+//                    return  new Tong
+                case "1":
+                    return new ZnglFragment();
+                case "2":
+                    return  new ADSSGuangLanFragment();
+                case "3":
+                    return new OPGLGuangLan();
+                case "4":
+                    return new PTGuangLanFragment();
+                case "5":
+                    return new BeiYongQianXinFragment();
+                case "6":
+                    return new TongXinDianYuanXiTongFragment();
+                case "7":
+                    return new TongXinXuDianChiFragment();
+                case "8":
+                    return new WeiBoSheBeiFragment();
+                case "9":
+                    return new GuangChuanShuFragment();
+                case "10":
+                    return new JiaoHuanSheBeiFragment();
+                case "11":
+                    return new ShuJuWangSheBeiFragment();
+            }
             return new ZnglFragment();
         }
 
