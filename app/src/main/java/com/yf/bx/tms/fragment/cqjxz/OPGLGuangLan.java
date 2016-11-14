@@ -2,62 +2,37 @@ package com.yf.bx.tms.fragment.cqjxz;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
-import com.yf.bx.tms.fragment.BaseListFragment;
-
-import butterknife.OnClick;
 
 /**
+ * A simple {@link Fragment} subclass.
  */
-public class ADSSGuangLanFragment extends BaseListFragment<Object> {
+public class OPGLGuangLan extends ADSSGuangLanFragment {
 
 
-    public ADSSGuangLanFragment() {
+    public OPGLGuangLan() {
         // Required empty public constructor
     }
 
-    public static final String[] TITLES = {"杆塔号", "档号", "挂点", "弧垂", "交叉跨越", "外护套", "光缆金具"};
+    public static final String[] TITLES = {"杆塔号", "档号", "是否断股", "交叉跨越物", "引下光缆及线夹", "光缆金具",
+            "是否有接头盒"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adssguang_lan, container, false);
+        return inflater.inflate(R.layout.fragment_opglguang_lan, container, false);
     }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        addLines(3, new ObjectCreator<Object>() {//默认三行
-            @Override
-            public Object createObject(int position) {
-                return new Object();
-            }
-        });
-    }
-
-
     @Override
     public View getView(int viewType, ViewGroup parent) {
         return LayoutInflater.from(getActivity()).inflate(R.layout
                 .list_item_adss_guang_lan_item_add, parent, false);
-    }
-
-    @OnClick(R.id.add_lines)
-    @Nullable
-    public void addLines(View view) {//增加5行
-        addLines(5, new ObjectCreator<Object>() {
-            @Override
-            public Object createObject(int position) {
-                return new Object();
-            }
-        });
     }
 
     @Override
@@ -76,6 +51,4 @@ public class ADSSGuangLanFragment extends BaseListFragment<Object> {
             }
         }
     }
-
-
 }

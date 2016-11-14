@@ -1,7 +1,5 @@
 package com.yf.bx.tms.fragment;
 
-import android.app.IntentService;
-import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

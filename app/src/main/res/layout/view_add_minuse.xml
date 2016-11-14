@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:orientation="horizontal"
               android:gravity="center_vertical"
+              android:orientation="horizontal"
               android:padding="16dp">
 
     <TextView
@@ -11,33 +11,35 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="通讯站安全检查"/>
+        android:text="通讯站安全检查"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/minus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?selectableItemBackground"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:background="@drawable/linear_bg"
         android:gravity="center"
         android:padding="8dp"
         android:text="-"/>
 
     <TextView
         android:id="@+id/count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:background="?selectableItemBackground"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:background="@drawable/linear_bg"
         android:gravity="center"
-        android:padding="8dp"
+        android:textSize="18sp"
         android:text="0"/>
 
     <TextView
         android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
 
-        android:background="?selectableItemBackground"
+        android:textSize="18sp"
+        android:background="@drawable/linear_bg"
 
         android:gravity="center"
         android:padding="8dp"

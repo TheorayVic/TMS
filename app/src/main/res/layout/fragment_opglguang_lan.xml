@@ -3,8 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.yf.bx.tms.fragment.cqjxz.ADSSGuangLanFragment">
-
+              tools:context="com.yf.bx.tms.fragment.cqjxz.OPGLGuangLan">
 
     <include layout="@layout/add_lines"/>
 
@@ -32,8 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -50,10 +48,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:singleLine="true"/>
 
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:minWidth="90dp"
 
+            android:text="线路名称"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:singleLine="true"/>
     </LinearLayout>
 
     <LinearLayout
@@ -80,8 +93,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -98,9 +111,24 @@
             android:layout_weight="1"
             android:gravity="center"
 
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:minWidth="90dp"
+            android:text="负责人"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=""/>
     </LinearLayout>
 
     <include layout="@layout/common_list_view"/>
