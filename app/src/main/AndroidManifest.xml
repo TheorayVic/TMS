@@ -86,7 +86,9 @@
             android:name=".activity.XjywCkActivity"
             android:label="@string/title_activity_xjyw_ck"
             android:screenOrientation="sensorLandscape" />
-        <activity android:name=".activity.KsxjPhotoActivity"></activity>
+
+        <activity android:name=".photo_picker.PhotoPickerActivity"
+            android:screenOrientation="sensorLandscape"/>
     </application>
 
 </manifest>
