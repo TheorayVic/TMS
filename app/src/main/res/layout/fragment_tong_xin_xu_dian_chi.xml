@@ -83,8 +83,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="电池组号"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -99,8 +99,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="浮充电压"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -114,8 +114,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="投运日期"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -142,8 +142,8 @@
             android:minWidth="90dp"
 
             android:text="对应电源"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -158,8 +158,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="连接部件"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -173,8 +173,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="外壳"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

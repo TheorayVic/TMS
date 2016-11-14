@@ -26,14 +26,13 @@
             android:minWidth="90dp"
 
             android:text="运行管理单位"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,15 +43,14 @@
             android:minWidth="90dp"
 
             android:text="运维单位"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
 
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
     </LinearLayout>
 
@@ -74,14 +72,13 @@
             android:minWidth="90dp"
 
             android:text="光缆区段"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,15 +88,14 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="光缆类型"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
 
-            android:singleLine="true"
-            android:text="sdfsdfsdfsdfsdf"/>
+            android:singleLine="true"/>
 
     </LinearLayout>
 

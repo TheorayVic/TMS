@@ -22,8 +22,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="设备型号"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -38,8 +38,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="网元编号"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -80,8 +80,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="生产厂商"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,8 +97,8 @@
             android:minWidth="90dp"
             android:text="运维单位"
             />
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -126,8 +126,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="投运时间"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -142,8 +142,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="所属系统"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

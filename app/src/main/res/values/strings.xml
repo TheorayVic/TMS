@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TMS</string>
+    <string name="app_name">信通专业</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->

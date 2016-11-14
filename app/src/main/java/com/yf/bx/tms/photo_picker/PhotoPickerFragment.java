@@ -28,7 +28,9 @@ import me.iwf.photopicker.entity.Photo;
 import me.iwf.photopicker.entity.PhotoDirectory;
 import me.iwf.photopicker.event.OnPhotoClickListener;
 import me.iwf.photopicker.fragment.ImagePagerFragment;
-import me.iwf.photopicker.utils.*;
+import me.iwf.photopicker.utils.AndroidLifecycleUtils;
+import me.iwf.photopicker.utils.ImageCaptureManager;
+import me.iwf.photopicker.utils.MediaStoreHelper;
 
 /**
  * Created by bai on 2016/11/14.
@@ -126,7 +128,8 @@ public class PhotoPickerFragment extends Fragment {
                 int[] screenLocation = new int[2];
                 v.getLocationOnScreen(screenLocation);
                 ImagePagerFragment imagePagerFragment = ImagePagerFragment.newInstance(photos, index, screenLocation, v.getWidth(), v.getHeight());
-                ((me.iwf.photopicker.PhotoPickerActivity) PhotoPickerFragment.this.getActivity()).addImagePagerFragment(imagePagerFragment);
+                ((com.yf.bx.tms.photo_picker.PhotoPickerActivity) PhotoPickerFragment.this.getActivity()).addImagePagerFragment
+                        (imagePagerFragment);
             }
         });
         this.photoGridAdapter.setOnCameraClickListener(new View.OnClickListener() {

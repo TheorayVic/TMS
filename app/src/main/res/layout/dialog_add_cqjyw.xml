@@ -62,11 +62,11 @@
                     android:layout_height="wrap_content"
                     android:text="检查负责人："/>
 
-                <Spinner
-                    style="@style/spinner_style"
+                <EditText
                     android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:id="@+id/spinner"></EditText>
 
                 <TextView
                     android:id="@+id/textView"
@@ -76,11 +76,11 @@
                     android:layout_height="wrap_content"
                     android:text="检查时间："/>
 
-                <Spinner
-                    style="@style/spinner_style"
+                <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:id="@+id/spinner2"></EditText>
             </LinearLayout>
 
             <LinearLayout
@@ -96,11 +96,11 @@
                     android:layout_height="wrap_content"
                     android:text="工作票编号："/>
 
-                <Spinner
-                    style="@style/spinner_style"
+                <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:id="@+id/spinner3"></EditText>
 
             </LinearLayout>
 
