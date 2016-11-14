@@ -12,10 +12,12 @@ import android.widget.TextView;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.MainAdapter;
 import com.yf.bx.tms.bean.MainBean;
+import com.yf.bx.tms.photo_picker.PhotoPicker;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 import static com.yf.bx.tms.R.drawable.banner_11;
 
@@ -109,7 +111,6 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
                 }
                 break;
             case R.id.tv_main_tip:
-
                 break;
         }
     }

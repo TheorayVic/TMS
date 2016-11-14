@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -23,6 +24,8 @@ public class JfhjFragment extends KsxjCommonFra implements View.OnClickListener 
 
     private View view;
     private EditText et6,et7,et8;
+    private ImageButton ib5,ib6,ib7,ib8;
+
     public JfhjFragment() {
     }
 
@@ -62,6 +65,10 @@ public class JfhjFragment extends KsxjCommonFra implements View.OnClickListener 
         et6 = (EditText) view.findViewById(R.id.et_jfhj_yy6);
         et7 = (EditText) view.findViewById(R.id.et_jfhj_yy7);
         et8 = (EditText) view.findViewById(R.id.et_jfhj_yy8);
+        ib5 = (ImageButton) view.findViewById(R.id.ib_jfhj_photo5);
+        ib6 = (ImageButton) view.findViewById(R.id.ib_jfhj_photo6);
+        ib7 = (ImageButton) view.findViewById(R.id.ib_jfhj_photo7);
+        ib8 = (ImageButton) view.findViewById(R.id.ib_jfhj_photo8);
     }
 
     private void initListener() {
@@ -72,10 +79,13 @@ public class JfhjFragment extends KsxjCommonFra implements View.OnClickListener 
         ib_photo2.setOnClickListener(this);
         ib_photo3.setOnClickListener(this);
         ib_photo4.setOnClickListener(this);
+        ib5.setOnClickListener(this);
+        ib6.setOnClickListener(this);
+        ib7.setOnClickListener(this);
+        ib8.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), KsxjPhotoActivity.class);
         switch (v.getId()){
             case R.id.ib_photo1:
                 break;
@@ -85,8 +95,16 @@ public class JfhjFragment extends KsxjCommonFra implements View.OnClickListener 
                 break;
             case R.id.ib_photo4:
                 break;
+            case R.id.ib_jfhj_photo5:
+                break;
+            case R.id.ib_jfhj_photo6:
+                break;
+            case R.id.ib_jfhj_photo7:
+                break;
+            case R.id.ib_jfhj_photo8:
+                break;
 
         }
-        getActivity().startActivity(intent);
+        jumptoPicker();
     }
 }

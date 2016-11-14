@@ -22,7 +22,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//巡检业务 五位一体界面
 public class XjywWwytActivity extends AutoLayoutActivity implements RadioGroup.OnCheckedChangeListener,
         ViewPager.OnPageChangeListener{
 

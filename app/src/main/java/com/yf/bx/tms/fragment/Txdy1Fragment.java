@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class Txdy1Fragment extends KsxjCommonFra {
 
     private View view;
     private EditText et_yy6,et_yy9;
+    private ImageButton ib5;
     public Txdy1Fragment() {
     }
     @Override
@@ -56,7 +58,14 @@ public class Txdy1Fragment extends KsxjCommonFra {
         tv_jcxm4.setText("整流模块风扇状态");
         et_yy6 = (EditText) view.findViewById(R.id.et_txdy1_yy6);
         et_yy9 = (EditText) view.findViewById(R.id.et_txdy1_yy9);
+        ib5 = (ImageButton) view.findViewById(R.id.ib_txdy1_photo6);
         et_yy6.setOnTouchListener(this);
         et_yy9.setOnTouchListener(this);
+        ib5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumptoPicker();
+            }
+        });
     }
 }

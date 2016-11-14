@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.yf.bx.tms.R;
 
@@ -17,6 +18,7 @@ import com.yf.bx.tms.R;
 public class MxjglFragment extends KsxjCommonFra {
     private View view;
     private EditText et5;
+    private ImageButton ib5;
     public MxjglFragment() {
     }
     @Override
@@ -51,5 +53,12 @@ public class MxjglFragment extends KsxjCommonFra {
         tv_jcxm4.setText("箱内或余缆架光缆捆扎摆放是否紧凑、整齐、不松弛");
         et5 = (EditText) view.findViewById(R.id.et_mxxgl_y1);
         et5.setOnTouchListener(this);
+        ib5 = (ImageButton)view.findViewById(R.id.ib_mxxgl_photo1);
+        ib5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumptoPicker();
+            }
+        });
     }
 }

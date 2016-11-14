@@ -8,17 +8,21 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.photo_picker.PhotoPicker;
 
 /**
  * Created by 123 on 2016/11/9.
  */
 
-public class CssbFragment extends Fragment implements View.OnTouchListener{
+public class CssbFragment extends Fragment implements View.OnTouchListener,
+        View.OnClickListener{
 
     private View view;
     private EditText et1,et2;
+    private ImageButton ib1,ib2;
     public CssbFragment() {
     }
     @Override
@@ -38,6 +42,10 @@ public class CssbFragment extends Fragment implements View.OnTouchListener{
         super.onViewCreated(view, savedInstanceState);
         et1 = (EditText) view.findViewById(R.id.et_cssb_y1);
         et2 = (EditText) view.findViewById(R.id.et_cssb_y2);
+        ib1 = (ImageButton) view.findViewById(R.id.ib_cssb_photo1);
+        ib2 = (ImageButton) view.findViewById(R.id.ib_cssb_photo2);
+        ib1.setOnClickListener(this);
+        ib2.setOnClickListener(this);
         et1.setOnTouchListener(this);
         et2.setOnTouchListener(this);
     }
@@ -52,5 +60,22 @@ public class CssbFragment extends Fragment implements View.OnTouchListener{
                 break;
         }
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ib_cssb_photo1:
+                break;
+            case R.id.ib_cssb_photo2:
+                break;
+        }
+            PhotoPicker.builder()
+                    .setPhotoCount(9)
+                    .setShowCamera(true)
+                    .setShowGif(true)
+                    .setPreviewEnabled(false)
+                    .start(getActivity(), PhotoPicker.REQUEST_CODE);
+
     }
 }

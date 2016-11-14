@@ -14,12 +14,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.photo_picker.PhotoPicker;
 
 /**
  * Created by 123 on 2016/11/9.
  */
 
-public class KsxjCommonFra extends Fragment implements View.OnTouchListener{
+public class KsxjCommonFra extends Fragment implements View.OnTouchListener,View.OnClickListener{
 
     protected RadioGroup rg1,rg2,rg3,rg4;
     protected RadioButton rb_left1,rb_right1,rb_left2,rb_right2,rb_left3,rb_right3,rb_left4,rb_right4;
@@ -74,6 +75,10 @@ public class KsxjCommonFra extends Fragment implements View.OnTouchListener{
         et2.setOnTouchListener(this);
         et3.setOnTouchListener(this);
         et4.setOnTouchListener(this);
+        ib_photo1.setOnClickListener(this);
+        ib_photo2.setOnClickListener(this);
+        ib_photo3.setOnClickListener(this);
+        ib_photo4.setOnClickListener(this);
     }
 
     @Override
@@ -86,5 +91,30 @@ public class KsxjCommonFra extends Fragment implements View.OnTouchListener{
                 break;
         }
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ib_photo1:
+                break;
+            case R.id.ib_photo2:
+                break;
+            case R.id.ib_photo3:
+                break;
+            case R.id.ib_photo4:
+                break;
+        }
+        jumptoPicker();
+    }
+
+    //跳转拍照照片界面
+    public void jumptoPicker(){
+        PhotoPicker.builder()
+                .setPhotoCount(9)
+                .setShowCamera(true)
+                .setShowGif(true)
+                .setPreviewEnabled(false)
+                .start(getActivity(), PhotoPicker.REQUEST_CODE);
     }
 }

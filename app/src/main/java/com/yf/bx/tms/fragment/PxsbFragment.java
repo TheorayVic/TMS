@@ -8,8 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.photo_picker.PhotoPicker;
 
 /**
  * Created by 123 on 2016/11/9.
@@ -17,7 +19,8 @@ import com.yf.bx.tms.R;
 
 public class PxsbFragment extends Fragment implements View.OnTouchListener{
     private View view;
-    private EditText et1,et2,et3;
+    private EditText et1;
+    private ImageButton ib;
     public PxsbFragment() {
     }
     @Override
@@ -37,6 +40,18 @@ public class PxsbFragment extends Fragment implements View.OnTouchListener{
         super.onViewCreated(view, savedInstanceState);
         et1 = (EditText) view.findViewById(R.id.et_pxsb_y1);
         et1.setOnTouchListener(this);
+        ib = (ImageButton) view.findViewById(R.id.ib_pxsb_photo1);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PhotoPicker.builder()
+                        .setPhotoCount(9)
+                        .setShowCamera(true)
+                        .setShowGif(true)
+                        .setPreviewEnabled(false)
+                        .start(getActivity(), PhotoPicker.REQUEST_CODE);
+            }
+        });
     }
 
     @Override

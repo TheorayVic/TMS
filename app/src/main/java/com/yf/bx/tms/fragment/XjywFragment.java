@@ -85,7 +85,7 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
         //时间日期选择
         selectDate(spi_jcsj);
         selectDate(spi_jcsj2);
-        IntentService
+
     }
 
 

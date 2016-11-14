@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.yf.bx.tms.R;
 
@@ -17,6 +18,7 @@ public class Txdy2Fragment extends KsxjCommonFra {
 
     private View view;
     private EditText et_yy6,et_yy9;
+    private ImageButton ib5;
     public Txdy2Fragment() {
     }
     @Override
@@ -54,5 +56,12 @@ public class Txdy2Fragment extends KsxjCommonFra {
         et_yy9 = (EditText) view.findViewById(R.id.et_txdy1_yy9);
         et_yy6.setOnTouchListener(this);
         et_yy9.setOnTouchListener(this);
+        ib5 = (ImageButton) view.findViewById(R.id.ib_txdy1_photo6);
+        ib5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumptoPicker();
+            }
+        });
     }
 }
