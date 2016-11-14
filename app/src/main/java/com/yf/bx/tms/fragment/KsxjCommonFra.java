@@ -107,7 +107,6 @@ public class KsxjCommonFra extends Fragment implements View.OnTouchListener,View
         }
         jumptoPicker();
     }
-
     //跳转拍照照片界面
     public void jumptoPicker(){
         PhotoPicker.builder()
