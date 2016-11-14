@@ -3,6 +3,7 @@ package com.yf.bx.tms.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +23,6 @@ import java.util.List;
 
 public abstract class BaseListFragment<T> extends CommonFra {
 
-    public ListView onCreateListView() {
-        return (ListView) getView().findViewById(R.id.listview);
-    }
 
     public ListView mListView;
     public final List<T> mList = new ArrayList<>();
@@ -37,6 +35,29 @@ public abstract class BaseListFragment<T> extends CommonFra {
         if (mListView != null) {
             mListView.setAdapter(mListViewAdapter = new ListViewAdapter());
         }
+    }
+
+    public ListView onCreateListView() {
+        mListView = (ListView) getView().findViewById(R.id.listview);
+        addFooter(bottomTitle());
+        return mListView;
+    }
+
+    public String bottomTitle() {
+        return null;
+    }
+
+    public void addFooter(String title) {
+        View footer = getActivity().getLayoutInflater().inflate(R.layout
+                .layout_cqj_xzfooter, mListView, false);
+        mListView.addFooterView(footer, null, false);
+        if (TextUtils.isEmpty(title)) {
+            footer.findViewById(R.id.area).setVisibility(View.GONE);
+        } else {
+            footer.findViewById(R.id.area).setVisibility(View.VISIBLE);
+        }
+        TextView tv = (TextView) footer.findViewById(R.id.title);
+        tv.setText(title);
     }
 
     /**

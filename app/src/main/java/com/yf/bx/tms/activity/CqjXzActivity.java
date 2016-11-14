@@ -1,5 +1,6 @@
 package com.yf.bx.tms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,8 +21,11 @@ import com.yf.bx.tms.fragment.cqjxz.JiaoHuanSheBeiFragment;
 import com.yf.bx.tms.fragment.cqjxz.OPGLGuangLan;
 import com.yf.bx.tms.fragment.cqjxz.PTGuangLanFragment;
 import com.yf.bx.tms.fragment.cqjxz.ShuJuWangSheBeiFragment;
+import com.yf.bx.tms.fragment.cqjxz.TongBuSheBeiFragment;
 import com.yf.bx.tms.fragment.cqjxz.TongXinDianYuanXiTongFragment;
+import com.yf.bx.tms.fragment.cqjxz.TongXinFangShiFragment;
 import com.yf.bx.tms.fragment.cqjxz.TongXinXuDianChiFragment;
+import com.yf.bx.tms.fragment.cqjxz.WangGuanXiTongFragment;
 import com.yf.bx.tms.fragment.cqjxz.WeiBoSheBeiFragment;
 import com.yf.bx.tms.fragment.cqjxz.ZnglFragment;
 
@@ -29,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * 新增春秋检
@@ -102,7 +107,11 @@ public class CqjXzActivity extends BaseActivity {
             }
         });
     }
-
+    @OnClick(R.id.ib_ksxj_wwyt)
+    public void onClick(View view){
+        Intent intent = new Intent(this,XjywWwytActivity.class);
+        startActivity(intent);
+    }
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
@@ -118,7 +127,7 @@ public class CqjXzActivity extends BaseActivity {
                 case "1":
                     return new ZnglFragment();
                 case "2":
-                    return  new ADSSGuangLanFragment();
+                    return new ADSSGuangLanFragment();
                 case "3":
                     return new OPGLGuangLan();
                 case "4":
@@ -137,6 +146,12 @@ public class CqjXzActivity extends BaseActivity {
                     return new JiaoHuanSheBeiFragment();
                 case "11":
                     return new ShuJuWangSheBeiFragment();
+                case "12":
+                    return new TongBuSheBeiFragment();
+                case "13":
+                    return new WangGuanXiTongFragment();
+                case "14":
+                    return new TongXinFangShiFragment();
             }
             return new ZnglFragment();
         }

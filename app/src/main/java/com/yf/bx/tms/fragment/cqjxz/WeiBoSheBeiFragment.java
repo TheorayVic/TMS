@@ -25,6 +25,9 @@ public class WeiBoSheBeiFragment extends ZnglFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_wei_bo_she_bei, container, false);
+    }@Override
+    public String bottomTitle() {
+        return "备注：";
     }
 
     static final String[] TITLES = {"天线防水", "天线紧固", "天线罩布", "馈线防水", "馈线接地", "馈线紧固", "铁塔锈蚀", "铁塔紧固", "通信电源", "是否具备\n" +

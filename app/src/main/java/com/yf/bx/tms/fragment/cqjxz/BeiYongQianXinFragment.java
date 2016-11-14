@@ -31,7 +31,10 @@ public class BeiYongQianXinFragment extends ADSSGuangLanFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bei_yong_qian_xin, container, false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "备注：";
+    }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

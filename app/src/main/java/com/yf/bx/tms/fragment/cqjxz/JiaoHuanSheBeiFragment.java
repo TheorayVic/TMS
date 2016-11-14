@@ -37,7 +37,10 @@ public class JiaoHuanSheBeiFragment extends ZnglFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_jiao_huan_she_bei, container, false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "其他：";
+    }
     @Override
     public String[] getLines() {
         return TITLES;

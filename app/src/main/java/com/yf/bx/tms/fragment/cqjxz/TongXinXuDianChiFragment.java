@@ -63,7 +63,10 @@ public class TongXinXuDianChiFragment extends ADSSGuangLanFragment {
     public View getView(int viewType, ViewGroup parent) {
         return getActivity().getLayoutInflater().inflate(R.layout.list_item_text_view_11,parent,false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "备注：";
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

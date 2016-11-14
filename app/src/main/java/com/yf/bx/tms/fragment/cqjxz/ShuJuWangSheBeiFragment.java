@@ -46,7 +46,10 @@ public class ShuJuWangSheBeiFragment extends ZnglFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shu_ju_wang_she_bei, container, false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "其他：";
+    }
     @Override
     public void convertObject2View(int position, ViewHolder holder, Object o) {
         super.convertObject2View(position, holder, o);

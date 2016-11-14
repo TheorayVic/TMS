@@ -49,4 +49,8 @@ public class WangGuanXiTongFragment extends ZnglFragment {
         return inflater.inflate(R.layout.fragment_wang_guan_xi_tong, container, false);
     }
 
+    @Override
+    public String bottomTitle() {
+        return "其他：";
+    }
 }

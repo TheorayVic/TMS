@@ -49,7 +49,10 @@ public class GuangChuanShuFragment extends ZnglFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_guang_chuan_shu, container, false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "备注：";
+    }
     @Override
     public String[] getLines() {
         return TITLES;

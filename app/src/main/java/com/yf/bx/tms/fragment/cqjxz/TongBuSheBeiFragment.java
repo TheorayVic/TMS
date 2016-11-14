@@ -42,5 +42,8 @@ public class TongBuSheBeiFragment extends ZnglFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tong_bu_she_bei, container, false);
     }
-
+    @Override
+    public String bottomTitle() {
+        return "其他：";
+    }
 }

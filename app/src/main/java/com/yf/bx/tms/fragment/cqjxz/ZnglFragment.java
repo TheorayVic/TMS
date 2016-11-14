@@ -4,10 +4,12 @@ package com.yf.bx.tms.fragment.cqjxz;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.fragment.BaseListFragment;
@@ -66,17 +68,7 @@ public class ZnglFragment extends BaseListFragment<Object> {
         });
     }
 
-    @Override
-    public ListView onCreateListView() {
-        mListView = super.onCreateListView();
-        addFooter("");
-        return mListView;
-    }
 
-    public void addFooter(String title) {
-        mListView.addFooterView(getActivity().getLayoutInflater().inflate(R.layout
-                .layout_cqj_xzfooter, mListView, false), null, false);
-    }
 
     @Override
     public View getView(int viewType, ViewGroup parent) {
