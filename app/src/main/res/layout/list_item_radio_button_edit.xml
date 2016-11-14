@@ -6,13 +6,15 @@
               android:background="@drawable/linear_bg"
               android:gravity="center_vertical"
               android:minHeight="60dp"
-              android:orientation="horizontal">
+              android:orientation="horizontal"
+              android:paddingBottom="4dp"
+              android:paddingTop="4dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:gravity="center"
         android:text="运行维护责任落实情况"
         android:textSize="18sp"/>
@@ -37,5 +39,18 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_margin="4dp"
-        android:layout_weight="2"/>
+        android:layout_weight="1.5"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8">
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/btn_photo"/>
+    </FrameLayout>
 </LinearLayout>

@@ -52,6 +52,8 @@ public class CqjXzActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cqj_xz);
+        TextView textView = (TextView) findViewById(R.id.tv_txxj_top);
+        textView.setText("通信站");
         viewGroup = (ViewGroup) findViewById(R.id.radio_button_area);
         List<CqjywFragment.CQJItem> list = CqjywFragment.list;
         for (int i = 0; i < list.size(); i++) {
@@ -107,11 +109,13 @@ public class CqjXzActivity extends BaseActivity {
             }
         });
     }
+
     @OnClick(R.id.ib_ksxj_wwyt)
-    public void onClick(View view){
-        Intent intent = new Intent(this,XjywWwytActivity.class);
+    public void onClick(View view) {
+        Intent intent = new Intent(this, XjywWwytActivity.class);
         startActivity(intent);
     }
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
