@@ -92,6 +92,9 @@
         <activity
             android:name=".activity.KsxjPhotoActivity"
             android:screenOrientation="sensorLandscape"></activity>
+
+        <activity android:name=".photo_picker.PhotoPickerActivity"
+            android:screenOrientation="sensorLandscape"/>
     </application>
 
 </manifest>
