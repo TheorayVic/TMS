@@ -23,7 +23,8 @@
             android:minWidth="90dp"
             android:text="站名"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -39,7 +40,8 @@
             android:minWidth="90dp"
             android:text="检查人"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,7 +69,8 @@
             android:minWidth="90dp"
             android:text="设备型号"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -84,7 +87,8 @@
             android:text="检查时间"
             android:id="@+id/textView8"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -111,7 +115,8 @@
             android:minWidth="90dp"
             android:text="生产厂商"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -128,7 +133,8 @@
             android:text="投运时间"
             android:id="@+id/textView7"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

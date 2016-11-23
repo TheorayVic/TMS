@@ -56,6 +56,12 @@ public class CqjXzActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cqj_xz);
         TextView textView = (TextView) findViewById(R.id.tv_txxj_top);
+        findViewById(R.id.ib_txxj_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         textView.setText("通信站");
         viewGroup = (ViewGroup) findViewById(R.id.radio_button_area);
         List<CqjywFragment.CQJItem> list = CqjywFragment.list;

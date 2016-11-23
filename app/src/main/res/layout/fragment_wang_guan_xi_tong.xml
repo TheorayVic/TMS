@@ -22,8 +22,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="网关名称"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -38,8 +38,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="检查人"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,8 +66,8 @@
         android:layout_marginRight="16dp"
         android:minWidth="90dp"
         android:text="网关版本"/>
-
-    <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -82,8 +82,8 @@
         android:gravity="center"
         android:minWidth="90dp"
         android:text="检查时间"        />
-
-    <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -109,8 +109,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="生产厂商"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -126,8 +126,8 @@
             android:minWidth="90dp"
             android:text="投运时间"
             android:id="@+id/textView7"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -154,8 +154,8 @@
             android:layout_marginRight="16dp"
             android:minWidth="90dp"
             android:text="型号"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -170,8 +170,8 @@
             android:gravity="center"
             android:minWidth="90dp"
             android:text="位置"/>
-
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

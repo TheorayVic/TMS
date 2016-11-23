@@ -18,9 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="电源名称"/>
-
-        <TextView
-            style="@style/text_view_in_list"
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -30,25 +29,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="运维单位"/>
-
-        <TextView
-            style="@style/text_view_in_list"
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:id="@+id/textView9"/>
 
         <TextView
             style="@style/text_view_in_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="运维责任人"/>
-
-        <TextView
-            style="@style/text_view_in_list"
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:id="@+id/textView10"/>
     </LinearLayout>
 
     <LinearLayout

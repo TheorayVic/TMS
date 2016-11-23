@@ -161,4 +161,7 @@
     <style name="text_view_in_list.sub">
         <item name="android:minHeight">60dp</item>
     </style>
+    <style name="text_view_in_list.noback">
+        <item name="android:background">@null</item>
+    </style>
 </resources>

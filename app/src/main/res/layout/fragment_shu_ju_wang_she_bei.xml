@@ -24,7 +24,8 @@
 
             android:text="设备型号"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:id="@+id/textView6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -70,7 +71,8 @@
 
             android:text="生产厂商"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -87,12 +89,12 @@
             android:minWidth="90dp"
             android:text="投运时间"/>
 
-        <TextView
+        <EditText
+            style="@style/text_view_in_list.noback"
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
             android:gravity="center"
             android:singleLine="true"/>
 

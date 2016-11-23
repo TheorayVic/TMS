@@ -4,15 +4,18 @@ package com.yf.bx.tms.fragment.cqjxz;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.fragment.BaseListFragment;
+import com.yf.bx.tms.photo_picker.PhotoPicker;
+
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,15 +72,47 @@ public class ZnglFragment extends BaseListFragment<Object> {
     }
 
 
-
     @Override
     public View getView(int viewType, ViewGroup parent) {
         return getActivity().getLayoutInflater
                 ().inflate(R.layout.list_item_radio_button_edit, parent, false);
     }
 
+    HashMap<String, String> mStringStringHashMap = new HashMap<>();
+
     @Override
-    public void convertObject2View(int position, ViewHolder holder, Object o) {
+    public void convertObject2View(final int position, ViewHolder holder, Object o) {
         holder.setText(R.id.title, getLines()[position]);
+        View view = holder.getView(R.id.photo);
+        if (view != null) {
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PhotoPicker.builder().setShowCamera(true).setPhotoCount(9).start(getActivity
+                            (), ZnglFragment.this);
+                }
+            });
+        }
+        EditText editText = holder.getView(R.id.et);
+        if(editText!=null){
+            editText.setText(mStringStringHashMap.get(String.valueOf(position)));
+            editText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    mStringStringHashMap.put(String.valueOf(position), s.toString());
+                }
+            });
+        }
+
     }
 }

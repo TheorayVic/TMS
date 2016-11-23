@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
-    android:background="@color/activity_bg">
+              android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,8 +32,9 @@
                 <Spinner
                     android:id="@+id/spi_cqj_xz_cqjdw"
                     style="@style/spinner_style"
-                    android:layout_width="420px"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></Spinner>
 
                 <TextView
                     style="@style/text_view_title_style"
@@ -64,25 +65,24 @@
                     android:text="检查负责人:"/>
 
                 <Spinner
-                    android:id="@+id/spi_cqj_xz_jcfzr"
-                    style="@style/spinner_style"
-                    android:layout_width="420px"
-                    android:layout_height="wrap_content"></Spinner>
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:gravity="right"
-                    style="@style/text_view_title_style"
-                    android:layout_width="160px"
-                    android:layout_height="wrap_content"
-                    android:text="检查时间:"/>
-
-                <TextView
-                    android:id="@+id/tv_cqj_xz_jcsj"
                     style="@style/spinner_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"></TextView>
+                    android:layout_weight="1"></Spinner>
+
+                <TextView
+                    android:id="@+id/textView"
+
+                    style="@style/text_view_title_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检查时间："/>
+
+                <Spinner
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></Spinner>
             </LinearLayout>
 
             <LinearLayout
@@ -90,16 +90,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="8px">
+                android:padding="8dp">
 
                 <TextView
                     style="@style/text_view_title_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="工作票编号:"/>
+                    android:text="工作票编号："/>
 
                 <Spinner
-                    android:id="@+id/spi_cqj_xz_gzpbh"
                     style="@style/spinner_style"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -117,7 +116,7 @@
             <com.yf.bx.tms.view.ZengjiaJianShaoGridView
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="100dp"/>
         </LinearLayout>
     </ScrollView>
 
@@ -126,6 +125,6 @@
         style="@style/yellow_button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5px"
+        android:layout_marginTop="30dp"
         android:text="春秋检申请"/>
 </LinearLayout>
