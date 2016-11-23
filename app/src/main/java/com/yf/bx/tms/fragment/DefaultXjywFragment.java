@@ -19,7 +19,7 @@ import com.yf.bx.tms.utils.DividerGridItemXjyw;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/**巡检业务
  * Created by 123 on 2016/11/7.
  */
 
@@ -31,7 +31,8 @@ public class DefaultXjywFragment extends Fragment {
     private DefaultXjywAdapter defaultXjywAdapter;
     private List<List<String>> list;
 
-    public DefaultXjywFragment() {
+    public DefaultXjywFragment(List<List<String>> list) {
+        this.list = list;
     }
 
     @Override
@@ -52,34 +53,10 @@ public class DefaultXjywFragment extends Fragment {
      //   glm = new GridLayoutManager(getActivity(),1);
         lv = (ListView) view.findViewById(R.id.lv_xjyw_default);
      //   rv.setLayoutManager(glm);
-        list = new ArrayList<>();
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        list1.add("4");
-        list1.add("5");
-        list1.add("6");
-        List<String> list2 = new ArrayList<>();
-        list2.add("1");
-        list2.add("2");
-        list2.add("3");
-        list2.add("4");
-        list2.add("5");
-        list2.add("6");
-        List<String> list3 = new ArrayList<>();
-        list3.add("1");
-        list3.add("2");
-        list3.add("3");
-        list3.add("4");
-        list3.add("5");
-        list3.add("6");
-        list.add(list1);
-        list.add(list2);
-        list.add(list3);
+      if (list!=null){
         defaultXjywAdapter = new DefaultXjywAdapter(getActivity(),list);
         //设置Adapter  
-        lv.setAdapter(defaultXjywAdapter);
+        lv.setAdapter(defaultXjywAdapter);}
     }
 
 

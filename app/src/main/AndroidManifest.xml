@@ -70,11 +70,13 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.CqjXzActivity"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorLandscape" />
         android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.KsxjActivity"
             android:label="@string/title_activity_ksxj"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" />
         <activity
@@ -88,6 +90,7 @@
             android:screenOrientation="sensorLandscape" />
 
         <activity android:name=".photo_picker.PhotoPickerActivity"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="sensorLandscape"/>
     </application>
 

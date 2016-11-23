@@ -14,9 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
-import com.yf.bx.tms.activity.KsxjPhotoActivity;
 
-/**
+/**机房环境
  * Created by 123 on 2016/11/9.
  */
 

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 
-/**
+/**通信电源1
  * Created by 123 on 2016/11/9.
  */
 

@@ -23,7 +23,7 @@
             <RelativeLayout
                 android:id="@+id/loginone"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55px"
                 android:layout_marginLeft="@dimen/login3"
                 android:layout_marginRight="@dimen/login3"
                 android:layout_marginTop="@dimen/login1"
@@ -33,14 +33,15 @@
                 <ImageView
                     android:id="@+id/user_img"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
                     android:contentDescription="login_icon_user"
                     android:src="@drawable/login_icon_user" />
 
                 <EditText
                     android:id="@+id/user_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_toRightOf="@id/user_img"
                     android:background="@android:color/transparent"
                     android:ems="10"
@@ -52,7 +53,7 @@
             <RelativeLayout
                 android:id="@+id/pwd_lay"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55px"
                 android:layout_alignLeft="@id/loginone"
                 android:layout_alignRight="@id/loginone"
                 android:layout_below="@id/loginone">
@@ -60,7 +61,7 @@
                 <RelativeLayout
                     android:id="@+id/logintwo"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/login8"
                     android:background="@drawable/selector_edittext"
                     android:gravity="center_vertical">
@@ -68,14 +69,15 @@
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
                         android:contentDescription="login_icon_password"
                         android:src="@drawable/login_icon_password" />
 
                     <EditText
                         android:id="@+id/text_pwd"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_toRightOf="@id/imageView2"
                         android:background="@android:color/transparent"
                         android:ems="8"
@@ -87,7 +89,7 @@
                 <ImageView
                     android:id="@+id/button_login"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/login4"
+                    android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="@dimen/login7"
                     android:layout_toRightOf="@id/logintwo"

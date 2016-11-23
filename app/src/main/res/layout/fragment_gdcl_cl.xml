@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
    android:id="@+id/ll_gdcl_cl_outer"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAF1F9">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <RelativeLayout
         android:layout_marginLeft="5px"
         android:layout_marginTop="5px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_marginLeft="47px"
+            android:layout_marginLeft="57px"
             android:id="@+id/tv_gdcl_cl_wtbt2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
@@ -53,7 +59,7 @@
             android:layout_below="@id/tv_gdcl_cl_wtbt"
             android:layout_alignRight="@id/tv_gdcl_cl_wtbt2"
             android:layout_width="wrap_content"
-            android:layout_height="50px"
+            android:layout_height="120px"
             android:text="问题描述:"
             android:drawableLeft="@drawable/xingxing"
             android:textColor="#3171AF"
@@ -68,7 +74,7 @@
             android:id="@+id/tv_gdcl_cl_wtms"
             android:layout_width="wrap_content"
             android:layout_alignRight="@id/tv_gdcl_cl_wtlx"
-            android:layout_height="85px"
+            android:layout_height="120px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
@@ -119,6 +125,7 @@
             android:layout_below="@id/tv_gdcl_cl_lxr"
             android:layout_width="wrap_content"
             android:layout_height="50px"
+            android:layout_alignRight="@id/tv_gdcl_cl_wtbt2"
             android:text="问题发生时间:"
             android:drawableLeft="@drawable/xingxing"
             android:textColor="#3171AF"
@@ -141,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50px"
             android:text="发生地点:"
+            android:layout_alignRight="@id/tv_gdcl_cl_lxdh2"
             android:drawableLeft="@drawable/xingxing"
             android:textColor="#3171AF"
             android:gravity="center_vertical"
@@ -290,7 +298,7 @@
             android:layout_below="@id/spinner_gdcl_cl_cljg"
             android:layout_width="wrap_content"
             android:layout_alignRight="@id/tv_gdcl_cl_sbms2"
-            android:layout_height="50px"
+            android:layout_height="120px"
             android:text="解决办法:"
             android:textColor="#3171AF"
             android:gravity="center_vertical"
@@ -303,50 +311,42 @@
             android:id="@+id/tv_gdcl_cl_jjbf"
             android:layout_alignRight="@id/spinner_gdcl_cl_cljg"
             android:layout_width="wrap_content"
-            android:layout_height="80px"
-            android:maxLength="20"
+            android:layout_height="120px"
+            android:maxLength="100"
             android:background="@drawable/tv_bg"/>
+        </RelativeLayout>
+            <TextView
+                android:layout_marginTop="10px"
+                android:id="@+id/tv_gdcl_hxcl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gdtb_down_bg"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="后续处理"/>
 
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10px"
-        android:orientation="horizontal">
         <TextView
+            android:layout_marginTop="10px"
             android:id="@+id/tv_gdcl_cl_savephoto"
             android:layout_marginLeft="5px"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/tv_gdcl_hxcl"
-        android:layout_marginLeft="10px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gdtb_down_bg"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:text="后续处理"/>
-    </LinearLayout>
-
+            android:layout_width="match_parent"
+            android:layout_height="160px" />
+</LinearLayout>
+    </ScrollView>
     <LinearLayout
-        android:paddingBottom="0dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10px"
         android:layout_height="60px"
         android:orientation="horizontal"
+        android:layout_gravity="bottom"
         android:gravity="center">
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_gdcl_cl_photo"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50px"
             android:background="@color/bgbottom"
             android:orientation="horizontal"
             android:gravity="center">
@@ -364,7 +364,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_gdcl_cl_save"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
@@ -387,7 +386,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_gdcl_cl_commit"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
@@ -410,4 +408,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

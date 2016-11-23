@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.photo_picker.PhotoPicker;
 
-/**
+/**传输设备
  * Created by 123 on 2016/11/9.
  */
 

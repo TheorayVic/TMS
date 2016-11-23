@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
+/**工单处理的 处理界面
  * Created by 123 on 2016/10/27.
  */
 
@@ -70,7 +70,7 @@ public class CLGdclFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_gdcl_cl,null);
+        view = inflater.inflate(R.layout.fragment_gdcl_cl,container,false);
         return view;
     }
 

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.yf.bx.tms.R;
 
-/**
+/**用户评价的评价页面
  * Created by 123 on 2016/11/2.
  */
 

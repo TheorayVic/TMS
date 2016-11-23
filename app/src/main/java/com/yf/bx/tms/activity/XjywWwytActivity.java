@@ -37,6 +37,8 @@ public class XjywWwytActivity extends AutoLayoutActivity implements RadioGroup.O
     private LcFragment lc;
     private ZdFragment zd;
 
+    private int currentItem;//标记对应的流程图
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,7 @@ public class XjywWwytActivity extends AutoLayoutActivity implements RadioGroup.O
         rb1 = (RadioButton)findViewById(R.id.rb_ksxj_wwyt_bz);
         viewPager = (ViewPager) findViewById(R.id.viewPager_xjyw_wwyt);
         fragmentList = new ArrayList<>();
+        currentItem = getIntent().getIntExtra("currentItem",0);
         bz = new BzFragment();
         gw = new GwFragment();
         jx = new JxFragment();
@@ -60,6 +63,9 @@ public class XjywWwytActivity extends AutoLayoutActivity implements RadioGroup.O
         rg.setOnCheckedChangeListener(this);
         viewPager.addOnPageChangeListener(this);
         rb1.setChecked(true);
+        Bundle bundle = new Bundle();
+        bundle.putInt("currentItem",currentItem);
+        lc.setArguments(bundle);
     }
 
     @Override

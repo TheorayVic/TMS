@@ -8,11 +8,10 @@
     android:orientation="horizontal"
     android:background="@color/black">
     <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="200px"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="工作负责人"
+        android:text="步骤"
         android:background="@color/blue"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -25,7 +24,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:background="@color/blue"
-        android:text="工作班成员"
+        android:text="岗位职责"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="18sp"/>

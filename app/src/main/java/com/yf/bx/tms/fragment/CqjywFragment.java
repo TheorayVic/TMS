@@ -4,9 +4,11 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.yf.bx.tms.R;
@@ -46,31 +48,39 @@ public class CqjywFragment extends XjywFragment {
             "电视电话会议系统", "数据网设备安全检查", "同步设备安全检查", "网关系统安全检查", "通信运行方式及重要业务通道"};
     public static List<CQJItem> list;
 
+
     @Override
-    public void add(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setView(R.layout.dialog_add_cqjyw);
-        Dialog dialog = builder.create();
+    public void add(Fragment fragment) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setView(R.layout.dialog_add_cqjyw);
+            Dialog dialog = builder.create();
+//            WindowManager windowManager = getActivity().getWindowManager();
+//            Display display = windowManager.getDefaultDisplay();
+//            WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+//            lp.width = (int) (display.getWidth()); //设置宽度
+//            lp.height = display.getHeight();
+//            dialog.getWindow().setAttributes(lp);
+        Window win = dialog.getWindow();
+        win.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams lp = win.getAttributes();
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+        win.setAttributes(lp);
         dialog.show();
-        WindowManager windowManager = getActivity().getWindowManager();
-        Display display = windowManager.getDefaultDisplay();
-        WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
-        lp.width = (int) (display.getWidth()); //设置宽度
-        lp.height = display.getHeight();
-        dialog.getWindow().setAttributes(lp);
-        ZengjiaJianShaoGridView gridView = (ZengjiaJianShaoGridView) dialog.findViewById(R.id.grid_view);
-        list = new ArrayList<>();
-        for (int i = 0; i < TITLES.length; i++) {
-            CQJItem cqjItem = new CQJItem(0, i, TITLES[i]);
-            list.add(cqjItem);
-        }
-        gridView.setList(list);
-        dialog.findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), CqjXzActivity.class));
+            ZengjiaJianShaoGridView gridView = (ZengjiaJianShaoGridView) dialog.findViewById(R.id.grid_view);
+            list = new ArrayList<>();
+            for (int i = 0; i < TITLES.length; i++) {
+                CQJItem cqjItem = new CQJItem(0, i, TITLES[i]);
+                list.add(cqjItem);
             }
-        });
+            gridView.setList(list);
+            dialog.findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), CqjXzActivity.class));
+                }
+            });
+
     }
 
     public static class CQJItem implements ZengjiaJianShaoGridView.GridItem, Cloneable {

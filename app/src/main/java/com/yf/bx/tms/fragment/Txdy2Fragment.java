@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 import com.yf.bx.tms.R;
 
-/**
+/**通信电源2
  * Created by 123 on 2016/11/9.
  */
 

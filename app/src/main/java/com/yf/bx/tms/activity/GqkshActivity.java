@@ -21,7 +21,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
 import static com.yf.bx.tms.R.id.et_gqksh_tv2;
 import static com.yf.bx.tms.R.id.iv_gqksh_tv4;
 
-/**
+/**光纤可视化模块
  * Created by 123 on 2016/10/25.
  */
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+//工单派送 派送工单人员名单
 public class GdpsAddPeopleActivity extends AutoLayoutActivity {
 
     private ListView lv_busy,lv_zhong,lv_xian;

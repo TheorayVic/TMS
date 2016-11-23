@@ -46,7 +46,7 @@
         <EditText
             android:id="@+id/tv_pjyhpj_wtms"
             android:layout_width="1000px"
-            android:layout_height="150px"
+            android:layout_height="130px"
             android:background="@drawable/tv_bg"/>
     </LinearLayout>
     <LinearLayout
@@ -144,7 +144,7 @@
         <EditText
             android:id="@+id/tv_pjyhpj_pj12"
             android:layout_width="1000px"
-            android:layout_height="170px"
+            android:layout_height="150px"
             android:background="@drawable/tv_bg"/>
     </LinearLayout>
     <TextView

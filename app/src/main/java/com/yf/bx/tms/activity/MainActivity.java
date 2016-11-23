@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.MainAdapter;
 import com.yf.bx.tms.bean.MainBean;
+import com.yf.bx.tms.customview.CustomSizeImg;
 import com.yf.bx.tms.photo_picker.PhotoPicker;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -21,9 +22,11 @@ import java.util.List;
 
 import static com.yf.bx.tms.R.drawable.banner_11;
 
+//主界面
 public class MainActivity extends AutoLayoutActivity implements View.OnClickListener{
 
-    private ImageView iv_banner1,iv_banner2,iv_banner3,iv_banner4;
+
+    CustomSizeImg iv_banner1,iv_banner2,iv_banner3,iv_banner4;
     private boolean isChecked1,isChecked2,isChecked3,isChecked4;
     private TextView tv_notice ;
     private ListView lv_main;
@@ -33,10 +36,10 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iv_banner1 = (ImageView) findViewById(R.id.iv_main_banner1);
-        iv_banner2 = (ImageView) findViewById(R.id.iv_main_banner2);
-        iv_banner3 = (ImageView) findViewById(R.id.iv_main_banner3);
-        iv_banner4 = (ImageView) findViewById(R.id.iv_main_banner4);
+        iv_banner1 = (CustomSizeImg) findViewById(R.id.iv_main_banner1);
+        iv_banner2 = (CustomSizeImg) findViewById(R.id.iv_main_banner2);
+        iv_banner3 = (CustomSizeImg) findViewById(R.id.iv_main_banner3);
+        iv_banner4 = (CustomSizeImg) findViewById(R.id.iv_main_banner4);
         tv_notice = (TextView) findViewById(R.id.tv_main_tip);
         lv_main = (ListView) findViewById(R.id.lv_main);
         list = new ArrayList<>();
@@ -77,7 +80,8 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.iv_main_banner1:
                 if (!isChecked1){
                     isChecked1 = true;
-                    iv_banner1.setImageResource(R.drawable.banner_11);
+                //    iv_banner1.setImageResource(R.drawable.banner_11);
+                    iv_banner1.setBackgroundResource(R.drawable.banner_11);
                 }else {
                     Intent intent = new Intent(MainActivity.this,XxbgActivity.class);
                     startActivity(intent);
@@ -86,7 +90,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.iv_main_banner2:
                 if (!isChecked2){
                     isChecked2 = true;
-                    iv_banner2.setImageResource(R.drawable.banner_22);
+                    iv_banner2.setBackgroundResource(R.drawable.banner_22);
                 }else {
                     Intent intent = new Intent(MainActivity.this,GqkshActivity.class);
                     startActivity(intent);
@@ -95,7 +99,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.iv_main_banner3:
                 if (!isChecked3){
                     isChecked3 = true;
-                    iv_banner3.setImageResource(R.drawable.banner_33);
+                    iv_banner3.setBackgroundResource(R.drawable.banner_33);
                 }else {
                     Intent intent = new Intent(MainActivity.this,TxxjActivity.class);
                     startActivity(intent);
@@ -104,7 +108,7 @@ public class MainActivity extends AutoLayoutActivity implements View.OnClickList
             case R.id.iv_main_banner4:
                 if (!isChecked4){
                     isChecked4 = true;
-                    iv_banner4.setImageResource(R.drawable.banner_44);
+                    iv_banner4.setBackgroundResource(R.drawable.banner_44);
                 }else {
                     Intent intent = new Intent(MainActivity.this,TxsbcxActivity.class);
                     startActivity(intent);

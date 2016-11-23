@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.yf.bx.tms.R;
 
-/**
+/**信息办公界面的搜索
  * Created by 123 on 2016/10/31.
  */
 

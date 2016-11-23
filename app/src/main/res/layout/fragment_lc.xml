@@ -11,17 +11,19 @@
             android:orientation="vertical">
 
         <ImageView
-    android:layout_gravity="center_horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+            android:id="@+id/iv_xjyw_wwyt_lc1"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="fitXY"
-    android:src="@drawable/wwyt_xjyw_lc1_01"/>
+            android:src="@drawable/wwyt_jfhj1"/>
         <ImageView
+            android:id="@+id/iv_xjyw_wwyt_lc2"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:scaleType="fitXY"
             android:layout_height="wrap_content"
-            android:src="@drawable/wwyt_xjyw_lc1_02"/>
+            android:src="@drawable/wwyt_jfhj2"/>
 
         </LinearLayout>
     </ScrollView>

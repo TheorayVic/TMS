@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
@@ -99,6 +100,7 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
         PhotoGridAdapter.PhotoViewHolder holder = new PhotoGridAdapter.PhotoViewHolder(itemView);
         if(viewType == 100) {
             holder.vSelected.setVisibility(View.INVISIBLE);
+            holder.et_name.setVisibility(View.INVISIBLE);
             holder.ivPhoto.setScaleType(ImageView.ScaleType.CENTER);
             holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -166,9 +168,9 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
 
                     switch (view.getId()){
                         case R.id.picker_edit:
-                            Toast.makeText(context, "编辑", Toast.LENGTH_SHORT).show();
                             break;
                         case R.id.picker_del:
+                            Toast.makeText(context, "删除", Toast.LENGTH_SHORT).show();
                             break;
                     }
 
@@ -243,11 +245,13 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
     public static class PhotoViewHolder extends RecyclerView.ViewHolder {
         private ImageView ivPhoto;
         private View vSelected;
+        private EditText et_name;
 
         public PhotoViewHolder(View itemView) {
             super(itemView);
             this.ivPhoto = (ImageView)itemView.findViewById(R.id.iv_photo);
             this.vSelected = itemView.findViewById(R.id.v_selected);
+            this.et_name = (EditText) itemView.findViewById(R.id.et_gridview_picker_item);
         }
     }
 

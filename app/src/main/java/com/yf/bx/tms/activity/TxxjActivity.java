@@ -1,6 +1,9 @@
 package com.yf.bx.tms.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.adapter.TxxjFragmentPagerAdapter;
 import com.yf.bx.tms.fragment.CqjywFragment;
@@ -19,11 +24,12 @@ import com.yf.bx.tms.fragment.GzzdFragment;
 import com.yf.bx.tms.fragment.XjywFragment;
 import com.zhy.autolayout.AutoLayoutActivity;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 
-/**
+/**通信巡检界面
  * Created by 123 on 2016/10/25.
  */
 

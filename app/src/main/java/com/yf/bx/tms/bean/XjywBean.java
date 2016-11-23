@@ -15,7 +15,7 @@ public class XjywBean implements Parcelable {
     private String jcfzr;
     private String zt;
     private String xjlx;
-    private boolean flag;//凑够七列，表格
+    private String isEnd;//是否结束巡检
 
     protected XjywBean(Parcel in) {
         xjdw = in.readString();
@@ -24,7 +24,7 @@ public class XjywBean implements Parcelable {
         jcfzr = in.readString();
         zt = in.readString();
         xjlx = in.readString();
-        flag = in.readByte() != 0;
+        isEnd = in.readString();
     }
 
     public static final Creator<XjywBean> CREATOR = new Creator<XjywBean>() {
@@ -52,7 +52,7 @@ public class XjywBean implements Parcelable {
         dest.writeString(jcfzr);
         dest.writeString(zt);
         dest.writeString(xjlx);
-        dest.writeByte((byte) (flag ? 1 : 0));
+        dest.writeString(isEnd);
     }
 
     public String getXjdw() {
@@ -103,12 +103,12 @@ public class XjywBean implements Parcelable {
         this.xjlx = xjlx;
     }
 
-    public boolean isFlag() {
-        return flag;
+    public String getIsEnd() {
+        return isEnd;
     }
 
-    public void setFlag(boolean flag) {
-        this.flag = flag;
+    public void setIsEnd(String isEnd) {
+        this.isEnd = isEnd;
     }
 
     public static Creator<XjywBean> getCREATOR() {
@@ -124,7 +124,7 @@ public class XjywBean implements Parcelable {
                 ", jcfzr='" + jcfzr + '\'' +
                 ", zt='" + zt + '\'' +
                 ", xjlx='" + xjlx + '\'' +
-                ", flag=" + flag +
+                ", flag=" + isEnd +
                 '}';
     }
 }

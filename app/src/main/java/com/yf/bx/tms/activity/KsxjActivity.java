@@ -29,7 +29,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-//巡检业务中 开始巡检进入此界面
+//巡检业务中 开始巡检 不是春秋检的巡检界面
 public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnCheckedChangeListener,
         View.OnClickListener,ViewPager.OnPageChangeListener{
 
@@ -178,6 +178,8 @@ public class KsxjActivity extends AutoLayoutActivity implements RadioGroup.OnChe
                 break;
             case R.id.ib_ksxj_wwyt:
                 Intent intent = new Intent(this,XjywWwytActivity.class);
+                int i = viewpager.getCurrentItem();
+                intent.putExtra("currentItem",i);
                 startActivity(intent);
                 break;
         }

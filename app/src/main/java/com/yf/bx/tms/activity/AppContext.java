@@ -8,8 +8,10 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+import com.yf.bx.tms.R;
 import com.yf.bx.tms.bean.User;
 import com.yf.bx.tms.utils.CyptoUtils;
 import com.yf.bx.tms.utils.FileUtils;
@@ -29,6 +31,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -51,7 +54,6 @@ public class AppContext extends Application {
     public List<String> list_txz;
     public ArrayAdapter<String> adapter_txz;
     public boolean isOnline=true;
-
 //	private Handler unLoginHandler = new Handler(){
 //		public void handleMessage(Message msg) {
 //			if(msg.what == 1){
@@ -81,6 +83,16 @@ public class AppContext extends Application {
                 android.R.layout.simple_dropdown_item_1line,list_txz);
         return adapter_txz;
     }
+    public ArrayAdapter<String> getAdapter_isXiaoque(Activity activity){
+        list_txz = new ArrayList<>();
+        list_txz.add("是");
+        list_txz.add("否");
+        adapter_txz = new ArrayAdapter<String>(activity,
+                android.R.layout.simple_dropdown_item_1line,list_txz);
+        return adapter_txz;
+    }
+
+
     /**
      * 初始化
      */

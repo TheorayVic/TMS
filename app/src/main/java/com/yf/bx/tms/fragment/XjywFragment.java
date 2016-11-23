@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,11 +17,12 @@ import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.AppContext;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.OnClick;
 
-/**
+/**巡检业务界面
  * Created by 123 on 2016/11/7.
  */
 
@@ -37,7 +39,9 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
     private FragmentManager fm;
     private List<Fragment> fragments;
     private TextView tv_add, tv_search, tv_reset;
+    private String txz;
 
+    private List<List<String>> list;
     public XjywFragment() {
     }
 
@@ -51,7 +55,32 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_xjyw, null);
-        defaultXjywFragment = new DefaultXjywFragment();
+        list = new ArrayList<>();
+        List<String> list1 = new ArrayList<>();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+        list1.add("5");
+        list1.add("1");
+        List<String> list2 = new ArrayList<>();
+        list2.add("1");
+        list2.add("2");
+        list2.add("3");
+        list2.add("4");
+        list2.add("5");
+        list2.add("1");
+        List<String> list3 = new ArrayList<>();
+        list3.add("1");
+        list3.add("2");
+        list3.add("3");
+        list3.add("4");
+        list3.add("5");
+        list3.add("1");
+        list.add(list1);
+        list.add(list2);
+        list.add(list3);
+        defaultXjywFragment = new DefaultXjywFragment(list);
         fm = getChildFragmentManager();
         if (fm.getFragments() != null) {
             fm.getFragments().clear();
@@ -78,8 +107,21 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
         addXjywFragment = new AddXjywFragment();
         tv_search.setOnClickListener(this);
         tv_reset.setOnClickListener(this);
+        tv_add.setOnClickListener(this);
         appContext = (AppContext) getActivity().getApplicationContext();
         spi_txz.setAdapter(appContext.getAdapter_txz(getActivity()));
+        spi_txz.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+             //获取下拉框选中的内容
+                txz = appContext.list_txz.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         //时间日期选择
         selectDate(spi_jcsj);
         selectDate(spi_jcsj2);
@@ -91,9 +133,17 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.xjyw_search:
+                defaultXjywFragment = new DefaultXjywFragment(list);
+                add(defaultXjywFragment);
                 break;
             case R.id.xjyw_reset:
-
+                spi_xjdw.setText("");
+                spi_jcfzr.setText("");
+                spi_jcsj.setText("");
+                spi_jcsj2.setText("");
+                break;
+            case R.id.xjyw_add:
+                add(addXjywFragment);
                 break;
         }
     }
@@ -103,15 +153,14 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
         super.onDestroy();
     }
 
-    @OnClick(R.id.xjyw_add)
-    public void add(View v) {
+    public void add(Fragment fragment) {
         fragments = fm.getFragments();
         if (fragments != null) {
-            if (fragments.contains(addXjywFragment))
-                fragments.remove(addXjywFragment);
+            if (fragments.contains(fragment))
+                fragments.remove(fragment);
         }
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.framelayout_txxj, addXjywFragment);
+        ft.replace(R.id.framelayout_txxj, fragment);
         ft.addToBackStack(null);
         ft.commit();
     }

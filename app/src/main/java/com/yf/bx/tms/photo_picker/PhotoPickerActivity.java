@@ -21,7 +21,7 @@ import java.util.List;
 import me.iwf.photopicker.entity.Photo;
 import me.iwf.photopicker.event.OnItemCheckListener;
 import me.iwf.photopicker.fragment.ImagePagerFragment;
-/**
+/**拍照 从图库中选择照片
  * Created by bai on 2016/11/13.
  */
 

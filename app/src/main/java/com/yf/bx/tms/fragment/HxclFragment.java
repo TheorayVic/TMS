@@ -69,7 +69,7 @@ public class HxclFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_hxcl,null);
+        view = inflater.inflate(R.layout.fragment_hxcl,container,false);
         return view;
     }
 

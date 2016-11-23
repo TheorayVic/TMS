@@ -20,7 +20,7 @@ import com.yf.bx.tms.updateApk.UpdateManager;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 
-/**
+/**登录界面
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends Activity {

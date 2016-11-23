@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ import com.yf.bx.tms.fragment.cqjxz.TongXinXuDianChiFragment;
 import com.yf.bx.tms.fragment.cqjxz.WangGuanXiTongFragment;
 import com.yf.bx.tms.fragment.cqjxz.WeiBoSheBeiFragment;
 import com.yf.bx.tms.fragment.cqjxz.ZnglFragment;
+
+import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,11 +113,19 @@ public class CqjXzActivity extends BaseActivity {
         });
     }
 
-    @OnClick(R.id.ib_ksxj_wwyt)
+    @OnClick({R.id.ib_ksxj_wwyt,R.id.ib_txxj_back})
     public void onClick(View view) {
-        Intent intent = new Intent(this, XjywWwytActivity.class);
-        startActivity(intent);
+        switch (view.getId()){
+            case R.id.ib_ksxj_wwyt:
+                Intent intent = new Intent(this, XjywWwytActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ib_txxj_back:
+                finish();
+                break;
+        }
     }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
 

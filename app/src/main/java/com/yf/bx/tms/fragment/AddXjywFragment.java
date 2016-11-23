@@ -16,7 +16,7 @@ import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.AppContext;
 import com.yf.bx.tms.activity.KsxjActivity;
 
-/**
+/**巡检业务 新增界面
  * Created by 123 on 2016/11/8.
  */
 

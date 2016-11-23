@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.customview.CustomRoundProcessbar;
 
 import java.util.List;
 
@@ -19,7 +22,7 @@ public class GzzdAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> list;
-
+    private  int progress = 0;
     public GzzdAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
@@ -42,19 +45,23 @@ public class GzzdAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolderGzzd holder = null;
         if (convertView==null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.listview_gzzd_item,null);
-          //  holder.tv_date = (TextView) convertView.findViewById(R.id.tv_gzzd_item_date);
-         //   holder.tv_title = (TextView) convertView.findViewById(R.id.tv_gzzd_item_title);
+            holder = new ViewHolderGzzd();
+            convertView = LayoutInflater.from(context).inflate(R.layout.listview_gzzd_item,parent,false);
+            holder.tv_date = (TextView) convertView.findViewById(R.id.tv_gzzd_item_date);
+            holder.tv_title = (TextView) convertView.findViewById(R.id.tv_gzzd_item_title);
+
+            holder.bar = (CustomRoundProcessbar) convertView.findViewById(R.id.roundProgressBar);
             convertView.setTag(holder);
         }else{
-            holder = (ViewHolder) convertView.getTag();
+            holder = (ViewHolderGzzd) convertView.getTag();
         }
         return convertView;
     }
 
-    class ViewHolder{
+    public class ViewHolderGzzd{
         TextView tv_title,tv_date;
+        public CustomRoundProcessbar bar;
     }
 }

@@ -25,6 +25,17 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
+
+        <com.yf.bx.tms.customview.CustomSizeImg
+
+            android:id="@+id/iv_main_banner1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200px"
+            android:background="@drawable/banner_1">
+
+        </com.yf.bx.tms.customview.CustomSizeImg>
+        <!--
         <ImageView
             android:id="@+id/iv_main_banner1"
             android:layout_width="0dp"
@@ -32,33 +43,31 @@
             android:layout_height="200px"
             android:scaleType="fitXY"
             android:src="@drawable/banner_1"/>
-        <ImageView
+            -->
+        <com.yf.bx.tms.customview.CustomSizeImg
             android:id="@+id/iv_main_banner2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="200px"
-            android:scaleType="fitXY"
-            android:src="@drawable/banner_2"/>
+            android:background="@drawable/banner_2"/>
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-            <ImageView
+            <com.yf.bx.tms.customview.CustomSizeImg
                 android:id="@+id/iv_main_banner3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="200px"
-                android:scaleType="fitXY"
-                android:src="@drawable/banner_3"/>
-            <ImageView
+                android:background="@drawable/banner_3"/>
+            <com.yf.bx.tms.customview.CustomSizeImg
                 android:id="@+id/iv_main_banner4"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="200px"
-                android:scaleType="fitXY"
-                android:src="@drawable/banner_4"/>
+                android:background="@drawable/banner_4"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

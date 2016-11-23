@@ -1,25 +1,44 @@
 package com.yf.bx.tms.fragment;
 
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
+import android.text.style.ReplacementSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.activity.TxxjActivity;
 import com.yf.bx.tms.adapter.GzzdAdapter;
+import com.yf.bx.tms.customview.CustomRoundProcessbar;
+import com.yf.bx.tms.utils.DownloadFileUtils;
+import com.yf.bx.tms.utils.OpenFileUtils;
 
+import org.xutils.x;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/**规章制度和标准规范
  * Created by 123 on 2016/11/7.
  */
 
@@ -33,6 +52,10 @@ public class GzzdFragment extends CommonFra {
     private ListView lv;
     private List<String> list_gzzd,list_bzgf;
     private GzzdAdapter gzzdAdapter;
+    private int progress = 0;//下载进度
+    private String src;
+    private String floder;
+    private OpenFileUtils openFileUtils;
     public GzzdFragment() {
     }
 
@@ -81,7 +104,53 @@ public class GzzdFragment extends CommonFra {
             }
         });
         tv_gzzd.setChecked(true);
+
+        openFileUtils = new OpenFileUtils(getActivity());
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                      @Override
+                                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                          if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                                              src = Environment.getExternalStorageDirectory()
+                                                      .getAbsolutePath();
+                                              // 这里区分本地是否存在
+                                              String filename = "";
+                                              floder = src+filename;
+                                              if (isState(filename)) {
+                                                  openFileUtils.openFile(new File(floder + filename));
+                                              } else {
+                                                  final CustomRoundProcessbar bar = ((GzzdAdapter.ViewHolderGzzd) (view.getTag())).bar;
+                                                  File file = new File(floder);
+                                                  if (!file.exists()) {
+                                                      file.mkdirs();
+                                                  }
+                                                  bar.setVisibility(View.VISIBLE);
+                                                  final String fileUrl = "";
+                                                  final String address = "";
+                                                  new Thread(new Runnable() {
+                                                      @Override
+                                                      public void run() {
+                                                          DownloadFileUtils.downLoadFile(fileUrl, address, bar);
+                                                      }
+                                                  }).start();
+
+                                              }
+                                          } else {
+                                              Toast.makeText(getActivity(), "请插入SD卡", Toast.LENGTH_SHORT).show();
+                                              return;
+                                          }
+                                      }
+                                  });
     }
 
+    // 判断本地文件是否存在
+    boolean isState(String filename){
+        boolean isS = false;
+        String filePath = floder + filename;
+        File fileFile = new File(filePath);
+        if (fileFile.exists()) {
+            isS = true;
+        }
+        return isS;
+    }
 
 }

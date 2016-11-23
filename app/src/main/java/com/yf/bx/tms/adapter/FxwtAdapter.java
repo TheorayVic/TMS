@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yf.bx.tms.R;
 
@@ -54,10 +55,16 @@ public class FxwtAdapter extends BaseAdapter {
             holder.tv_ycyy = (TextView) convertView.findViewById(R.id.tv_fxwt_item_ycyy);
             holder.tv_sfyxq = (TextView) convertView.findViewById(R.id.tv_fxwt_item_sfyxq);
             holder.tv_cz = (TextView) convertView.findViewById(R.id.tv_fxwt_item_cz);
+            convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-
+        holder.tv_cz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"已经消缺",Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
     }
 

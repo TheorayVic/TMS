@@ -68,9 +68,7 @@ public class XjywCkActivity extends AutoLayoutActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
 
-
         Intent intent = new Intent(this,KsxjActivity.class);
-
         switch (v.getId()){
             case R.id.ib_xjyw_ck_back:
                 finish();

@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
    android:id="@+id/ll_hxcl_outer"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAF1F9">
-    <RelativeLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <RelativeLayout
         android:layout_marginLeft="5px"
         android:layout_marginTop="5px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_marginLeft="47px"
+            android:layout_marginLeft="57px"
             android:id="@+id/tv_hxcl_wtbt2"
             android:layout_width="wrap_content"
             android:layout_height="50px"
@@ -53,7 +60,7 @@
             android:layout_below="@id/tv_hxcl_wtbt"
             android:layout_alignRight="@id/tv_hxcl_wtbt2"
             android:layout_width="wrap_content"
-            android:layout_height="50px"
+            android:layout_height="120px"
             android:text="问题描述:"
             android:drawableLeft="@drawable/xingxing"
             android:textColor="#3171AF"
@@ -68,7 +75,7 @@
             android:id="@+id/tv_hxcl_wtms"
             android:layout_width="wrap_content"
             android:layout_alignRight="@id/tv_hxcl_wtlx"
-            android:layout_height="85px"
+            android:layout_height="120px"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:layout_marginTop="5px"
@@ -118,6 +125,7 @@
             android:id="@+id/tv_hxcl_wtfssj2"
             android:layout_below="@id/tv_hxcl_lxr"
             android:layout_width="wrap_content"
+            android:layout_alignRight="@id/tv_hxcl_wtbt2"
             android:layout_height="50px"
             android:text="问题发生时间:"
             android:drawableLeft="@drawable/xingxing"
@@ -140,6 +148,7 @@
             android:layout_toRightOf="@id/tv_hxcl_wtfssj"
             android:layout_width="wrap_content"
             android:layout_height="50px"
+            android:layout_alignRight="@id/tv_hxcl_lxdh2"
             android:text="发生地点:"
             android:drawableLeft="@drawable/xingxing"
             android:textColor="#3171AF"
@@ -290,7 +299,7 @@
             android:layout_below="@id/spinner_hxcl_cljg"
             android:layout_width="wrap_content"
             android:layout_alignRight="@id/tv_hxcl_sbms2"
-            android:layout_height="50px"
+            android:layout_height="120px"
             android:text="解决办法:"
             android:textColor="#3171AF"
             android:gravity="center_vertical"
@@ -303,8 +312,8 @@
             android:id="@+id/tv_hxcl_jjbf"
             android:layout_alignRight="@id/spinner_hxcl_cljg"
             android:layout_width="wrap_content"
-            android:layout_height="80px"
-            android:maxLength="20"
+            android:layout_height="120px"
+            android:maxLength="100"
             android:background="@drawable/tv_bg"/>
         <TextView
             android:id="@+id/tv_hxcl_hxjjbf2"
@@ -313,41 +322,41 @@
             android:layout_below="@id/tv_hxcl_jjbf"
             android:text="后续解决办法:"
             android:layout_alignRight="@id/tv_hxcl_jjbf2"
-            android:layout_height="50px"
+            android:layout_height="120px"
             android:textColor="#3171AF"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:textSize="18sp" />
         <EditText
-            android:layout_marginTop="5px"
+            android:layout_marginTop="12px"
             android:layout_toRightOf="@id/tv_hxcl_hxjjbf2"
             android:layout_below="@id/tv_hxcl_jjbf"
             android:id="@+id/tv_hxcl_hxjjbf"
             android:layout_alignRight="@id/spinner_hxcl_cljg"
             android:layout_width="wrap_content"
-            android:layout_height="80px"
-            android:maxLength="20"
+            android:layout_height="120px"
+            android:maxLength="100"
             android:background="@drawable/tv_bg"/>
     </RelativeLayout>
-<TextView
+    <TextView
     android:id="@+id/tv_hxcl_savephoto"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"/>
+    android:layout_height="160px"/>
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
-        android:paddingBottom="0dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10px"
-        android:layout_height="60px"
+        android:layout_height="70px"
         android:orientation="horizontal"
+        android:layout_gravity="bottom"
         android:gravity="center">
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_hxcl_photo"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50px"
             android:background="@color/bgbottom"
             android:orientation="horizontal"
             android:gravity="center">
@@ -365,7 +374,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_hxcl_save"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
@@ -388,7 +396,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="0dp"
             android:id="@+id/ll_hxcl_commit"
             android:layout_marginLeft="5px"
             android:background="@color/bgbottom"
@@ -411,4 +418,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

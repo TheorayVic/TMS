@@ -1,11 +1,14 @@
 package com.yf.bx.tms.photo_picker;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -17,6 +20,7 @@ import android.widget.Button;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
+import com.yf.bx.tms.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,7 +77,7 @@ public class PhotoPickerFragment extends Fragment {
         this.mGlideRequestManager = Glide.with(this);
         this.directories = new ArrayList();
         this.originalPhotos = this.getArguments().getStringArrayList("origin");
-        this.column = this.getArguments().getInt("column", 3);
+        this.column = this.getArguments().getInt("column", 4);
         boolean showCamera = this.getArguments().getBoolean("camera", true);
         boolean previewEnable = this.getArguments().getBoolean("PREVIEW_ENABLED", true);
         this.photoGridAdapter = new PhotoGridAdapter(getActivity(), this.mGlideRequestManager, this.directories, this.originalPhotos, this.column);
@@ -99,6 +103,7 @@ public class PhotoPickerFragment extends Fragment {
         this.listAdapter = new PopupDirectoryListAdapter(this.mGlideRequestManager, this.directories);
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(me.iwf.photopicker.R.id.rv_photos);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(this.column, 1);
+       // GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),4);
         layoutManager.setGapStrategy(2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(this.photoGridAdapter);
