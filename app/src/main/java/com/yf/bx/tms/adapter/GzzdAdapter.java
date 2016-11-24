@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.bean.GzzdBean;
 import com.yf.bx.tms.customview.CustomRoundProcessbar;
 
 import java.util.List;
@@ -21,9 +22,9 @@ import java.util.List;
 public class GzzdAdapter extends BaseAdapter {
 
     private Context context;
-    private List<String> list;
+    public List<GzzdBean> list;
     private  int progress = 0;
-    public GzzdAdapter(Context context, List<String> list) {
+    public GzzdAdapter(Context context, List<GzzdBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -57,6 +58,7 @@ public class GzzdAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolderGzzd) convertView.getTag();
         }
+        holder.tv_title.setText(list.get(position).getFileName());
         return convertView;
     }
 

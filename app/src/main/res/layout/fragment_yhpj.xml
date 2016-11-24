@@ -47,7 +47,7 @@
             android:layout_width="250px"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="发生地点"
+            android:text="发生时间"
             android:textSize="16sp"
             android:textColor="@color/white"/>
         <TextView

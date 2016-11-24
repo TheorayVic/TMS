@@ -52,7 +52,10 @@ public class GdpsFragment extends Fragment {
         List<String> list = new ArrayList<>();
         list.add("试验数据1");
         list.add("试验数据2");
-        gdpsAdapter = new GdpsAdapter(getActivity(),list);
+        tv_gdps_num.setText("2");
+        String[][] strings = {{"2016111501","高","软件问题","excel文件打不开","东兴办公区三楼","王飞"},
+                {"2016111502","低","硬件问题","外网电脑启动不开","东兴办公区三楼","李昊"}};
+        gdpsAdapter = new GdpsAdapter(getActivity(),strings);
         lv_gdps.setAdapter(gdpsAdapter);
 
     }

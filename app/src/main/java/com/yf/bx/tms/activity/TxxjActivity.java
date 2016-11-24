@@ -113,15 +113,20 @@ public class TxxjActivity extends AutoLayoutActivity implements View.OnClickList
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-
+        Intent intent = new Intent();
+        intent.setAction("type");
         switch (checkedId){
             case R.id.rb_txxj_xjyw:
                 tv_top.setText("通信检修");
+                intent.putExtra("type",0);
+                sendBroadcast(intent);
                 viewPager.setCurrentItem(0);
                 Log.i(TAG, "onCheckedChanged: fagments[0]:"+fragments.get(0));
                 break;
             case R.id.rb_txxj_cqjyw:
                 tv_top.setText("通信检修");
+                intent.putExtra("type",1);
+                sendBroadcast(intent);
                 viewPager.setCurrentItem(1);
                 Log.i(TAG, "onCheckedChanged: fagments[1]:"+fragments.get(1));
                 break;

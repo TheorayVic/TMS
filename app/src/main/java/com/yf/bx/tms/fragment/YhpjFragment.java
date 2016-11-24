@@ -52,7 +52,7 @@ public class YhpjFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_yhpj,null);
+        view = inflater.inflate(R.layout.fragment_yhpj,container,false);
         return view;
     }
     @Override
@@ -64,17 +64,17 @@ public class YhpjFragment extends Fragment implements View.OnClickListener{
         tv_tj = (TextView) view.findViewById(R.id.tv_yhpj_tj);
         list = new ArrayList<>();
         list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
         tv_pj.setOnClickListener(this);
         tv_tj.setOnClickListener(this);
         adapter = new YhpjAdapter(getActivity(),list);

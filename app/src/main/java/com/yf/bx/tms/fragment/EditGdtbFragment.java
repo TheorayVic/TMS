@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -41,7 +42,7 @@ public class EditGdtbFragment extends Fragment implements View.OnClickListener{
     private Spinner spinner_wtlx,spinner_jjcd;
     private List<String> list_wtlx = new ArrayList<>();
     private List<String> list_jjcd = new ArrayList<>();
-
+    private EditText et_wtbt,et_wtms,et_lxr,et_lxdh,et_fsdd,et_bm,et_sbbm,et_sbms;
     private View.OnClickListener listener;
 
     private TextView tv_wtfssj,tv_savePhoto;
@@ -80,14 +81,29 @@ public class EditGdtbFragment extends Fragment implements View.OnClickListener{
         ll_commit = (LinearLayout) view.findViewById(R.id.ll_gdtb_edit_commit);
         spinner_wtlx = (Spinner) view.findViewById(R.id.tv_gdtb_edit_wtlx);
         spinner_jjcd = (Spinner) view.findViewById(R.id.spinner_gdtb_edit_jjcd);
-
         tv_wtfssj = (TextView) view.findViewById(R.id.tv_gdtb_edit_wtfssj);
+        et_wtbt = (EditText) view.findViewById(R.id.tv_gdtb_edit_wtbt);
+        et_wtms = (EditText) view.findViewById(R.id.tv_gdtb_edit_wtms);
+        et_lxr = (EditText) view.findViewById(R.id.tv_gdtb_edit_lxr);
+        et_lxdh = (EditText) view.findViewById(R.id.tv_gdtb_edit_lxdh);
+        et_fsdd = (EditText) view.findViewById(R.id.tv_gdtb_edit_fsdd);
+        et_bm = (EditText) view.findViewById(R.id.tv_gdtb_edit_bm);
+        et_sbbm = (EditText) view.findViewById(R.id.tv_gdtb_edit_sbbm);
+        et_sbms = (EditText) view.findViewById(R.id.tv_gdtb_edit_sbms);
         tv_savePhoto = (TextView) view.findViewById(R.id.gdtb_edit_savePhoto);
         list_jjcd.add("高");
         list_jjcd.add("中");
         list_jjcd.add("低");
         list_wtlx.add("硬件问题");
         list_wtlx.add("软件问题");
+        et_wtbt.setText("安全U盘制作");
+        et_wtms.setText("安全u盘无法识别");
+        et_lxr.setText("刘星");
+        et_lxdh.setText("3425");
+        tv_wtfssj.setText("2016.11.15");
+        et_fsdd.setText("A座807");
+        et_bm.setText("财务部");
+        et_sbms.setText("金士顿安全U盘");
         ArrayAdapter<String> adapter_jjcd = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line,list_jjcd);
         ArrayAdapter<String> adapter_wtlx = new ArrayAdapter<String>(getActivity(),
@@ -97,7 +113,6 @@ public class EditGdtbFragment extends Fragment implements View.OnClickListener{
         ll_photo.setOnClickListener(this);
         ll_save.setOnClickListener(this);
         ll_commit.setOnClickListener(this);
-
         listener = new View.OnClickListener(){
             @Override
             public void onClick(View view) {

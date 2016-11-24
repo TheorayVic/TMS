@@ -70,7 +70,7 @@ public class GdtbFragment extends Fragment implements View.OnClickListener{
         ll_commit.setOnClickListener(this);
         list = new ArrayList<>();
         list.add("实验数据1");
-        list.add("实验数据2");
+       // list.add("实验数据2");
         adapter = new GdtbAdapter(list,getActivity());
         listView.setAdapter(adapter);
         cb_gdtb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -47,7 +47,7 @@ public class GdclFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_gdcl,null);
+        view = inflater.inflate(R.layout.fragment_gdcl,container,false);
         return view;
     }
     @Override
@@ -59,17 +59,17 @@ public class GdclFragment extends Fragment implements View.OnClickListener{
         tv_tj = (TextView) view.findViewById(R.id.tv_gdcl_tj);
         list = new ArrayList<>();
         list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
-        list.add("测试数据1");
-        list.add("测试数据2");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
+//        list.add("测试数据1");
+//        list.add("测试数据2");
         tv_cl.setOnClickListener(this);
         tv_tj.setOnClickListener(this);
         adapter = new GdclAdapter(getActivity(),list);

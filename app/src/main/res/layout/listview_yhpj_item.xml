@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="问题标题"
+            android:text="安全U盘制作"
             android:layout_gravity="center"
             android:textSize="16sp"
             android:textColor="@color/black"/>
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="联系人"
+            android:text="刘星"
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="联系电话"
+            android:text="3425"
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="发生地点"
+            android:text="2016.11.15"
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="工单状态"
+            android:text="待评价"
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="紧急程度"
+            android:text="高"
             android:textSize="16sp"
             android:textColor="@color/black"/>
     </LinearLayout>

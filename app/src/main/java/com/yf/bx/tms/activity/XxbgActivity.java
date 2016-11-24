@@ -84,7 +84,7 @@ public class XxbgActivity extends AutoLayoutActivity implements View.OnClickList
         fragments = getSupportFragmentManager().getFragments();
 
         //根据登录人权限判断展示页面
-
+          rb_gdtb.setChecked(true);
     }
 
     private void initView() {

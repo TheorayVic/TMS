@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.CqjXzActivity;
+import com.yf.bx.tms.adapter.DefaultXjywAdapter;
 import com.yf.bx.tms.view.ZengjiaJianShaoGridView;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class CqjywFragment extends XjywFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
     }
 
     public static final String[] TITLES = {"通讯站安全检查", "站内光缆安全检查", "ADSS光缆安全检查", "OPGW光缆安全检查",

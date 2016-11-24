@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SearchView;
 import android.text.style.ReplacementSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import com.yf.bx.tms.R;
 import com.yf.bx.tms.activity.TxxjActivity;
 import com.yf.bx.tms.adapter.GzzdAdapter;
+import com.yf.bx.tms.bean.GzzdBean;
 import com.yf.bx.tms.customview.CustomRoundProcessbar;
 import com.yf.bx.tms.utils.DownloadFileUtils;
 import com.yf.bx.tms.utils.OpenFileUtils;
@@ -44,13 +46,14 @@ import java.util.List;
 
 public class GzzdFragment extends CommonFra {
 
+    private final static String TAG ="GzzdFragment";
     private View view;
     private RadioButton tv_gzzd,tv_bzgf;
     private RadioGroup rg;
     private ImageButton ib_search;
     private SearchView searchView;
     private ListView lv;
-    private List<String> list_gzzd,list_bzgf;
+    private List<GzzdBean> list_gzzd,list_bzgf;
     private GzzdAdapter gzzdAdapter;
     private int progress = 0;//下载进度
     private String src;
@@ -82,13 +85,36 @@ public class GzzdFragment extends CommonFra {
         lv = (ListView) view.findViewById(R.id.lv_gzzd);
         list_gzzd = new ArrayList<>();
         list_bzgf = new ArrayList<>();
-        list_bzgf.add("");
-        list_bzgf.add("");
-        list_bzgf.add("");
-        list_gzzd.add("");
-        list_gzzd.add("");
-        list_gzzd.add("");
-        list_gzzd.add("");
+        GzzdBean gzzdBean1 = new GzzdBean();
+        gzzdBean1.setIsGzzd("true");
+        gzzdBean1.setFileName("国家电网公司机动应急通信系统管理细则");
+        GzzdBean gzzdBean2 = new GzzdBean();
+        gzzdBean2.setFileName("国家电网公司通信安全管理办法");
+        GzzdBean gzzdBean3 = new GzzdBean();
+        gzzdBean3.setFileName("国家电网公司通信检修管理办法");
+        GzzdBean gzzdBean4 = new GzzdBean();
+        gzzdBean4.setFileName("国家电网公司通信设备及资产管理细则");
+
+
+        GzzdBean gzzdBean5 = new GzzdBean();
+        gzzdBean5.setIsGzzd("false");
+        gzzdBean5.setFileName("电力数字调度交换机测试方法");
+        GzzdBean gzzdBean6 = new GzzdBean();
+        gzzdBean6.setFileName("电力系统复用调制解调器600bits移频键控调制解调器技术要求");
+        GzzdBean gzzdBean7 = new GzzdBean();
+        gzzdBean7.setFileName("电力系统调度通信交换网设计技术规程");
+        GzzdBean gzzdBean8 = new GzzdBean();
+        gzzdBean8.setFileName("微波电路传输继电保护信息设计技术规定");
+
+        list_gzzd.add(gzzdBean1);
+        list_gzzd.add(gzzdBean2);
+        list_gzzd.add(gzzdBean3);
+        list_gzzd.add(gzzdBean4);
+
+        list_bzgf.add(gzzdBean5);
+        list_bzgf.add(gzzdBean6);
+        list_bzgf.add(gzzdBean7);
+        list_bzgf.add(gzzdBean8);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -112,9 +138,10 @@ public class GzzdFragment extends CommonFra {
                                           if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                                               src = Environment.getExternalStorageDirectory()
                                                       .getAbsolutePath();
-                                              // 这里区分本地是否存在
-                                              String filename = "";
+                                              String filename = gzzdAdapter.list.get(position).getFileName();
+                                              Log.i(TAG, "onItemClick: filename:"+filename);
                                               floder = src+filename;
+                                              // 这里区分本地是否存在
                                               if (isState(filename)) {
                                                   openFileUtils.openFile(new File(floder + filename));
                                               } else {

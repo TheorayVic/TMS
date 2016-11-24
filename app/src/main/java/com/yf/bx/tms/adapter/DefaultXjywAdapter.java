@@ -71,6 +71,7 @@ public class DefaultXjywAdapter extends BaseAdapter implements View.OnClickListe
         }else{
             holder = (MyViewHolder) convertView.getTag();
         }
+        holder.tv_xjlx.setText(list.get(position).get(6));
         holder.tv_ck.setOnClickListener(this);
         holder.tv_jsxj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,9 +98,9 @@ public class DefaultXjywAdapter extends BaseAdapter implements View.OnClickListe
     }
 
 
-    class MyViewHolder {
-        TextView tv_xjdw,tv_txz,tv_jcsj,tv_jcfzr,tv_zt,tv_xjlx,tv_ck,tv_edit,tv_jsxj;
-        LinearLayout ll_xjyw_item;
+   public class MyViewHolder {
+        public TextView tv_xjdw,tv_txz,tv_jcsj,tv_jcfzr,tv_zt,tv_xjlx,tv_ck,tv_edit,tv_jsxj;
+        public LinearLayout ll_xjyw_item;
     }
 
     @Override

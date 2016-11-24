@@ -1,10 +1,15 @@
 package com.yf.bx.tms.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +33,7 @@ import butterknife.OnClick;
 
 public class XjywFragment extends CommonFra implements View.OnClickListener {
 
+    private final static String TAG = "XjywFragment";
     private View view;
     private EditText spi_xjdw, spi_jcfzr;
     private Spinner spi_txz;
@@ -40,47 +46,19 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
     private List<Fragment> fragments;
     private TextView tv_add, tv_search, tv_reset;
     private String txz;
-
-    private List<List<String>> list;
     public XjywFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+        super.onCreate(savedInstanceState);}
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_xjyw, null);
-        list = new ArrayList<>();
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        list1.add("4");
-        list1.add("5");
-        list1.add("1");
-        List<String> list2 = new ArrayList<>();
-        list2.add("1");
-        list2.add("2");
-        list2.add("3");
-        list2.add("4");
-        list2.add("5");
-        list2.add("1");
-        List<String> list3 = new ArrayList<>();
-        list3.add("1");
-        list3.add("2");
-        list3.add("3");
-        list3.add("4");
-        list3.add("5");
-        list3.add("1");
-        list.add(list1);
-        list.add(list2);
-        list.add(list3);
-        defaultXjywFragment = new DefaultXjywFragment(list);
+        defaultXjywFragment = new DefaultXjywFragment();
         fm = getChildFragmentManager();
         if (fm.getFragments() != null) {
             fm.getFragments().clear();
@@ -133,7 +111,7 @@ public class XjywFragment extends CommonFra implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.xjyw_search:
-                defaultXjywFragment = new DefaultXjywFragment(list);
+                defaultXjywFragment = new DefaultXjywFragment();
                 add(defaultXjywFragment);
                 break;
             case R.id.xjyw_reset:

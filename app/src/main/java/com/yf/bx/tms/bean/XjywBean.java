@@ -3,11 +3,13 @@ package com.yf.bx.tms.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by 123 on 2016/11/7.
  */
 
-public class XjywBean implements Parcelable {
+public class XjywBean extends DataSupport implements Parcelable {
 
     private String xjdw;
     private String txz;

@@ -53,7 +53,7 @@ public class AddXjywFragment extends CommonFra {
         tv_jcsj = (TextView) view.findViewById(R.id.spi_xjyw_add_jcsj);
         tv_xj = (TextView) view.findViewById(R.id.tv_xjyw_add_xjsq);
         appContext = (AppContext) getActivity().getApplicationContext();
-        spi_txz.setAdapter(appContext.adapter_txz);
+        spi_txz.setAdapter(appContext.getAdapter_txz(getActivity()));
         selectDate(tv_jcsj);
         tv_xj.setOnClickListener(new View.OnClickListener() {
             @Override

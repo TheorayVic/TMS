@@ -92,9 +92,6 @@
             android:label="@string/title_activity_xjyw_ck"
             android:screenOrientation="sensorLandscape" />
 
-        <activity android:name=".photo_picker.PhotoPickerActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="sensorLandscape"/>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import com.yf.bx.tms.utils.CyptoUtils;
 import com.yf.bx.tms.utils.FileUtils;
 import com.yf.bx.tms.utils.StringUtils;
 
+import org.litepal.LitePal;
 import org.xutils.x;
 
 import java.io.File;
@@ -67,6 +68,7 @@ public class AppContext extends Application {
     public void onCreate() {
         super.onCreate();
         x.Ext.init(this);
+        LitePal.initialize(this);
         //注册App异常崩溃处理器
 //        Thread.setDefaultUncaughtExceptionHandler(AppException.getAppExceptionHandler());
 //        init();

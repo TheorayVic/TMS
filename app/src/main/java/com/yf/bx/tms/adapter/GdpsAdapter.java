@@ -33,20 +33,23 @@ public class GdpsAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> list;
+    private String[][] strings;
 
-    public GdpsAdapter(Context context, List<String> list) {
+    public GdpsAdapter(Context context, String[][] strings) {
         this.context = context;
-        this.list = list;
+        this.strings = strings;
     }
 
     @Override
     public int getCount() {
-        return list.size();
+    //    return list.size();
+        return strings.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+      //  return list.get(position);
+        return strings[position];
     }
 
     @Override
@@ -77,7 +80,13 @@ public class GdpsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.tv_gdbh.setText(list.get(position));
+        holder.tv_gdbh.setText(strings[position][0]);
+        holder.tv_jjcd.setText(strings[position][1]);
+        holder.tv_wtlx.setText(strings[position][2]);
+        holder.tv_wtms.setText(strings[position][3]);
+        holder.tv_fsdd.setText(strings[position][4]);
+        holder.tv_lxr.setText(strings[position][5]);
+
         holder.tv_num.setText(position+1+"");
         //点击派送工单，成功后显示派送成功，然后才能点击领取工单，领取工单后，
         // 整个ll变成“处理中”，背景变绿色
@@ -128,11 +137,7 @@ public class GdpsAdapter extends BaseAdapter {
             }
         });
         holder.tv_wtms.setMovementMethod(ScrollingMovementMethod.getInstance());
-        holder.tv_wtms.setText("党的十八届六中全会审议通过的《中国共产党党内监督条例》" +
-                "（以下简称《条例》）突出全面从严治党这个主题，根据新形势新任务的发展变化，" +
-                "在2003年颁布施行的《中国共产党党内监督条例（试行）》基础上进行修订和完善，" +
-                "把党的十八大以来加强党的建设、强化党内监督的实践探索及时转化为制度成果，" +
-                "实现了党内监督制度的与时俱进。《条例》聚焦党内监督存在的薄弱环节，明确了新形势下加强党内监督的指导思想、基本原则、主要内容、任务、对象和方式等，为全面从严治党锻造了新的制度利器。 ");
+
         return convertView;
     }
 

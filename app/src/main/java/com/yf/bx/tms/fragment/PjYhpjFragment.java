@@ -52,7 +52,8 @@ public class PjYhpjFragment extends Fragment {
         rb_cljg = (RatingBar) view.findViewById(R.id.ratingbar_pjyhpj_cljg);
         ll_commit = (LinearLayout) view.findViewById(R.id.ll_pjyhpj_pj_commit);
         //rb_xysj.getRating() :返回星星的个数
-
+        et_gdbh.setText("201511103");
+        et_wtms.setText("安全U盘制作");
         ll_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

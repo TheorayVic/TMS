@@ -52,10 +52,10 @@ public class WwytpjFragment extends Fragment {
         list_content2 =new ArrayList<>();
         map = new HashMap<>();
         list_head.add("head实验数据1");
-        list_head.add("head实验数据2");
+//        list_head.add("head实验数据2");
         list_content1.add("content实验数据1");
         map.put(0,list_content1);
-        list_content2.add("content实验数据2");
+//        list_content2.add("content实验数据2");
         map.put(1,list_content2);
         WwytExpandlistviewAdapter adapter = new WwytExpandlistviewAdapter(getActivity(),list_head,map);
         exlv_wwytpj.setAdapter(adapter);

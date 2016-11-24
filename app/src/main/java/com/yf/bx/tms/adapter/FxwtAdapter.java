@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yf.bx.tms.R;
+import com.yf.bx.tms.bean.FxwtBean;
 
 import java.util.List;
 
@@ -19,9 +20,9 @@ import java.util.List;
 public class FxwtAdapter extends BaseAdapter {
 
     private Context context;
-    private List<String> list;
+    private List<FxwtBean> list;
 
-    public FxwtAdapter(Context context, List<String> list) {
+    public FxwtAdapter(Context context, List<FxwtBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -59,6 +60,14 @@ public class FxwtAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
+        FxwtBean fxwtBean = list.get(position);
+        holder.tv_jcfzr.setText(fxwtBean.getJcfzr());
+        holder.tv_xjdw.setText(fxwtBean.getXjdw());
+        holder.tv_txz.setText(fxwtBean.getTxz());
+        holder.tv_jcsj.setText(fxwtBean.getJxsj());
+        holder.tv_jcxm.setText(fxwtBean.getJcxm());
+        holder.tv_ycyy.setText(fxwtBean.getYcyy());
+        holder.tv_sfyxq.setText(fxwtBean.getIsyxq());
         holder.tv_cz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
